@@ -403,8 +403,27 @@ roslaunch octomap_3Dlidar_px4.launch
 
 ![image](http://files.amovauto.com:8088/group1/default/20200122/12/04/1/cotomap_3Dlidar.png)
 
+# image_process
+## vision landing
+
+![image](http://files.amovauto.com:8088/group1/default/20200213/01/43/1/landing_px4.gif)
+
+运行demo之前请先安装必要的ros包
+
+```
+sudo apt-get install ros-melodic-ar-track-alvar*
+```
+
+运行
+
+```
+roslaunch simulation landing_px4.launch
+```
+
+然后在键盘控制界面输入'0' 解锁，输入'2'切入OFFBOARD，飞机会自动起飞降落到目标板。
 
 # planning
+
 ## ros navigation
 
 运行demo之前请先安装必要的导航包
