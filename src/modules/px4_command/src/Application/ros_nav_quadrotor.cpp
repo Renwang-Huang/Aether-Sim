@@ -36,14 +36,14 @@ void PX4RosNav::PublishVelControl(){
 void PX4RosNav::CmdVelCallback(const geometry_msgs::Twist &msg){
  px4_vel_[0] = msg.linear.x;
  px4_vel_[1] = msg.linear.y;
- nh_.param<float>("desire_posz_", desire_posz_, 1.0);
+ 
 }
 void PX4RosNav::initialize()
 {
   px4_vel_[0] = 0;
   px4_vel_[1] = 0;
   //读取offboard模式下飞机的期望高度
-  
+  nh_.param<float>("desire_posz_", desire_posz_, 1.0);
 }
 int main(int argc, char** argv) {
   ros::init(argc,argv,"ros_nav_quadrotor");

@@ -1,0 +1,44 @@
+<launch> 
+
+	<!-- 
+	search_alt_：预定搜索高度
+	markers_id_ ：ar_markers 二维码数字
+    desire_pose_x、desire_pose_y、desire_pose_z：期望的飞机相对降落板的位置
+	PidXY_p：x,y方向p项系数
+	PidXY_d：x,y方向d项系数
+	PidXY_i：x,y方向i项系数
+	PidZ_p：z方向p项系数
+	PidZ_d：z方向d项系数
+	PidZ_i：z方向i项系数
+-->
+
+  <arg name="world_path" default="$(find simulation)/worlds/landing_place.world" />
+
+  <arg name="search_alt_" default="3" />
+
+
+  <include file="$(find simulation)/launch/px4/camera_down_px4.launch">
+    <arg name="world_path" value="$(arg world_path)" />
+  </include>
+
+  <include file="$(find ros_vision)/launch/ar_track_camera.launch" >
+  </include>
+
+  <include file="$(find px4_command)/launch/landing.launch" >
+ 	<arg name="search_alt_" value="3" />
+ 	<arg name="markers_id_" value="4" />
+ 	<arg name="desire_pose_x" value="0" />
+ 	<arg name="desire_pose_y" value="0" />
+ 	<arg name="desire_pose_z" value="0" />
+ 	<arg name="PidXY_p" value="0.5" />
+ 	<arg name="PidXY_d" value="0.15" />
+ 	<arg name="PidXY_i" value="0" />
+ 	<arg name="PidZ_p" value="0.2" />
+ 	<arg name="PidZ_d" value="0.1" />
+ 	<arg name="PidZ_i" value="0" />
+  </include>
+
+	<node pkg="simulation" type="keyboard_control_px4.py" name="keyboard_control_px4" output="screen" launch-prefix="gnome-terminal --tab -e">
+    </node>
+</launch>
+
