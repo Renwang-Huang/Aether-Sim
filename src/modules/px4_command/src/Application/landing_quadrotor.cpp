@@ -12,7 +12,7 @@ PX4Landing::PX4Landing(const ros::NodeHandle& nh, const ros::NodeHandle& nh_priv
   nh_(nh),
   nh_private_(nh_private) {
   Initialize();
-  cmdloop_timer_ = nh_.createTimer(ros::Duration(0.1), &PX4Landing::CmdLoopCallback, this); //周期为0.01s
+  cmdloop_timer_ = nh_.createTimer(ros::Duration(0.1), &PX4Landing::CmdLoopCallback, this); //周期为0.1s
   //订阅降落板相对飞机位置
   ar_pose_sub_ = nh_private_.subscribe("/ar_pose_marker", 1, &PX4Landing::ArPoseCallback, this,ros::TransportHints().tcpNoDelay());
 

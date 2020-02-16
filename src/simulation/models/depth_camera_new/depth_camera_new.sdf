@@ -23,6 +23,27 @@
           </mesh>
         </geometry>
       </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.06</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+
       <sensor name="depth_camera" type="depth">
         <update_rate>20</update_rate>
         <camera>
@@ -34,7 +55,7 @@
           </image>
           <clip>
             <near>0.4</near>
-            <far>3.5</far>
+            <far>5</far>
           </clip>
         </camera>
         <plugin filename="libgazebo_ros_openni_kinect.so" name="camera_controller">
