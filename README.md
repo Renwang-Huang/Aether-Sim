@@ -197,6 +197,12 @@ youname@ubuntu:~$ mkdir gazebo_models
 dir:some/src/mid/slam/ros_slam
 查看README.md
 ```
+And
+```
+sudo apt-get install ros-melodic-ar-track-alvar*
+```
+
+
 
 运行demo之前请先下载3Dlidar仿真相关的插件包
 
