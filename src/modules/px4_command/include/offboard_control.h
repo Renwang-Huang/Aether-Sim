@@ -41,7 +41,7 @@ void OffboardControl::send_velxyz_setpoint(const Eigen::Vector3d& vel_sp, float 
     pos_setpoint.velocity.x = vel_sp[0];
     pos_setpoint.velocity.y = vel_sp[1];
     pos_setpoint.velocity.z = vel_sp[2];
-	  pos_setpoint.yaw = yaw_sp;
+    pos_setpoint.yaw = yaw_sp;
     mavros_setpoint_pos_pub_.publish(pos_setpoint);
 }
 //发送xy速度期望值以及高度z期望值至飞控（输入：期望xy,期望高度）
@@ -73,6 +73,6 @@ void OffboardControl::send_pos_setpoint(const Eigen::Vector3d& pos_sp, float yaw
     pos_setpoint.position.x = pos_sp[0];
     pos_setpoint.position.y = pos_sp[1];
     pos_setpoint.position.z = pos_sp[2];
-		pos_setpoint.yaw = yaw_sp;
+    pos_setpoint.yaw = yaw_sp;
     mavros_setpoint_pos_pub_.publish(pos_setpoint);
 }

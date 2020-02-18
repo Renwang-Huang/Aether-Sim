@@ -16,11 +16,11 @@
 #include <geometry_msgs/PoseStamped.h>
 #include <nav_msgs/Path.h>
 ros::Publisher position_pub;
-
+using namespace std;
 int main(int argc, char** argv){
   ros::init(argc, argv, "position_to_mavros");
 
-  ros::NodeHandle node;
+  ros::NodeHandle node("~");
 
   geometry_msgs::PoseStamped cur_position;
 
@@ -44,35 +44,41 @@ int main(int argc, char** argv){
 	node.getParam("pitch_obj", pitch_obj);
 	node.getParam("yaw_obj", yaw_obj);
 
+	cout<<"target_frame_id:"<<target_frame_id<<endl;
+	cout<<"source_frame_id:"<<source_frame_id<<endl;
+	cout<<"output_rate:"<<output_rate<<endl;
+	cout<<"roll_obj:"<<roll_obj<<endl;
+	cout<<"pitch_obj:"<<pitch_obj<<endl;
+	cout<<"yaw_obj:"<<yaw_obj<<endl;
+
   ros::Rate rate(10.0);
   while (node.ok()){
     geometry_msgs::TransformStamped transformStamped;
     try{
       transformStamped = tfBuffer.lookupTransform(target_frame_id, source_frame_id,
-                               ros::Time(0),ros::Duration(3.0));
+      ros::Time(0),ros::Duration(3.0));
 
         static tf2::Quaternion quat_obj, quat_body;
-				quat_obj = tf2::Quaternion(transformStamped.transform.rotation.x,transformStamped.transform.rotation.y,transformStamped.transform.rotation.z,transformStamped.transform.rotation.w);
-
+	quat_obj = tf2::Quaternion(transformStamped.transform.rotation.x,transformStamped.transform.rotation.y,transformStamped.transform.rotation.z,transformStamped.transform.rotation.w);
 
         quat_body.setRPY( roll_obj, pitch_obj, yaw_obj);
-				//ROS_INFO_STREAM(quat_body);
-				quat_body = quat_obj * quat_body;
+        //ROS_INFO_STREAM(quat_body);
+        quat_body = quat_obj * quat_body;
         quat_body.normalize();
 
-				cur_position.pose.position.x = transformStamped.transform.translation.x ;
-				cur_position.pose.position.y = transformStamped.transform.translation.y ;
-				cur_position.pose.position.z = transformStamped.transform.translation.z ;
+        cur_position.pose.position.x = transformStamped.transform.translation.x ;
+        cur_position.pose.position.y = transformStamped.transform.translation.y ;
+        cur_position.pose.position.z = transformStamped.transform.translation.z ;
 
-				cur_position.pose.orientation.x = quat_body.x();
-				cur_position.pose.orientation.y = quat_body.y();
-				cur_position.pose.orientation.z = quat_body.z();
-				cur_position.pose.orientation.w = quat_body.w();
-				cur_position.header.stamp = ros::Time::now();
-				cur_position.header.frame_id = transformStamped.header.frame_id;
-    		position_pub.publish(cur_position);
+        cur_position.pose.orientation.x = quat_body.x();
+        cur_position.pose.orientation.y = quat_body.y();
+        cur_position.pose.orientation.z = quat_body.z();
+        cur_position.pose.orientation.w = quat_body.w();
+        cur_position.header.stamp = ros::Time::now();
+        cur_position.header.frame_id = transformStamped.header.frame_id;
+        position_pub.publish(cur_position);
 
-				body_path.header.stamp = cur_position.header.stamp;
+        body_path.header.stamp = cur_position.header.stamp;
         body_path.header.frame_id = cur_position.header.frame_id;
         body_path.poses.push_back(cur_position);
         body_path_pubisher.publish(body_path);
