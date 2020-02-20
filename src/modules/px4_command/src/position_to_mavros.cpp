@@ -12,7 +12,6 @@
 #include <tf2_ros/transform_listener.h>
 #include <geometry_msgs/TransformStamped.h>
 #include <geometry_msgs/Twist.h>
-#include <turtlesim/Spawn.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <nav_msgs/Path.h>
 ros::Publisher position_pub;
