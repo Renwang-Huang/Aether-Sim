@@ -65,7 +65,7 @@
 1. Add ROS to sources.list.
 
    ```bash
-   echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list
+   sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
    sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
    sudo apt update
    ```
@@ -197,6 +197,12 @@ youname@ubuntu:~$ mkdir gazebo_models
 dir:some/src/mid/slam/ros_slam
 查看README.md
 ```
+And
+```
+sudo apt-get install ros-melodic-ar-track-alvar*
+```
+
+
 
 运行demo之前请先下载3Dlidar仿真相关的插件包
 
