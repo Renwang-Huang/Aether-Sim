@@ -5,7 +5,7 @@
   A navigation demo of px4,with cartographer amcl
   </description>
   <author>Binog</author>
-  <maintainer email="bingobin.lw@gmail.com">Chai Changkun</maintainer>
+  <maintainer email="bingobin.lw@gmail.com">bingo</maintainer>
   <license>BSD</license>
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>

@@ -14,8 +14,6 @@
 
   <arg name="world_path" default="$(find simulation)/worlds/landing_place.world" />
 
-  <arg name="search_alt_" default="3" />
-
 
   <include file="$(find simulation)/launch/px4/camera_down_px4.launch">
     <arg name="world_path" value="$(arg world_path)" />
