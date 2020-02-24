@@ -26,13 +26,12 @@ void MissionCar::CmdLoopCallback(const ros::TimerEvent& event)
 
 void MissionCar::MissionStateUpdate(){
 
-  Eigen::Vector4d  px4_vel_;
-  px4_vel_[0] = 1800;
-  px4_vel_[1] = 1800;
-  px4_vel_[2] = 1800;
-  px4_vel_[3] = 1800;
+  Eigen::Vector3d  px4_vel_;
+  px4_vel_[0] = 0;
+  px4_vel_[1] = 0;
+  px4_vel_[2] = 40;
 
-  OffboardControl_.send_actuator_setpoint(px4_vel_);
+  OffboardControl_.send_attitude_setpoint(px4_vel_,0.2);
 
 }
 
