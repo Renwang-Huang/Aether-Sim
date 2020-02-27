@@ -31,7 +31,7 @@ class PX4Landing {
   void CmdLoopCallback(const ros::TimerEvent& event);
   void LandingStateUpdate();
   void ArPoseCallback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr &msg);
-	void Px4PosCallback(const geometry_msgs::PoseStamped::ConstPtr &msg);
+  void Px4PosCallback(const geometry_msgs::PoseStamped::ConstPtr &msg);
   void Px4StateCallback(const mavros_msgs::State::ConstPtr& msg);
   Eigen::Vector3d LandingPidProcess(Eigen::Vector3d &currentPos,Eigen::Vector3d &expectPos);
   Eigen::Vector3d temp_pos_drone;

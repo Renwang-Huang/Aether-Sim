@@ -126,7 +126,7 @@ void OffboardControl::send_actuator_setpoint(const Eigen::Vector4d& actuator_sp)
     actuator_setpoint_pub_.publish(actuator_setpoint);
 }
 
-//发送角度期望值至飞控（输入：期望角度-欧拉角,期望推力）(期望的是角度值，而不是弧度值)
+//发送角度期望值至飞控（输入：期望角度-欧拉角,期望推力）(期望的是角度值 NED坐标系，而不是弧度值)
 void OffboardControl::send_attitude_setpoint(const Eigen::Vector3d& _AttitudeReference,float thrust_sp)
 {
     mavros_msgs::AttitudeTarget att_setpoint;
@@ -136,14 +136,16 @@ void OffboardControl::send_attitude_setpoint(const Eigen::Vector3d& _AttitudeRef
     /*角度值转成弧度值*/
     temp_att[0] = _AttitudeReference[0]/(180/pi);
     temp_att[1] = _AttitudeReference[1]/(180/pi);
-    temp_att[2] = _AttitudeReference[2]/(180/pi);
-
+    temp_att[2] =(90- _AttitudeReference[2])/(180/pi);
+    if(temp_att[2]<0)
+    {
+    	temp_att[2] = 2*pi+temp_att[2];
+    }
     /*欧拉角转四元数*/
     quat_obj.setRPY( temp_att[0], temp_att[1], temp_att[2]);
     //Mappings: If any of these bits are set, the corresponding input should be ignored:
     //bit 1: body roll rate, bit 2: body pitch rate, bit 3: body yaw rate. bit 4-bit 6: reserved, bit 7: throttle, bit 8: attitude
 
-    //att_setpoint.type_mask = 0b00000111;
     att_setpoint.type_mask = 1 + 2 + 4 + 8 + 16 + 32/* + 64 + 128*/;
     att_setpoint.orientation.x = quat_obj.x();
     att_setpoint.orientation.y = quat_obj.y();
@@ -164,7 +166,6 @@ void OffboardControl::send_attitude_rate_setpoint(const Eigen::Vector3d& attitud
     //Mappings: If any of these bits are set, the corresponding input should be ignored:
     //bit 1: body roll rate, bit 2: body pitch rate, bit 3: body yaw rate. bit 4-bit 6: reserved, bit 7: throttle, bit 8: attitude
 
-    //att_setpoint.type_mask = 0b10000000;
     att_setpoint.type_mask = /*1 + 2 + 4 + */8 + 16 + 32 +/* 64 + */128;
     att_setpoint.body_rate.x = attitude_rate_sp[0];
     att_setpoint.body_rate.y = attitude_rate_sp[1];

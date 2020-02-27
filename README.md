@@ -6,11 +6,11 @@
 
 - Slam
 
-- map
+- Map
 
-- image_process
+- Image_process
 
-- planning
+- Planning
 
 - P200
 
@@ -374,7 +374,7 @@ roslaunch simulation rtabmap_depthCam_mapping_demo_px4.launch
 
 ![image](http://files.amovauto.com:8088/group1/default/20191230/22/38/1/rtabmap3.png)
 
-# map
+# Map
 
 运行map-Demo之前请先安装必要的功能包，具体请看
 
@@ -409,7 +409,7 @@ roslaunch octomap_3Dlidar_px4.launch
 
 ![image](http://files.amovauto.com:8088/group1/default/20200122/12/04/1/cotomap_3Dlidar.png)
 
-# image_process
+# Image_process
 ## vision landing
 
 ![image](http://files.amovauto.com:8088/group1/default/20200213/01/43/1/landing_px4.gif)
@@ -428,7 +428,7 @@ roslaunch simulation landing_px4.launch
 
 然后在键盘控制界面输入'0' 解锁，输入'2'切入OFFBOARD，飞机会自动起飞降落到目标板。
 
-# planning
+# Planning
 
 ## ros navigation
 
@@ -455,6 +455,14 @@ roslaunch simulation ros_2Dnav_demo_px4.launch
 参考于：http://wiki.ros.org/navigation
 
 # P200
+
+# AmovCar
+
+```
+见 dir:some/src/AmovCar/README.md
+```
+
+
 
 待定
 

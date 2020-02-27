@@ -1,9 +1,0 @@
-<launch>
-
-
-  <include file="$(find px4_command)/launch/cartogra_tf_to_mavros.launch">
-  </include>
-
-</launch>
-
-
