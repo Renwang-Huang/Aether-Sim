@@ -58,16 +58,16 @@ bool MissionCar::CarPosControl(Eigen::Vector3d &currPose,float currYaw,Eigen::Ve
     }
    // cout << "expectYaw = " << expectAtt[2] << endl;
     currYaw = currYaw * (180/pi);
-   if(currYaw <= expectYaw + 5 && currYaw >= expectYaw - 5)
+   if(abs(currYaw-expectYaw)<= 5 && abs(currPose[0]-expectPose[0]) >0.5 && abs(currPose[1]-expectPose[1]) >0.5)
 	{
-		OffboardControl_.send_attitude_setpoint(expectAtt,0.3);
+		OffboardControl_.send_attitude_setpoint(expectAtt,desire_vel_);
 	}
 	else
 	{
 		OffboardControl_.send_attitude_setpoint(expectAtt,0.3);
 	}
 
-	if(currPose[0] <= expectPose[0]+0.1 && currPose[0] >= expectPose[0]-0.1 && currPose[1] <= expectPose[1]+0.1 && currPose[1] >= expectPose[1]-0.1)
+	if(abs(currPose[0]-expectPose[0]) <=0.1 && abs(currPose[1]-expectPose[1]) <=0.1)
 	{
 		return true;
 	}
@@ -160,9 +160,11 @@ void MissionCar::Initialize()
     nh_private_.param<float>("step3_Pose_y", step3_Pose_y, 0);
     nh_private_.param<float>("step4_Pose_x", step4_Pose_x, 0);
     nh_private_.param<float>("step4_Pose_y", step4_Pose_y, 0);
+    nh_private_.param<float>("desire_vel_",  desire_vel_, 0);
 	desire_pose_[0] = step1_Pose_x;
 	desire_pose_[1] = step1_Pose_y;
 
+	cout << "current desire vel: " << desire_vel_ << endl;
 	cout << "current step: " << mission_step_ << endl;
 	cout << "current desire poseX: " << step1_Pose_x << endl;
 	cout << "current desire poseY: " << step1_Pose_y << endl;

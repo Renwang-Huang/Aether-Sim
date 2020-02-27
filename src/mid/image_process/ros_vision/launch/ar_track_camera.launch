@@ -17,7 +17,5 @@
         <remap from="camera_info"   to="$(arg cam_info_topic)" />
     </node>
 
-    <!-- rviz view /-->
-    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find ros_vision)/config/ar_track_camera.rviz"/>
 
 </launch>

@@ -47,6 +47,7 @@ class MissionCar {
   float step4_Pose_x;
   float step4_Pose_y;
 
+  float desire_vel_;
   bool mission_finish_;
 
   void Px4PosCallback(const geometry_msgs::PoseStamped::ConstPtr &msg);
