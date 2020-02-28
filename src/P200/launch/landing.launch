@@ -13,6 +13,12 @@
 -->
 
 <!-- 
+	发布usb_camera tf
+-->
+	<node pkg="tf" type="static_transform_publisher" name="world_to_camera"
+		args="0 0 0.5 0 1.57 0 camera_link usb_camera_link 10"/>
+
+<!-- 
 	打开相机
 -->
   <include file="$(find ros_vision)/launch/usb_cam_with_calibration.launch" >
@@ -20,21 +26,30 @@
 
 <!-- 
 	运行二维码检测
+marker_size:二维码大小，这里是边长是7.5cm的正方形
 -->
-  <include file="$(find ros_vision)/launch/ar_track_camera.launch" >
+
+  <include file="$(find ros_vision)/launch/ar_track_camera.launch" 	
+    <arg name="marker_size" value="7.5" />
+    <arg name="max_new_marker_error" value="0.08" />
+    <arg name="max_track_error" value="0.2" />
+    <arg name="cam_image_topic" value="/camera/image_raw" />
+    <arg name="cam_info_topic" value="/camera/camera_info" />
+    <arg name="output_frame" value="/usb_camera_link" />
+
   </include>
 <!-- 
 	运行二维码降落
 -->
   <include file="$(find px4_command)/launch/landing.launch" >
- 	<arg name="search_alt_" value="3" />
+ 	<arg name="search_alt_" value="1.5" />
  	<arg name="markers_id_" value="4" />
  	<arg name="desire_pose_x" value="0" />
  	<arg name="desire_pose_y" value="0" />
- 	<arg name="desire_pose_z" value="0" />
- 	<arg name="PidXY_p" value="0.5" />
+ 	<arg name="desire_pose_z" value="1.5" />
+ 	<arg name="PidXY_p" value="1" />
  	<arg name="PidXY_d" value="0.15" />
- 	<arg name="PidXY_i" value="0" />
+ 	<arg name="PidXY_i" value="0.001" />
  	<arg name="PidZ_p" value="0.2" />
  	<arg name="PidZ_d" value="0.1" />
  	<arg name="PidZ_i" value="0" />

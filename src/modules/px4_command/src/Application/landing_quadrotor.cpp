@@ -128,7 +128,7 @@ void PX4Landing::LandingStateUpdate()
 				temp_pos_drone[2] = px4_pose_[2];
 				LandingState = CHECKING;
 			}
-		//	cout << "WAITING" <<endl;
+				cout << "WAITING" <<endl;
 			break;
 		case CHECKING:
 			if(px4_pose_[0] == 0 && px4_pose_[1] == 0) 			//没有位置信息则执行降落模式
@@ -161,7 +161,7 @@ void PX4Landing::LandingStateUpdate()
 			{
 				LandingState = WAITING;
 			}
-			//cout << "PREPARE" <<endl;
+			cout << "PREPARE" <<endl;
 			break;
 		case SEARCH:
 			if(detect_state == true)
@@ -189,7 +189,7 @@ void PX4Landing::LandingStateUpdate()
 				{
 					LandingState = WAITING;
 				}
-				if(ar_pose_[2] <= 0.5)
+				if(ar_pose_[2] <= 0.3)
 				{
 					LandingState = LANDOVER;
 				}
@@ -199,7 +199,7 @@ void PX4Landing::LandingStateUpdate()
 				}
 				OffboardControl_.send_velxyz_setpoint(s_desire_vel,0);
 			}
-			//cout << "LANDING" <<endl;
+			cout << "LANDING" <<endl;
 			break;
 		case LANDOVER:
 			{

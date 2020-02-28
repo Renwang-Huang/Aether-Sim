@@ -11,13 +11,13 @@
 	PidZ_i：z方向i项系数
 -->
 
-        <arg name="search_alt_" default="3" />
+        <arg name="search_alt_" default="1.5" />
 
         <arg name="markers_id_" default="4" />
 
         <arg name="desire_pose_x" default="0" />
         <arg name="desire_pose_y" default="0" />
-        <arg name="desire_pose_z" default="0" />
+        <arg name="desire_pose_z" default="1" />
 
         <arg name="PidXY_p" default="0.3" />
         <arg name="PidXY_d" default="0.05" />

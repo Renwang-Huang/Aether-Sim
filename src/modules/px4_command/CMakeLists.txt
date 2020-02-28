@@ -44,6 +44,7 @@ add_executable(circular_node src/Application/circular.cpp)
 add_executable(circular_car_node src/Application/circular_car.cpp)
 add_executable(ros_nav_quadrotor_node src/Application/ros_nav_quadrotor.cpp)
 add_executable(mission_car_offboard_node src/Application/mission_car_offboard.cpp)
+add_executable(landing_quadrotor_node src/Application/landing_quadrotor.cpp)
 
 ## Specify libraries to link a library or executable target against
 
@@ -71,6 +72,9 @@ target_link_libraries(ros_nav_quadrotor_node
 target_link_libraries(mission_car_offboard_node
   ${catkin_LIBRARIES}
 )
+target_link_libraries(landing_quadrotor_node
+  ${catkin_LIBRARIES}
+)
 ## Mark cpp header files for installation
 install(DIRECTORY include/${PROJECT_NAME}/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
@@ -84,6 +88,7 @@ install(TARGETS  position_to_mavros_node
   circular_node circular_car_node 
   ros_nav_quadrotor_node 
   mission_car_offboard_node
+  landing_quadrotor_node
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
