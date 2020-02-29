@@ -14,7 +14,7 @@ MissionCar::MissionCar(const ros::NodeHandle& nh, const ros::NodeHandle& nh_priv
   Initialize();
   cmdloop_timer_ = nh_.createTimer(ros::Duration(0.1), &MissionCar::CmdLoopCallback, this); // Define timer for constant loop rate 0.1s
 
-  position_sub_ = nh_private_.subscribe("/mavros/vision_pose/pose", 0.1, &MissionCar::Px4PosCallback,this,ros::TransportHints().tcpNoDelay());
+  position_sub_ = nh_private_.subscribe("/mavros/local_position/pose", 1, &MissionCar::Px4PosCallback,this,ros::TransportHints().tcpNoDelay());
 
 }
 
@@ -61,7 +61,7 @@ bool MissionCar::CarPosControl(Eigen::Vector3d &currPose,float currYaw,Eigen::Ve
 
 		OffboardControl_.send_attitude_setpoint(expectAtt,desire_vel_);
    //据航点小于0.1m即作为到达目的地
-	if(sqrt((currPose[0]-expectPose[0])*(currPose[0]-expectPose[0]) - (currPose[1]-expectPose[1])*(currPose[1]-expectPose[1])) <= 0.1)
+	if(sqrt((currPose[0]-expectPose[0])*(currPose[0]-expectPose[0]) - (currPose[1]-expectPose[1])*(currPose[1]-expectPose[1])) <= 0.5)
 	{
 		return true;
 	}
@@ -103,7 +103,7 @@ void MissionCar::MissionStateUpdate()
 			}
 			else
 			{
-	          		cout << "current step: " << mission_step_ << endl;
+	      cout << "current step: " << mission_step_ << endl;
 				cout << "current desire poseX" << desire_pose_[0] << endl;
 				cout << "current desire poseY" << desire_pose_[1] << endl;
 			}
@@ -146,15 +146,15 @@ void MissionCar::Initialize()
 {
 	mission_step_ = 1;
 	mission_finish_ = false;
-    nh_private_.param<float>("step1_Pose_x", step1_Pose_x, 0);
-    nh_private_.param<float>("step1_Pose_y", step1_Pose_y, 0);
-    nh_private_.param<float>("step2_Pose_x", step2_Pose_x, 0);
-    nh_private_.param<float>("step2_Pose_y", step2_Pose_y, 0);
-    nh_private_.param<float>("step3_Pose_x", step3_Pose_x, 0);
-    nh_private_.param<float>("step3_Pose_y", step3_Pose_y, 0);
-    nh_private_.param<float>("step4_Pose_x", step4_Pose_x, 0);
-    nh_private_.param<float>("step4_Pose_y", step4_Pose_y, 0);
-    nh_private_.param<float>("desire_vel_",  desire_vel_, 0);
+  nh_private_.param<float>("step1_Pose_x", step1_Pose_x, 0);
+  nh_private_.param<float>("step1_Pose_y", step1_Pose_y, 0);
+  nh_private_.param<float>("step2_Pose_x", step2_Pose_x, 0);
+  nh_private_.param<float>("step2_Pose_y", step2_Pose_y, 0);
+  nh_private_.param<float>("step3_Pose_x", step3_Pose_x, 0);
+  nh_private_.param<float>("step3_Pose_y", step3_Pose_y, 0);
+  nh_private_.param<float>("step4_Pose_x", step4_Pose_x, 0);
+  nh_private_.param<float>("step4_Pose_y", step4_Pose_y, 0);
+  nh_private_.param<float>("desire_vel_",  desire_vel_, 0);
 	desire_pose_[0] = step1_Pose_x;
 	desire_pose_[1] = step1_Pose_y;
 
