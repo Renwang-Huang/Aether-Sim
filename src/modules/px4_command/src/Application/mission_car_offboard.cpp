@@ -14,7 +14,7 @@ MissionCar::MissionCar(const ros::NodeHandle& nh, const ros::NodeHandle& nh_priv
   Initialize();
   cmdloop_timer_ = nh_.createTimer(ros::Duration(0.1), &MissionCar::CmdLoopCallback, this); // Define timer for constant loop rate 0.1s
 
-  position_sub_ = nh_private_.subscribe("/mavros/local_position/pose", 1, &MissionCar::Px4PosCallback,this,ros::TransportHints().tcpNoDelay());
+  position_sub_ = nh_private_.subscribe("/mavros/vision_pose/pose", 0.1, &MissionCar::Px4PosCallback,this,ros::TransportHints().tcpNoDelay());
 
 }
 
@@ -58,16 +58,10 @@ bool MissionCar::CarPosControl(Eigen::Vector3d &currPose,float currYaw,Eigen::Ve
     }
    // cout << "expectYaw = " << expectAtt[2] << endl;
     currYaw = currYaw * (180/pi);
-   if(abs(currYaw-expectYaw)<= 5 && abs(currPose[0]-expectPose[0]) >0.5 && abs(currPose[1]-expectPose[1]) >0.5)
-	{
-		OffboardControl_.send_attitude_setpoint(expectAtt,desire_vel_);
-	}
-	else
-	{
-		OffboardControl_.send_attitude_setpoint(expectAtt,0.3);
-	}
 
-	if(abs(currPose[0]-expectPose[0]) <=0.1 && abs(currPose[1]-expectPose[1]) <=0.1)
+		OffboardControl_.send_attitude_setpoint(expectAtt,desire_vel_);
+   //据航点小于0.1m即作为到达目的地
+	if(sqrt((currPose[0]-expectPose[0])*(currPose[0]-expectPose[0]) - (currPose[1]-expectPose[1])*(currPose[1]-expectPose[1])) <= 0.1)
 	{
 		return true;
 	}
