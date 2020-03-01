@@ -1,4 +1,4 @@
-​                                                                                 **四旋翼的仿真与实机**
+# **四旋翼的仿真与实机**
 
 - Overview
 
@@ -429,6 +429,8 @@ roslaunch simulation landing_px4.launch
 
 然后在键盘控制界面输入'0' 解锁，输入'2'切入OFFBOARD，飞机会自动起飞降落到目标板。
 
+视频链接：[landding vision](https://www.bilibili.com/video/av89393095)
+
 # Planning
 
 ## ros navigation
@@ -455,15 +457,9 @@ roslaunch simulation ros_2Dnav_demo_px4.launch
 
 参考于：http://wiki.ros.org/navigation
 
+视频链接：[px4 ros navigation](https://www.bilibili.com/video/av86842219)
+
 # P200
-
-# AmovCar
-
-```
-见 dir:some/src/AmovCar/README.md
-```
-
-
 
 待定
 
