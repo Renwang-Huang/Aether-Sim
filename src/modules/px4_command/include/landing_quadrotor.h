@@ -7,9 +7,13 @@
 #include <mavros_msgs/PositionTarget.h>
 #include <std_msgs/Bool.h>
 #include <std_msgs/UInt32.h>
-#include <Eigen/Dense>
 #include "offboard_control.h"
 #include "px4_control_cfg.h"
+#include <tf/transform_datatypes.h>
+#include <Eigen/Eigen>
+#include <Eigen/Dense>
+#include <Eigen/Geometry>
+#include <Eigen/Eigenvalues>
 using namespace std;
 using namespace Eigen;
 class PX4Landing {
@@ -33,23 +37,28 @@ class PX4Landing {
   void ArPoseCallback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr &msg);
   void Px4PosCallback(const geometry_msgs::PoseStamped::ConstPtr &msg);
   void Px4StateCallback(const mavros_msgs::State::ConstPtr& msg);
-  Eigen::Vector3d LandingPidProcess(Eigen::Vector3d &currentPos,Eigen::Vector3d &expectPos);
+  Eigen::Vector4d LandingPidProcess(Eigen::Vector3d &currentPos,float currentYaw,Eigen::Vector3d &expectPos,float expectYaw);
   Eigen::Vector3d temp_pos_drone;
   Eigen::Vector3d posxyz_target;//期望飞机的空间位置
   Eigen::Vector3d velxy_posz_target;//offboard模式下，发送给飞控的期望值
   Eigen::Vector3d  ar_pose_;  //降落板相对飞机位置
   Eigen::Vector3d  px4_pose_; //接收来自飞控的飞机位置 
   Eigen::Vector3d desire_pose_;//期望的飞机相对降落板的位置
+	float desire_yaw_;//期望的飞机相对降落板的偏航角
   mavros_msgs::State px4_state_;//飞机的状态
   mavros_msgs::SetMode mode_cmd_;
   float search_alt_;
   float markers_id_;//需要检测到的二维码，默认是4
+	float markers_yaw_;//二维码相对飞机的偏航角
   bool detect_state;//是否检测到降落板标志位
-  Eigen::Vector3d s_desire_vel;
-  S_PID s_PidXY,s_PidZ;
+  Eigen::Vector4d desire_vel_;
+	Eigen::Vector3d desire_xyVel_;
+	float desire_yawVel_;
+  S_PID s_PidXY,s_PidZ,s_PidYaw;
   S_PID_ITEM s_PidItemX;
   S_PID_ITEM s_PidItemY;
   S_PID_ITEM s_PidItemZ;
+  S_PID_ITEM s_PidItemYaw;
   enum
  {
   WAITING,		//等待offboard模式

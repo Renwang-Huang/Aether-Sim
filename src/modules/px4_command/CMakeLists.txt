@@ -17,6 +17,10 @@ find_package(catkin REQUIRED COMPONENTS
   tf2_eigen
   mavros_msgs
 )
+find_package(cmake_modules REQUIRED)
+find_package(Eigen3 REQUIRED)
+include_directories(${EIGEN3_INCLUDE_DIR})
+add_definitions(${EIGEN_DEFINITIONS})
 
 catkin_package(
 #  INCLUDE_DIRS include
