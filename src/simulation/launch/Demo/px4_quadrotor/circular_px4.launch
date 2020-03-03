@@ -10,7 +10,7 @@
     <arg name="world_path" value="$(arg world_path)" />
   </include>
 
-  <include file="$(find px4_command)/launch/circular.launch" >
+  <include file="$(find px4_control)/launch/circular.launch" >
  	<arg name="desire_z" value="1" />
  	<arg name="desire_Radius" value="1" />
   </include>

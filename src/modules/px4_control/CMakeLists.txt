@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(px4_command)
+project(px4_control)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
  add_compile_options(-std=c++11)
@@ -41,14 +41,14 @@ include_directories(
 )
 
 add_executable(position_to_mavros_node src/position_to_mavros.cpp)
-add_executable(set_mode_node src/Utilities/set_mode.cpp)
-add_executable(collision_avoidance_vfh_node src/Application/collision_avoidance_vfh.cpp)
-add_executable(collision_avoidance_matlabvfh_node src/Application/collision_avoidance_matlabvfh.cpp)
-add_executable(circular_node src/Application/circular.cpp)
-add_executable(circular_car_node src/Application/circular_car.cpp)
-add_executable(ros_nav_quadrotor_node src/Application/ros_nav_quadrotor.cpp)
-add_executable(mission_car_offboard_node src/Application/mission_car_offboard.cpp)
-add_executable(landing_quadrotor_node src/Application/landing_quadrotor.cpp)
+add_executable(set_mode_node src/set_mode.cpp)
+add_executable(collision_avoidance_vfh_node src/collision_avoidance_vfh.cpp)
+add_executable(collision_avoidance_matlabvfh_node src/collision_avoidance_matlabvfh.cpp)
+add_executable(circular_node src/circular.cpp)
+add_executable(circular_car_node src/circular_car.cpp)
+add_executable(ros_nav_quadrotor_node src/ros_nav_quadrotor.cpp)
+add_executable(mission_car_offboard_node src/mission_car_offboard.cpp)
+add_executable(landing_quadrotor_node src/landing_quadrotor.cpp)
 
 ## Specify libraries to link a library or executable target against
 

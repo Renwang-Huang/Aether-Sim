@@ -4,7 +4,7 @@
 
 - Simulation
 
-- Px4_command
+- Px4_control
 
 - Slam
 
@@ -233,7 +233,7 @@ source source_enviroment.sh
 ```
 roslaunch simulation models_demo_test_px4.launch
 ```
-# Px4_command
+# Px4_control
 
 px4控制以及上层应用模块
 

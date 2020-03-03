@@ -35,7 +35,7 @@
 	  <arg name="fcu_url"           default="/dev/ttyTHS2:921600"/>
   </include>
 
-  <include file="$(find px4_command)/launch/t265_tf_to_mavros.launch">
+  <include file="$(find px4_control)/launch/t265_tf_to_mavros.launch">
   </include>
 
 </launch>

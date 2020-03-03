@@ -39,7 +39,7 @@
   </include>
 
 
-	<node pkg="px4_command" type="mission_car_offboard_node" name="mission_car_offboard_node" output="screen">
+	<node pkg="px4_control" type="mission_car_offboard_node" name="mission_car_offboard_node" output="screen">
 		<param name="step1_Pose_x" value = "$(arg step1_Pose_x)"/>	
 		<param name="step1_Pose_y" value = "$(arg step1_Pose_y)"/>
 

@@ -46,7 +46,7 @@ marker_size:二维码大小，这里是边长是7.5cm的正方形
 <!-- 
 	运行二维码降落
 -->
-  <include file="$(find px4_command)/launch/landing.launch" >
+  <include file="$(find px4_control)/launch/landing.launch" >
  	<arg name="search_alt_" value="1.5" />
  	<arg name="markers_id_" value="4" />
  	<arg name="desire_pose_x" value="0" />

@@ -4,7 +4,7 @@
 
 - Simulation
 
-- Px4_command
+- Px4_control
 
 - Slam
 
@@ -39,7 +39,7 @@
 
 ![image](http://files.amovauto.com:8088/group1/default/20200301/01/09/1/carModer.png)
 
-安装指导见   **QUAD_README.md**
+安装指导见   **QuadGuidance.md**
 
 其中不同的地方下面另行说明
 
@@ -71,7 +71,7 @@ make px4_sitl_default gazebo
 
 
 
-# Px4_command
+# Px4_control
 
 px4控制以及上层应用模块
 

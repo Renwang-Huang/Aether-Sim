@@ -22,7 +22,7 @@
   <include file="$(find ros_vision)/launch/ar_track_camera.launch" >
   </include>
 
-  <include file="$(find px4_command)/launch/landing.launch" >
+  <include file="$(find px4_control)/launch/landing.launch" >
  	<arg name="search_alt_" value="3" />
  	<arg name="markers_id_" value="4" />
  	<arg name="desire_pose_x" value="0" />

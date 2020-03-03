@@ -17,7 +17,7 @@
     <include file="$(find ros_navigation)/launch/nav_px4.launch">
     </include>
 
-     <include file="$(find px4_command)/launch/ros_2DNav.launch">
+     <include file="$(find px4_control)/launch/ros_2DNav.launch">
  	<arg name="desire_posz_" value="2" />
     </include>
  

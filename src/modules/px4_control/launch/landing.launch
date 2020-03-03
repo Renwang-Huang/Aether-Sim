@@ -36,7 +36,7 @@
         <arg name="PidYaw_d" default="0" />
         <arg name="PidYaw_i" default="0" />
 
-	<node pkg="px4_command" type="landing_quadrotor_node" name="landing_quadrotor_node" output="screen">
+	<node pkg="px4_control" type="landing_quadrotor_node" name="landing_quadrotor_node" output="screen">
 		<param name="search_alt_" value = "$(arg search_alt_)"/>	
 		<param name="markers_id_" value = "$(arg markers_id_)"/>
 		<param name="desire_pose_x" value = "$(arg desire_pose_x)"/>	

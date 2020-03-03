@@ -1,4 +1,4 @@
   >  px4控制模块
   >
-  >  px4_command for app
+  >  px4_control for app
 

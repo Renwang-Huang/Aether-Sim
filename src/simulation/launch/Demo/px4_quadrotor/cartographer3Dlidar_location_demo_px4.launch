@@ -21,7 +21,7 @@
 	<node pkg="simulation" type="keyboard_control_px4.py" name="keyboard_control_px4" output="screen" launch-prefix="gnome-terminal --tab -e">
     </node>
 
-  <include file="$(find px4_command)/launch/cartogra_tf_to_mavros.launch">
+  <include file="$(find px4_control)/launch/cartogra_tf_to_mavros.launch">
    </include>
 
     <!-- RViz -->
