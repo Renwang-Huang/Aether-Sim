@@ -70,7 +70,7 @@ void OffboardControl::send_velxy_posz_setpoint(const Eigen::Vector3d& vel_sp, fl
     //Bitmask toindicate which dimensions should be ignored (1 means ignore,0 means not ignore; Bit 10 must set to 0)
     //Bit 1:x, bit 2:y, bit 3:z, bit 4:vx, bit 5:vy, bit 6:vz, bit 7:ax, bit 8:ay, bit 9:az, bit 10:is_force_sp, bit 11:yaw, bit 12:yaw_rate
     //Bit 10 should set to 0, means is not force sp
-    pos_setpoint.type_mask = 1 + 2 + /*4 + 8 + 16 +*/ 32 + 64 + 128 + 256 + 512 + 1024 + 2048;
+    pos_setpoint.type_mask = 1 + 2 + /*4 + 8 + 16 + 32 +*/ 64 + 128 + 256 + 512 + 1024 + 2048;
     pos_setpoint.coordinate_frame = 1;
 
     pos_setpoint.velocity.x = vel_sp[0];
