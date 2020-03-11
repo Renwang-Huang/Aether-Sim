@@ -60,7 +60,7 @@ bool MissionCar::CarPosControl(Eigen::Vector3d &currPose,float currYaw,Eigen::Ve
     currYaw = currYaw * (180/pi);
 
 		OffboardControl_.send_attitude_setpoint(expectAtt,desire_vel_);
-   //据航点小于0.1m即作为到达目的地
+   //据航点小于0.5m即作为到达目的地
 	if(sqrt((currPose[0]-expectPose[0])*(currPose[0]-expectPose[0]) - (currPose[1]-expectPose[1])*(currPose[1]-expectPose[1])) <= 0.5)
 	{
 		return true;

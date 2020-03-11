@@ -1,16 +1,16 @@
 <launch>
     <!-- vehicle pose -->
-    <arg name="x" default="10"/>
-    <arg name="y" default="0"/>
+    <arg name="x" default="14"/>
+    <arg name="y" default="2.4"/>
     <arg name="z" default="1"/>
     <arg name="R" default="0"/>
     <arg name="P" default="0"/>
-    <arg name="Y" default="-1.61"/>
+    <arg name="Y" default="0"/>
     
-   
+    <arg name="world_path" default="$(find simulation)/worlds/mcity.world" />  
     <arg name="gui" default="true"/>
     <arg name="ns" default="/"/>
-    <arg name="model" default="iris_2Dlidar_camera"/>
+    <arg name="model" default="iris_depth_camera"/>
     <arg name="car" default="$(find simulation)/urdf/car/prius.urdf"/>
     <arg name="fcu_url" default="udp://:14540@localhost:14557"/>
     <arg name="gcs_url" default="" />   <!-- GCS link is provided by SITL -->
@@ -32,7 +32,7 @@
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="verbose" value="true"/>
-    <arg name="world_name" value="$(find simulation)/worlds/mcity.world"/> 
+    <arg name="world_name" value="$(arg world_path)" />
   </include>
 
     <!-- Launch PX4 SITL -->
@@ -62,6 +62,6 @@
 
   <param name="robot_description" textfile="$(arg car)"/>
 
-  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x 0 -y -0 -z 0.5 -model prius"/>
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x 19.8 -y 2.4 -z 0.5 -model prius"/>
 
 </launch>
