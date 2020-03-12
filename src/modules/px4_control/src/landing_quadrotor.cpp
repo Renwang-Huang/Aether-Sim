@@ -324,6 +324,10 @@ void PX4Landing::Initialize()
   s_PidItemY.tempDiffer = 0;
   s_PidItemZ.tempDiffer = 0;
   s_PidItemYaw.tempDiffer = 0;
+  s_PidItemX.intergral = 0;
+  s_PidItemY.intergral = 0;
+  s_PidItemZ.intergral = 0;
+  s_PidItemYaw.intergral = 0;
 
 	cout << "search_alt_ = " << search_alt_ << endl;
 	cout << "markers_id_ = " << markers_id_ << endl;

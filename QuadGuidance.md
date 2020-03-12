@@ -413,6 +413,8 @@ roslaunch octomap_3Dlidar_px4.launch
 # Image_process
 ## vision landing
 
+二维码降落
+
 ![image](http://files.amovauto.com:8088/group1/default/20200213/01/43/1/landing_px4.gif)
 
 运行demo之前请先安装必要的ros包
@@ -430,6 +432,19 @@ roslaunch simulation landing_px4.launch
 然后在键盘控制界面输入'0' 解锁，输入'2'切入OFFBOARD，飞机会自动起飞降落到目标板。
 
 视频链接：[landding vision](https://www.bilibili.com/video/av89393095)
+## vision tracking
+
+二维码跟踪
+
+![image](http://files.amovauto.com:8088/group1/default/20200312/17/55/1/tracking_px4.gif)
+
+运行
+
+```
+roslaunch simulation tracking_px4.launch
+```
+
+然后在键盘控制界面输入'0' 解锁，输入'2'切入OFFBOARD，然后在转入gazebo界面输入键盘的**“w a s d”**可控制汽车移动。
 
 # Planning
 

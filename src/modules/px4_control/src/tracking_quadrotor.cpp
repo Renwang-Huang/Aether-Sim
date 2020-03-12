@@ -5,7 +5,7 @@
 * Time: 2020.03.10
 * Description: 实现px4 quadrotor 二维码跟踪
 ***************************************************************************************************************************/
-#include "landing_quadrotor.h"
+#include "tracking_quadrotor.h"
 using namespace std;
 using namespace Eigen;
 PX4Tracking::PX4Tracking(const ros::NodeHandle& nh, const ros::NodeHandle& nh_private):
@@ -29,14 +29,14 @@ PX4Tracking::~PX4Tracking() {
 }
 
 /**
-* @name       S_SETPOINT_VEL PX4Tracking::LandingPidProcess(Eigen::Vector3d &currentPos,Eigen::Vector3d &expectPos)
+* @name       S_SETPOINT_VEL PX4Tracking::TRACKINGPidProcess(Eigen::Vector3d &currentPos,Eigen::Vector3d &expectPos)
 
 * @brief      pid控制程序,机体坐标系下控制无人机
 *             
 * @param[in]  &currentPos 当前飞机相对二维码的位置
 *             
 * @param[in]  &expectPos 期望位置 expectPos[0]:相对二维码前后方向距离；expectPos[1]:相对二维码左右方向距离；expectPos[2]:相对二维码上下方向距离
-* @param[out] x,z的期望速度,以及yaw方向的期望速度。
+* @param[out] y,z的期望速度,以及yaw方向的期望速度。
 *
 * @param[out] 
 **/
@@ -44,21 +44,21 @@ Eigen::Vector3d PX4Tracking::TrackingPidProcess(Eigen::Vector3d &currentPos,Eige
 {
   Eigen::Vector3d s_PidOut;
 
-	/*前后方向的pid控制，输出机体系下x方向的速度控制*/
-	s_PidItemX.difference = expectPos[0] - currentPos[2];
-	s_PidItemX.intergral += s_PidItemX.difference;
-	if(s_PidItemX.intergral >= 100)		
-		s_PidItemX.intergral = 100;
-	else if(s_PidItemX.intergral <= -100) 
-		s_PidItemX.intergral = -100;
-	s_PidItemX.differential =  s_PidItemX.difference  - s_PidItemX.tempDiffer;
-  s_PidItemX.tempDiffer = s_PidItemX.difference;
-//	cout << "s_PidItemX.tempDiffer: " << s_PidItemX.tempDiffer << endl;
-//	cout << "s_PidItemX.differential: " << s_PidItemX.differential << endl;
+	/*前后方向的pid控制，输出机体系下y方向的速度控制*/
+	s_PidItemY.difference = currentPos[2] - expectPos[0];
+	s_PidItemY.intergral += s_PidItemY.difference;
+	if(s_PidItemY.intergral >= 100)		
+		s_PidItemY.intergral = 100;
+	else if(s_PidItemY.intergral <= -100) 
+		s_PidItemY.intergral = -100;
+	s_PidItemY.differential =  s_PidItemY.difference  - s_PidItemY.tempDiffer;
+  s_PidItemY.tempDiffer = s_PidItemY.difference;
+//	cout << "s_PidItemY.tempDiffer: " << s_PidItemY.tempDiffer << endl;
+//	cout << "s_PidItemY.differential: " << s_PidItemY.differential << endl;
+	s_PidOut[0] = s_PidY.p*s_PidItemY.difference + s_PidY.d*s_PidItemY.differential + s_PidY.i*s_PidItemY.intergral;
 
-	s_PidOut[0] = s_PidX.p*s_PidItemX.difference + s_PidX.d*s_PidItemX.differential + s_PidX.i*s_PidItemX.intergral;
 	/*左右方向的pid控制，输出yaw方向速度控制*/
-	s_PidItemYaw.difference = expectPos[1] - currentPos[1];
+	s_PidItemYaw.difference = expectPos[1] - currentPos[0];
 	s_PidItemYaw.intergral += s_PidItemYaw.difference;
 	if(s_PidItemYaw.intergral >= 100)		
 		s_PidItemYaw.intergral = 100;
@@ -69,7 +69,7 @@ Eigen::Vector3d PX4Tracking::TrackingPidProcess(Eigen::Vector3d &currentPos,Eige
 	s_PidOut[1] = s_PidYaw.p*s_PidItemYaw.difference + s_PidYaw.d*s_PidItemYaw.differential + s_PidYaw.i*s_PidItemYaw.intergral;
 
 	/*上下方向的pid控制，输出z方向的速度控制*/
-	s_PidItemZ.difference = expectPos[2] - currentPos[0];
+	s_PidItemZ.difference = expectPos[2] - currentPos[1];
 	s_PidItemZ.intergral += s_PidItemZ.difference;
 	if(s_PidItemZ.intergral >= 100)		
 		s_PidItemZ.intergral = 100;
@@ -83,12 +83,12 @@ Eigen::Vector3d PX4Tracking::TrackingPidProcess(Eigen::Vector3d &currentPos,Eige
 }
 void PX4Tracking::CmdLoopCallback(const ros::TimerEvent& event)
 {
-  LandingStateUpdate();
+  TrackingStateUpdate();
 }
 
 
 /**
-* @name       void PX4Tracking::LandingStateUpdate()
+* @name       void PX4Tracking::TrackingStateUpdate()
 * @brief      状态机更新函数
 *             
 * @param[in]  无
@@ -98,10 +98,11 @@ void PX4Tracking::CmdLoopCallback(const ros::TimerEvent& event)
 *
 * @param[out] 
 **/
-void PX4Tracking::LandingStateUpdate()
+void PX4Tracking::TrackingStateUpdate()
 {
 
-//	desire_vel_ = LandingPidProcess(ar_pose_,markers_yaw_,desire_pose_,0);
+
+//	desire_vel_ = TrackingPidProcess(ar_pose_,desire_pose_);
 //	cout << "desire_vel_[0]:  "<< desire_vel_[0] <<endl;
 //	cout << "desire_vel_[1]:  "<< desire_vel_[1] <<endl;
 //	cout << "desire_vel_[2]:  "<< desire_vel_[2] <<endl;
@@ -114,7 +115,7 @@ void PX4Tracking::LandingStateUpdate()
 //	cout << "desire_pose_[1]:  "<<  desire_pose_[1] << endl;
 //	cout << "desire_pose_[2]:  "<<  desire_pose_[2] << endl;
 //	cout << "detect_state : " << detect_state << endl;
-	switch(LandingState)
+	switch(TrackingState)
 	{
 		case WAITING:
 			if(px4_state_.mode != "OFFBOARD")//等待offboard模式
@@ -129,7 +130,7 @@ void PX4Tracking::LandingStateUpdate()
 				temp_pos_drone[0] = px4_pose_[0];
 				temp_pos_drone[1] = px4_pose_[1];
 				temp_pos_drone[2] = px4_pose_[2];
-				LandingState = CHECKING;
+				TrackingState = CHECKING;
 				cout << "CHECKING" <<endl;
 			}
 				//cout << "WAITING" <<endl;
@@ -140,11 +141,11 @@ void PX4Tracking::LandingStateUpdate()
 				cout << "Check error, make sure have local location" <<endl;
 				mode_cmd_.request.custom_mode = "AUTO.LAND";
 				set_mode_client_.call(mode_cmd_);
-				LandingState = WAITING;	
+				TrackingState = WAITING;	
 			}
 			else
 			{
-				LandingState = PREPARE;
+				TrackingState = PREPARE;
 				cout << "PREPARE" <<endl;
 			}
 			
@@ -155,24 +156,24 @@ void PX4Tracking::LandingStateUpdate()
 			posxyz_target[2] = search_alt_;
 			if((px4_pose_[2]<=search_alt_+0.1) && (px4_pose_[2]>=search_alt_-0.1))
 			{
-				LandingState = SEARCH;
+				TrackingState = SEARCH;
 			}
 			else if(detect_state == true)
 			{
-			//	LandingState = SEARCH;
+			//	TrackingState = SEARCH;
 			}
 			OffboardControl_.send_pos_setpoint(posxyz_target, 0);					
 			if(px4_state_.mode != "OFFBOARD")				//如果在准备中途中切换到onboard，则跳到WAITING
 			{
-				LandingState = WAITING;
+				TrackingState = WAITING;
 			}
 
 			break;
 		case SEARCH:
 			if(detect_state == true)
 			{
-				LandingState = LANDING;
-			  cout << "LANDING" <<endl;
+				TrackingState = TRACKING;
+			  cout << "TRACKING" <<endl;
 			}	
 			else//这里无人机没有主动搜寻目标
 			{
@@ -180,15 +181,15 @@ void PX4Tracking::LandingStateUpdate()
 			}
 			if(px4_state_.mode != "OFFBOARD")				//如果在SEARCH途中切换到onboard，则跳到WAITING
 			{
-				LandingState = WAITING;
+				TrackingState = WAITING;
 			}
      // cout << "SEARCH" <<endl;
 			break;
-		case LANDING:
+		case TRACKING:
 			{
 				if(detect_state == true)
 				{
-					desire_vel_ = LandingPidProcess(ar_pose_,desire_pose_);
+					desire_vel_ = TrackingPidProcess(ar_pose_,desire_pose_);
 
 					//cout << "search_" <<endl;
 				}
@@ -200,26 +201,26 @@ void PX4Tracking::LandingStateUpdate()
 				}
 				if(ar_pose_[2] <= 0.3)
 				{
-					LandingState = LANDOVER;
-					cout << "LANDOVER" <<endl;
+					TrackingState = TRACKOVER;
+					cout << "TRACKOVER" <<endl;
 				}
-				if(px4_state_.mode != "OFFBOARD")			//如果在LANDING中途中切换到onboard，则跳到WAITING
+				if(px4_state_.mode != "OFFBOARD")			//如果在TRACKING中途中切换到onboard，则跳到WAITING
 				{
-					LandingState = WAITING;
+					TrackingState = WAITING;
 				}
-				desire_xyVel_[0] = desire_vel_[0];
-				desire_xyVel_[1] = 0;
-				desire_xyVel_[2] = desire_vel_[2];
+				desire_yzVel_[0] = desire_vel_[0];
+				desire_yzVel_[1] = desire_vel_[2];
 				desire_yawVel_ = desire_vel_[1];
-				OffboardControl_.send_velxyz_setpoint(desire_xyVel_,desire_yawVel_);
+
+				OffboardControl_.send_body_velyz_setpoint(desire_yzVel_,desire_yawVel_);
 			}
 
 			break;
-		case LANDOVER:
+		case TRACKOVER:
 			{
 				mode_cmd_.request.custom_mode = "AUTO.LAND";
         set_mode_client_.call(mode_cmd_);
-				LandingState = WAITING;
+				TrackingState = WAITING;
 			}
 
 			break;
@@ -234,8 +235,6 @@ void PX4Tracking::LandingStateUpdate()
 void PX4Tracking::ArPoseCallback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr &msg)
 {
 	detect_state = false;
-  double temp_roll,temp_pitch,temp_yaw;
-  tf::Quaternion quat;
 	for(auto &item : msg->markers)
 	{
 		if(item.id == markers_id_)
@@ -244,9 +243,7 @@ void PX4Tracking::ArPoseCallback(const ar_track_alvar_msgs::AlvarMarkers::ConstP
       ar_pose_[0] = item.pose.pose.position.x;
       ar_pose_[1] = item.pose.pose.position.y;
       ar_pose_[2] = item.pose.pose.position.z;
-      tf::quaternionMsgToTF(item.pose.pose.orientation,quat);
-      tf::Matrix3x3(quat).getRPY(temp_roll,temp_pitch,temp_yaw);
-			markers_yaw_ = temp_yaw;
+
 //			cout << "ar_pose_[0]:"  << ar_pose_[0] << endl;
 //			cout << "ar_pose_[1]:"  << ar_pose_[1] << endl;
 //			cout << "ar_pose_[2]:"  << ar_pose_[2] << endl;
@@ -274,23 +271,23 @@ void PX4Tracking::Px4StateCallback(const mavros_msgs::State::ConstPtr& msg)
 void PX4Tracking::Initialize()
 {
   //读取offboard模式下飞机的搜索高度
-  nh_private_.param<float>("search_alt_", search_alt_, 3);
+  nh_private_.param<float>("search_alt_", search_alt_, 2);
 
   nh_private_.param<float>("markers_id_", markers_id_, 4.0);
 
-  nh_private_.param<float>("PidX_p", s_PidX.p, 0.4);
-  nh_private_.param<float>("PidX_d", s_PidX.d, 0.05);
-  nh_private_.param<float>("PidX_i", s_PidX.i, 0.01);
-  nh_private_.param<float>("PidZ_p", s_PidZ.p, 0.1);
-  nh_private_.param<float>("PidZ_d", s_PidZ.d, 0);
+  nh_private_.param<float>("PidY_p", s_PidY.p, 0.6);
+  nh_private_.param<float>("PidY_d", s_PidY.d, 0.01);
+  nh_private_.param<float>("PidY_i", s_PidY.i, 0);
+  nh_private_.param<float>("PidZ_p", s_PidZ.p, 0.6);
+  nh_private_.param<float>("PidZ_d", s_PidZ.d, 0.01);
   nh_private_.param<float>("PidZ_i", s_PidZ.i, 0);
-  nh_private_.param<float>("PidYaw_p", s_PidYaw.p, 0);
-  nh_private_.param<float>("PidYaw_d", s_PidYaw.d, 0);
+  nh_private_.param<float>("PidYaw_p", s_PidYaw.p, 0.4);
+  nh_private_.param<float>("PidYaw_d", s_PidYaw.d, 0.01);
   nh_private_.param<float>("PidYaw_i", s_PidYaw.i, 0);
 
-  //期望的飞机相对降落板的位置
+  //期望的飞机相对二维码的位置
 	float desire_pose_x,desire_pose_y,desire_pose_z;
-  nh_private_.param<float>("desire_pose_x", desire_pose_x, 0);
+  nh_private_.param<float>("desire_pose_x", desire_pose_x, 6.5);
   nh_private_.param<float>("desire_pose_y", desire_pose_y, 0);
   nh_private_.param<float>("desire_pose_z", desire_pose_z, 0);
   desire_pose_[0] = desire_pose_x;
@@ -301,18 +298,19 @@ void PX4Tracking::Initialize()
   desire_vel_[0] = 0;
   desire_vel_[1] = 0;
   desire_vel_[2] = 0;
-	desire_xyVel_[0]  = 0;
-	desire_xyVel_[1]  = 0;
-	desire_xyVel_[2]  = 0;
-  s_PidItemX.tempDiffer = 0;
+	desire_yzVel_[0]  = 0;
+	desire_yzVel_[1]  = 0;
+  s_PidItemY.tempDiffer = 0;
   s_PidItemYaw.tempDiffer = 0;
   s_PidItemZ.tempDiffer = 0;
-
+  s_PidItemY.intergral = 0;
+  s_PidItemYaw.intergral = 0;
+  s_PidItemZ.intergral = 0;
 	cout << "search_alt_ = " << search_alt_ << endl;
 	cout << "markers_id_ = " << markers_id_ << endl;
-	cout << "PidX_p = " << s_PidX.p << endl;
-	cout << "PidX_d = " << s_PidX.d << endl;
-	cout << "PidX_i = " << s_PidX.i << endl;
+	cout << "PidY_p = " << s_PidY.p << endl;
+	cout << "PidY_d = " << s_PidY.d << endl;
+	cout << "PidY_i = " << s_PidY.i << endl;
 	cout << "PidZ_p = " << s_PidZ.p << endl;
 	cout << "PidZ_d = " << s_PidZ.d << endl;
 	cout << "PidZ_i = " << s_PidZ.i << endl;

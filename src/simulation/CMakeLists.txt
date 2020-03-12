@@ -58,9 +58,9 @@ add_dependencies(realsense_gazebo_plugin ${catkin_EXPORTED_TARGETS})
 #target_link_libraries(irlock_gazebo_ros_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 #add_dependencies(irlock_gazebo_ros_plugin ${catkin_EXPORTED_TARGETS})
 
-#add_library(PriusHybridPlugin SHARED gazebo_plugin/PriusHybridPlugin.cc)
-#target_link_libraries(PriusHybridPlugin ${GAZEBO_LIBRARIES} ${IGNITION-MSGS_LIBRARIES})
-#add_dependencies(PriusHybridPlugin ${catkin_EXPORTED_TARGETS})
+add_library(PriusHybridPlugin SHARED gazebo_plugin/PriusHybridPlugin.cc)
+target_link_libraries(PriusHybridPlugin ${GAZEBO_LIBRARIES} ${IGNITION-MSGS_LIBRARIES})
+add_dependencies(PriusHybridPlugin ${catkin_EXPORTED_TARGETS})
 
 catkin_install_python(PROGRAMS scripts/joystick_translator
                       DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})

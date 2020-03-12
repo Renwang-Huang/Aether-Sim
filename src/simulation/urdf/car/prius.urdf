@@ -57,7 +57,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-          <mesh filename="package://simulation/urdf/car/meshes/landing.dae" scale="2 2 2"/>
+          <mesh filename="package://simulation/urdf/car/meshes/landing.dae" scale="3 3 3"/>
       </geometry>
     </visual>
   </link>
@@ -65,7 +65,7 @@
   <joint name="landing_link_connection" type="fixed">
     <parent link="chassis"/>
     <child link="planding_place"/>
-    <origin xyz="0.3 2.2 1.5" rpy="-1.57 0 0"/>
+    <origin xyz="0.4 2.2 1.5" rpy="-1.57 0 0"/>
     <axis xyz="1 0 0"/>
   </joint>
 
@@ -363,23 +363,23 @@
       <back_left_wheel>rear_left_wheel_joint</back_left_wheel>
       <back_right_wheel>rear_right_wheel_joint</back_right_wheel>
       <steering_wheel>steering_joint</steering_wheel>
-      <chassis_aero_force_gain>0</chassis_aero_force_gain>
-      <front_torque>500</front_torque>
+      <chassis_aero_force_gain>0.63045</chassis_aero_force_gain>
+      <front_torque>859.4004393000001</front_torque>
       <back_torque>0</back_torque>
-      <front_brake_torque>600</front_brake_torque>
-      <back_brake_torque>350</back_brake_torque>
-      <max_speed>37.998337013956565</max_speed>
+      <front_brake_torque>1031.28052716</front_brake_torque>
+      <back_brake_torque>687.5203514400001</back_brake_torque>
+      <max_speed>1</max_speed>
       <min_gas_flow>8.981854013171626e-05</min_gas_flow>
       <gas_efficiency>0.371</gas_efficiency>
       <battery_charge_watt_hours>291</battery_charge_watt_hours>
       <battery_discharge_watt_hours>214</battery_discharge_watt_hours>
-      <max_steer>0.4</max_steer>
-      <flwheel_steering_p_gain>1e3</flwheel_steering_p_gain>
-      <frwheel_steering_p_gain>1e3</frwheel_steering_p_gain>
+      <max_steer>0.6458</max_steer>
+      <flwheel_steering_p_gain>1e4</flwheel_steering_p_gain>
+      <frwheel_steering_p_gain>1e4</frwheel_steering_p_gain>
       <flwheel_steering_i_gain>0</flwheel_steering_i_gain>
       <frwheel_steering_i_gain>0</frwheel_steering_i_gain>
-      <flwheel_steering_d_gain>1e2</flwheel_steering_d_gain>
-      <frwheel_steering_d_gain>1e2</frwheel_steering_d_gain>
+      <flwheel_steering_d_gain>3e2</flwheel_steering_d_gain>
+      <frwheel_steering_d_gain>3e2</frwheel_steering_d_gain>
     </plugin>
   </gazebo>
 

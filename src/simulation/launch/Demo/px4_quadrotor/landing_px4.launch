@@ -1,6 +1,7 @@
 <launch> 
 
 	<!-- 
+	二维码降落
 	search_alt_：预定搜索高度
 	markers_id_ ：ar_markers 二维码数字
     desire_pose_x、desire_pose_y、desire_pose_z：期望的飞机相对降落板的位置,当desire_pose_z小于0.3m时会自动降落

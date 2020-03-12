@@ -33,11 +33,11 @@ class PX4Tracking {
   ros::NodeHandle nh_private_;
   ros::Timer cmdloop_timer_;
   void CmdLoopCallback(const ros::TimerEvent& event);
-  void LandingStateUpdate();
+  void TrackingStateUpdate();
   void ArPoseCallback(const ar_track_alvar_msgs::AlvarMarkers::ConstPtr &msg);
   void Px4PosCallback(const geometry_msgs::PoseStamped::ConstPtr &msg);
   void Px4StateCallback(const mavros_msgs::State::ConstPtr& msg);
-  Eigen::Vector4d LandingPidProcess(Eigen::Vector3d &currentPos,float currentYaw,Eigen::Vector3d &expectPos,float expectYaw);
+  Eigen::Vector3d TrackingPidProcess(Eigen::Vector3d &currentPos,Eigen::Vector3d &expectPos);
   Eigen::Vector3d temp_pos_drone;
   Eigen::Vector3d posxyz_target;//期望飞机的空间位置
   Eigen::Vector3d  ar_pose_;  //二维码相对飞机位置
@@ -48,11 +48,11 @@ class PX4Tracking {
   float search_alt_;
   float markers_id_;//需要检测到的二维码，默认是4
   bool detect_state;//是否检测到二维码标志位
-  Eigen::Vector4d desire_vel_;
-	Eigen::Vector3d desire_xyVel_;
+  Eigen::Vector3d desire_vel_;
+	Eigen::Vector3d desire_yzVel_;
 	float desire_yawVel_;
-  S_PID s_PidX,s_PidZ,s_PidYaw;
-  S_PID_ITEM s_PidItemX;
+  S_PID s_PidY,s_PidZ,s_PidYaw;
+  S_PID_ITEM s_PidItemY;
   S_PID_ITEM s_PidItemZ;
   S_PID_ITEM s_PidItemYaw;
   enum
@@ -61,9 +61,9 @@ class PX4Tracking {
   CHECKING,		//检查飞机状态
   PREPARE,		//起飞到指定高度
   SEARCH,		  //搜索
-  LANDING,	  //检测到降落板，开始降落
-  LANDOVER,		//结束		
-}LandingState = WAITING;//初始状态WAITING
+  TRACKING,	  //检测到二维码，开始跟踪
+  TRACKOVER,	//结束		
+}TrackingState = WAITING;//初始状态WAITING
 
   ros::Subscriber ar_pose_sub_;
   ros::Subscriber position_sub_;
