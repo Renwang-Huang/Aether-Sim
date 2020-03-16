@@ -100,7 +100,7 @@
 4. Install catkin.
 
    ```bash
-   sudo apt install python-catkin-tools
+   sudo apt-get install ros-melodic-catkin python-catkin-tools
    ```
 
 4. Install mavros version 0.29.0 or above. Instructions to install it from sources can be found here: https://dev.px4.io/en/ros/mavros_installation.html. If you want to install using apt, be sure to check that the version is 0.29.0 or greater.
@@ -216,7 +216,8 @@ sudo apt-get install ros-melodic-velodyne-gazebo-plugins
 
 ```
 cd some
-catkin_make
+catkin config --extend /opt/ros/${ROS_DISTRO} --cmake-args -DCMAKE_BUILD_TYPE=Release
+catkin build
 
 ```
 

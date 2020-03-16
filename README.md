@@ -12,8 +12,8 @@
 
 # QuadGuidance
 
-[Quadrotor Guidance](https://gitee.com/bingobinlw/some/blob/master/QuadGuidance.md)
+[Quadrotor Guidance](./doc/QuadGuidance.md)
 
 # CarGuidance
 
-[Car Guidance](https://gitee.com/bingobinlw/some/blob/master/CarGuidance.md)
+[Car Guidance](./doc/CarGuidance.md)
