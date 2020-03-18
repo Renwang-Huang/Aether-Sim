@@ -4,7 +4,6 @@
 		加载模型
 	-->
   <include file="$(find simulation)/launch/px4/camera_front_car_px4.launch">
-
   </include>
 
 	<!-- 

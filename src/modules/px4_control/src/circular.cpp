@@ -22,7 +22,7 @@ Eigen::Vector3d pos_target;//offboard模式下，发送给飞控的期望值
 float desire_z = 1; //期望高度
 float desire_Radius = 1;//期望圆轨迹半径
 float MoveTimeCnt = 0;
-float priod = 2000.0;   //调此数值可改变飞圆形的速度
+float priod = 1000.0;   //减小数值可增大飞圆形的速度
 Eigen::Vector3d temp_pos_drone;
 Eigen::Vector3d temp_pos_target;
 mavros_msgs::SetMode mode_cmd;

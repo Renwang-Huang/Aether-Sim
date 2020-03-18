@@ -23,7 +23,7 @@
 
 
   <include file="$(find simulation)/launch/px4/camera_down_px4.launch">
-    <arg name="world_path" value="$(arg world_path)" />
+    <arg name="world" value="$(arg world_path)" />
   </include>
 
   <include file="$(find ros_vision)/launch/ar_track_camera.launch" >

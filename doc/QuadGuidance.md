@@ -39,13 +39,7 @@
 
 此simulation 包含2D、3D激光雷达模型、深度相机模型、双目相机模型、realsense相机模型、IRlock相机模型。
 
-![image](http://files.amovauto.com:8088/group1/default/20191206/18/07/1/gazebo_world.jpg)
-
-![image](http://files.amovauto.com:8088/group1/default/20191209/15/50/1/sensor_rviz.png)
-
 - 配置PX4以及ros环境
-
-- 下载gazebo模型包
 
 - 编译工作空间，运行launch文件
 
@@ -178,19 +172,6 @@ make px4_sitl_default gazebo
 
 
 
-
-## 下载gazebo模型包
-
-  在home目录下创建**gazebo_models**文件夹
-
-```
-youname@ubuntu:~$ mkdir gazebo_models
-```
-
-下载gazebo模型包 https://bitbucket.org/osrf/gazebo_models/downloads/
-
-把gazebo模型包解压出来的所有模型文件剪切至**gazebo_models**文件夹
-
 ## 编译工作空间，运行launch文件
 编译之前，请先下载必要的slam包，具体请到ros_slam包中查看readme.md
 
@@ -228,12 +209,6 @@ catkin build
 source source_enviroment.sh
 ```
 
-
-运行model demo launch文件
-
-```
-roslaunch simulation models_demo_test_px4.launch
-```
 # Px4_control
 
 px4控制以及上层应用模块
@@ -409,7 +384,7 @@ roslaunch octomap_3Dlidar_px4.launch
 
 建图效果
 
-![image](http://files.amovauto.com:8088/group1/default/20200122/12/04/1/cotomap_3Dlidar.png)
+![image](http://files.amovauto.com:8088/group1/default/20200318/22/00/1/octomap_3Dlidar.gif)
 
 # Image_process
 ## vision landing
@@ -469,7 +444,7 @@ roslaunch simulation ros_2Dnav_demo_px4.launch
 
 然后在键盘控制界面输入2运行offboard模式。
 
-![image](http://files.amovauto.com:8088/group1/default/20200205/00/42/1/nav2D_px4.png)
+![image](http://files.amovauto.com:8088/group1/default/20200318/22/12/1/ros_nav_px4.gif)
 
 参考于：http://wiki.ros.org/navigation
 
