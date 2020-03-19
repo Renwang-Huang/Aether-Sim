@@ -8,7 +8,7 @@
     <arg name="P" default="0"/>
     <arg name="Y" default="0"/>
     <arg name="world" default="$(find simulation)/worlds/empty.world" />
-    <arg name="sdf" default="$(find simulation)/models/amovCar/amovCar.sdf" />
+    <arg name="sdf" default="$(find simulation)/models/amovCar_2Dlidar/amovCar_2Dlidar.sdf" />
     <arg name="vehicle" default="amovCar"/>
     <arg name="verbose" default="false"/>
     <arg name="debug" default="false"/>

@@ -5,14 +5,14 @@
 
       <inertial>
         <pose>0 0 0 0 0 0</pose>
-        <mass>0.19</mass>
+        <mass>0.01</mass>
         <inertia>
-          <ixx>4.15e-6</ixx>
+          <ixx>0</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>2.407e-6</iyy>
+          <iyy>0</iyy>
           <iyz>0</iyz>
-          <izz>2.407e-6</izz>
+          <izz>0</izz>
         </inertia>
       </inertial>
 
@@ -52,7 +52,7 @@
         </plugin>
         <always_on>1</always_on>
         <update_rate>5.5</update_rate>
-        <visualize>false</visualize>
+        <visualize>true</visualize>
       </sensor>
 <!--
       <sensor name="laser" type="gpu_ray">

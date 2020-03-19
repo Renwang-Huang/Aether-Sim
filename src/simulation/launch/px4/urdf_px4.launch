@@ -1,51 +1,34 @@
 <launch>
-    <!-- vehicle pose -->
+
+    <arg name="vehicle" default="iris"/>
+    <!-- Launching gazebo -->
+    <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/empty.world"/>
+    <arg name="debug" default="false"/>
+    <arg name="verbose" default="false"/>
+    <arg name="gui" default="true"/>
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(arg world)"/>
+        <arg name="verbose" value="$(arg verbose)"/>
+        <arg name="gui" value="$(arg gui)"/>
+        <arg name="debug" value="$(arg debug)"/>
+    </include>
+
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find simulation)/urdf/iris_depth_camera/xacro_sitl/urdf/iris_base.xacro'" /> 
+
+    <!-- robot description for px4 sitl -->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+    <!-- spawn robot -->
     <arg name="x" default="0"/>
     <arg name="y" default="0"/>
     <arg name="z" default="0"/>
     <arg name="R" default="0"/>
     <arg name="P" default="0"/>
     <arg name="Y" default="0"/>
+    <node name="$(anon vehicle_spawn)" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-param robot_description -urdf -model $(arg vehicle) -package_to_model -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg R) -P $(arg P) -Y $(arg Y)"/>
 
-    <arg name="world_path" default="$(find simulation)/worlds/classroom.world" />
-    <arg name="px4_config" default="$(find simulation)/resource/px4_config.yaml" />
-    <arg name="gui" default="true"/>
-    <arg name="ns" default="/"/>
-    <arg name="sdf" default="$(find simulation)/models/iris.sdf"/>
-    <arg name="fcu_url" default="udp://:14540@localhost:14557"/>
-    <arg name="gcs_url" default="" />   <!-- GCS link is provided by SITL -->
-    <arg name="tgt_system" default="1" />
-    <arg name="tgt_component" default="1" />
-    <arg name="vehicle" default="iris"/>
-
-    <param name="use_sim_time" value="true" />
-
-    <!-- Launch PX4 SITL -->
-    <include file="$(find px4)/launch/px4.launch">
-        <arg name="vehicle" value="$(arg vehicle)"/>
-    </include>
-
-    <!-- Launch MavROS -->
-    <group ns="$(arg ns)">
-        <include file="$(find mavros)/launch/node.launch">
-            <arg name="pluginlists_yaml" value="$(find mavros)/launch/px4_pluginlists.yaml" />
-            <!-- Need to change the config file to get the tf topic and get local position in terms of local origin -->
-            <arg name="config_yaml" value="$(arg px4_config)" />
-            <arg name="fcu_url" value="$(arg fcu_url)" />
-            <arg name="gcs_url" value="$(arg gcs_url)" />
-            <arg name="tgt_system" value="$(arg tgt_system)" />
-            <arg name="tgt_component" value="$(arg tgt_component)" />
-        </include>
-    </group>
-
-    <!-- Launch Gazebo -->
-    <include file="$(find gazebo_ros)/launch/empty_world.launch">
-        <arg name="gui" value="$(arg gui)"/>
-        <arg name="world_name" value="$(arg world_path)" />
-    </include>
-
-    <!-- Spawn vehicle model -->
-    <node name="$(anon vehicle_spawn)" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf -file $(arg sdf) -model $(arg vehicle) -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg R) -P $(arg P) -Y $(arg Y)"/>
-    </node>
-
+ 
 </launch>
+
+<!-- vim: set et ft=xml fenc=utf-8 ff=unix sts=0 sw=4 ts=4 : -->
