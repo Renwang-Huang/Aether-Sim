@@ -3,7 +3,7 @@
 * Author: bingo
 * Email: 1554459957@qq.com
 * Time: 2019.10.14
-* Description: lidar collision vfh v1.0
+* Description: lidar collision vfh for quad v1.0
 *  
 ***************************************************************************************************************************/
 

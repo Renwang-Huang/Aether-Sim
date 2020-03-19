@@ -43,6 +43,7 @@ include_directories(
 add_executable(position_to_mavros_node src/position_to_mavros.cpp)
 add_executable(set_mode_node src/set_mode.cpp)
 add_executable(collision_avoidance_vfh_node src/collision_avoidance_vfh.cpp)
+add_executable(avoidance_car_vfh_node src/avoidance_car_vfh.cpp)
 add_executable(collision_avoidance_matlabvfh_node src/collision_avoidance_matlabvfh.cpp)
 add_executable(circular_node src/circular.cpp)
 add_executable(circular_car_node src/circular_car.cpp)
@@ -60,6 +61,9 @@ target_link_libraries(set_mode_node
   ${catkin_LIBRARIES}
 )
 target_link_libraries(collision_avoidance_vfh_node
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(avoidance_car_vfh_node
   ${catkin_LIBRARIES}
 )
 target_link_libraries(collision_avoidance_matlabvfh_node
@@ -92,6 +96,7 @@ install(DIRECTORY include/${PROJECT_NAME}/
 install(TARGETS  position_to_mavros_node
   set_mode_node
   collision_avoidance_vfh_node
+  avoidance_car_vfh_node
   collision_avoidance_matlabvfh_node
   circular_node circular_car_node 
   ros_nav_quadrotor_node 

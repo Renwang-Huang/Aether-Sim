@@ -147,16 +147,6 @@
       <real_time>411 231696230</real_time>
       <wall_time>1576771033 533624798</wall_time>
       <iterations>316456</iterations>
-      <model name='bus'>
-        <pose frame=''>-7.51874 9.25739 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>-7.51874 9.25739 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
       <model name='corridors'>
         <pose frame=''>16.7218 -3.30276 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -391,44 +381,6 @@
       </attenuation>
       <cast_shadows>1</cast_shadows>
     </light>
-    <model name='bus'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <scale>0.01 0.01 0.01</scale>
-              <uri>model://bus/meshes/bus.obj</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <scale>0.01 0.01 0.01</scale>
-              <uri>model://bus/meshes/bus.obj</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-7.51874 9.25739 0 0 -0 0</pose>
-    </model>
     <model name='pine_tree'>
       <static>1</static>
       <link name='link'>

@@ -90,6 +90,22 @@ vim launch/Demo/px4_car/mission_offboard_car.launch
 
 视频链接：[car offboard mission](https://www.bilibili.com/video/av92790324)
 
+## offboard 模式下进行二维VFH避障
+
+运行demo之前，请先在QGC中添加航点，然后上传，VFH节点将读取航点信息，当作目标点。
+
+然后重新运行
+
+```
+roslaunch simulation avoidance_vfh_car.launch
+```
+
+中间终端为GCG中各航点的平面信息，读取航点成功后，在QGC地面站中切入offboard，然后小车将开始走航点。
+
+视频链接：[car offboard vfh](https://www.bilibili.com/video/av97713134/)
+
+
+
 # Slam
 
 

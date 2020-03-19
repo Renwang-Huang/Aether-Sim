@@ -3,7 +3,7 @@
 * Author: bingo
 * Email: 1554459957@qq.com
 * Time: 2019.10.14
-* Description: lidar collision vfh v1.0
+* Description: lidar collision vfh for car v1.0
 *  
 ***************************************************************************************************************************/
 
@@ -50,7 +50,6 @@ float sector_scale;
 Point2D Uavp;
 vector<float> map_cv;
 vector<double> ranges;
-float desire_z = 1.5; //期望高度
 
 uint32_t init_mask = 0;
 Eigen::Vector3d vel_sp_body;                                           
@@ -266,14 +265,14 @@ void gps_cb(const sensor_msgs::NavSatFix::ConstPtr &msg)
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>主 函 数<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "collision_avoidance_vfh");
+    ros::init(argc, argv, "avoidance_car_vfh");
     ros::NodeHandle nh("~");
-	scan_distance_max = 2.1;
-	scan_distance_min = 0.1;
-	angle_resolution = 1.0;
+	scan_distance_max = 2.1;//vfh中激光雷达有效范围。超过2.1m的障碍物不予考虑
+	scan_distance_min = 0.1;//小于0.1m的障碍物不予考虑
+	angle_resolution = 1.0;//此值与sector_value共同决定vfh中共有多少vector(360/angle_resolution/sector_value=12)
     heading = 90;
 	sector_value = 30;
-	sector_scale = 10;
+	sector_scale = 10;//判断前方[360-sector_scale，360]与[0,sector_scale]是否安全
 	Uavp.x = 0;
 	Uavp.y = 0;
 
@@ -293,7 +292,7 @@ ros::Publisher local_pos_pub = nh.advertise<mavros_msgs::PositionTarget>("/mavro
 		rate.sleep();
 	}
     printf("Please set the waypoint in QGC before running this program.\n");
-	printf("wait a moment\n");
+	printf("Set the mode to hold and wait a moment\n");
 	while (ros::ok())
 	{
 		//7F ‭0111 1111‬
@@ -307,7 +306,7 @@ ros::Publisher local_pos_pub = nh.advertise<mavros_msgs::PositionTarget>("/mavro
 
 while (ros::ok())
 	{
-		while (ros::ok() && !current_state.guided )
+		while (ros::ok() && !current_state.guided)
 		{
 			ros::spinOnce();
 			rate.sleep();
@@ -399,10 +398,9 @@ while (ros::ok())
 
 					mavros_msgs::PositionTarget pos_target;
 					pos_target.coordinate_frame = 1;
-					pos_target.type_mask = 1 + 2 + /*4 + 8 + 16 + 32 +*/ 64 + 128 + 256 + 512 + 1024 + 2048;
+		            pos_target.type_mask = 1 + 2 + 4 +/* 8 + 16 + 32 +*/ 64 + 128 + 256 + 512 + 1024 + 2048;
 					pos_target.velocity.x = 0.5* cos(arc);
 					pos_target.velocity.y = 0.5* sin(arc);
-					pos_target.position.z = desire_z;
 					local_pos_pub.publish(pos_target);
 
 					ros::Time last_request = ros::Time::now();
@@ -441,10 +439,9 @@ while (ros::ok())
 				{
 					mavros_msgs::PositionTarget pos_target;
 					pos_target.coordinate_frame = 1;
-					pos_target.type_mask = 1 + 2 +/* 4 + 8 + 16 + 32 +*/ 64 + 128 + 256 + 512 + 1024 + 2048;
+		            pos_target.type_mask = 1 + 2 + 4 +/* 8 + 16 + 32 +*/ 64 + 128 + 256 + 512 + 1024 + 2048;
 					pos_target.velocity.x = 0;
 					pos_target.velocity.y = 0;
-					pos_target.position.z = desire_z;
  					local_pos_pub.publish(pos_target);
 				}
 			}
@@ -452,10 +449,9 @@ while (ros::ok())
 
 		mavros_msgs::PositionTarget pos_target;
 		pos_target.coordinate_frame = 1;
-		pos_target.type_mask = 1 + 2 + /*4 + 8 + 16 + 32 +*/ 64 + 128 + 256 + 512 + 1024 + 2048;
+		pos_target.type_mask = 1 + 2 + 4 +/* 8 + 16 + 32 +*/ 64 + 128 + 256 + 512 + 1024 + 2048;
 		pos_target.velocity.x = 0;
 		pos_target.velocity.y = 0;
-		pos_target.position.z = desire_z;
 		local_pos_pub.publish(pos_target);
 
 		printf("task over\n");

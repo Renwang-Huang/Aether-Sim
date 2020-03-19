@@ -35,7 +35,7 @@
   <arg name="world_path" default="$(find simulation)/worlds/amovCar.world" />
 
   <include file="$(find simulation)/launch/px4/rover_px4.launch">
-    <arg name="world_path" value="$(arg world_path)" />
+    <arg name="world" value="$(arg world_path)" />
   </include>
 
 
