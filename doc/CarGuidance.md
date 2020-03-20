@@ -39,37 +39,7 @@
 
 ![image](http://files.amovauto.com:8088/group1/default/20200301/01/09/1/carModer.png)
 
-安装指导见   **QuadGuidance.md**
-
-其中不同的地方下面另行说明
-
-#### 下载编译firmware
-
-在此目录下下载px4源码并切换v1.11.0的固件
-
-```
-cd some
-git clone https://github.com/PX4/Firmware
-```
-
-或下载码云中的px4源码
-
-```
-cd some
-git clone https://gitee.com/bingobinlw/Firmware
-```
-
-然后更新submodule切换固件并编译
-
-```
-cd Firmware
-git submodule update --init --recursive
-git checkout v1.11.0-beta1
-make distclean
-make px4_sitl_default gazebo
-```
-
-
+安装指导见   [**QuadGuidance.md**](./QuadGuidance.md)
 
 # Px4_control
 

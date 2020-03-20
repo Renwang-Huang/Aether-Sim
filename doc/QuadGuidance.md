@@ -146,7 +146,7 @@ git clone https://gitee.com/bingobinlw/some
 ```
 #### 下载编译firmware
 
-在此目录下下载px4源码并切换v1.9.2的固件
+在此目录下下载px4源码并切换v1.11.0-beta1的固件
 
 ```
 cd some
@@ -165,7 +165,7 @@ git clone https://gitee.com/bingobinlw/Firmware
 ```
 cd Firmware
 git submodule update --init --recursive
-git checkout v1.9.2
+git checkout v1.11.0-beta1
 make distclean
 make px4_sitl_default gazebo
 ```
