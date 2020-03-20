@@ -8,7 +8,7 @@
 
     <include>
       <uri>model://2Dlidar</uri>
-      <pose>0 0 0.25 0 0 -3.1415926</pose>
+      <pose>0 0 0.27 0 0 -3.1415926</pose>
     </include>
     <joint name="2Dlidar_joint" type="fixed">
       <child>2Dlidar::link</child>

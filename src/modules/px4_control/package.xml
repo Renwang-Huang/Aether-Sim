@@ -13,7 +13,7 @@
 
   <build_depend>message_generation</build_depend>
   <exec_depend>message_runtime</exec_depend>
-
+  <depend>pluginlib</depend>
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>
   <build_depend>rospy</build_depend>
@@ -25,9 +25,7 @@
   <exec_depend>rospy</exec_depend>
   <exec_depend>tf</exec_depend>
 
-
-
   <export>
-
+    <moveit_core plugin="${prefix}/moveit_multi_dof_controller_manager_plugin_description.xml"/>
   </export>
 </package>

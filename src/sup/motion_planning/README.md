@@ -1,9 +1,7 @@
 # motion_planning
 
 - ros_moveit
-- ..
-
-
+- ......
 
 ## ros_moveit
 
@@ -18,8 +16,15 @@
 roslaunch moveit_setup_assistant setup_assistant.launch
 ```
 
-
+视频指导：[moveit_config]()
 
 ```
-rotors_description_dir:=/home/bingo/project/some/src/simulation/urdf/iris_depth_camera/ mavlink_udp_port visual_material:=green
+rotors_description_dir:=/home/bingo/project/some/src/simulation/urdf/iris_depth_camera/xacro visual_material:=green
 ```
+
+运行demo
+
+```
+roslaunch ros_moveit_config demo.launch
+```
+

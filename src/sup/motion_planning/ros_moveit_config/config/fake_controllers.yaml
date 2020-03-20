@@ -1,4 +1,4 @@
 controller_list:
-  - name: fake_iris_group_controller
+  - name: fake_px4_group_controller
     joints:
       - virtual_joint

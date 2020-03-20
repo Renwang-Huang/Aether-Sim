@@ -16,6 +16,11 @@ find_package(catkin REQUIRED COMPONENTS
   tf2_ros
   tf2_eigen
   mavros_msgs
+  actionlib
+  trajectory_msgs
+  pluginlib
+  moveit_msgs
+  moveit_core
 )
 find_package(cmake_modules REQUIRED)
 find_package(Eigen3 REQUIRED)
@@ -51,6 +56,7 @@ add_executable(ros_nav_quadrotor_node src/ros_nav_quadrotor.cpp)
 add_executable(mission_car_offboard_node src/mission_car_offboard.cpp)
 add_executable(landing_quadrotor_node src/landing_quadrotor.cpp)
 add_executable(tracking_quadrotor_node src/tracking_quadrotor.cpp)
+add_executable(moveit_px4_controller_node src/moveit_px4_controller.cpp)
 
 ## Specify libraries to link a library or executable target against
 
@@ -87,6 +93,13 @@ target_link_libraries(landing_quadrotor_node
 target_link_libraries(tracking_quadrotor_node
   ${catkin_LIBRARIES}
 )
+target_link_libraries(moveit_px4_controller_node 
+${catkin_LIBRARIES}
+)
+
+add_library(${PROJECT_NAME}_moveit_multi_dof_controller_manager src/moveit_multi_dof_controller_manager.cpp)
+target_link_libraries(${PROJECT_NAME}_moveit_multi_dof_controller_manager ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+
 ## Mark cpp header files for installation
 install(DIRECTORY include/${PROJECT_NAME}/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
@@ -103,6 +116,7 @@ install(TARGETS  position_to_mavros_node
   mission_car_offboard_node
   landing_quadrotor_node
   tracking_quadrotor_node
+  moveit_px4_controller_node
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

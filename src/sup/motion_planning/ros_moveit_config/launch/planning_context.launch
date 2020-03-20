@@ -6,19 +6,19 @@
   <arg name="robot_description" default="robot_description"/>
 
   <!-- Load universal robot description format (URDF) -->
-  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="xacro rotors_description_dir:=/home/bingo/project/some/src/simulation/urdf/iris_depth_camera visual_material:=green '$(find simulation)/urdf/iris_depth_camera/urdf/iris_base.xacro'"/>
+  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="xacro rotors_description_dir:=/home/bingo/project/some/src/simulation/urdf/iris_depth_camera/xacro visual_material:=green '$(find simulation)/urdf/iris_depth_camera/xacro/urdf/iris_base.xacro'"/>
 
   <!-- The semantic description that corresponds to the URDF -->
-  <param name="$(arg robot_description)_semantic" textfile="$(find iris_moveit_config)/config/iris.srdf" />
+  <param name="$(arg robot_description)_semantic" textfile="$(find ros_moveit_config)/config/iris.srdf" />
 
   <!-- Load updated joint limits (override information from URDF) -->
   <group ns="$(arg robot_description)_planning">
-    <rosparam command="load" file="$(find iris_moveit_config)/config/joint_limits.yaml"/>
+    <rosparam command="load" file="$(find ros_moveit_config)/config/joint_limits.yaml"/>
   </group>
 
   <!-- Load default settings for kinematics; these settings are overridden by settings in a node's namespace -->
   <group ns="$(arg robot_description)_kinematics">
-    <rosparam command="load" file="$(find iris_moveit_config)/config/kinematics.yaml"/>
+    <rosparam command="load" file="$(find ros_moveit_config)/config/kinematics.yaml"/>
   </group>
 
 </launch>
