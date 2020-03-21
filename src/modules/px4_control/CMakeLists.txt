@@ -28,7 +28,7 @@ include_directories(${EIGEN3_INCLUDE_DIR})
 add_definitions(${EIGEN_DEFINITIONS})
 
 catkin_package(
-#  INCLUDE_DIRS include
+ INCLUDE_DIRS include
 #  LIBRARIES vision_to_mavros
 #  CATKIN_DEPENDS roscpp rospy tf
 #  DEPENDS system_lib
@@ -44,6 +44,9 @@ include_directories(
   include
   ${catkin_INCLUDE_DIRS}
 )
+
+add_library(${PROJECT_NAME}_moveit_multi_dof_controller_manager src/moveit_multi_dof_controller_manager.cpp)
+target_link_libraries(${PROJECT_NAME}_moveit_multi_dof_controller_manager ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 
 add_executable(position_to_mavros_node src/position_to_mavros.cpp)
 add_executable(set_mode_node src/set_mode.cpp)
@@ -97,8 +100,6 @@ target_link_libraries(moveit_px4_controller_node
 ${catkin_LIBRARIES}
 )
 
-add_library(${PROJECT_NAME}_moveit_multi_dof_controller_manager src/moveit_multi_dof_controller_manager.cpp)
-target_link_libraries(${PROJECT_NAME}_moveit_multi_dof_controller_manager ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 
 ## Mark cpp header files for installation
 install(DIRECTORY include/${PROJECT_NAME}/
