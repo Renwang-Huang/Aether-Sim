@@ -28,3 +28,15 @@ rotors_description_dir:=/home/bingo/project/some/src/simulation/urdf/iris_depth_
 roslaunch ros_moveit_config demo.launch
 ```
 
+Controller.Yaml 
+
+该文件描述了控制器管理器使用的参数。
+```
+controller_list:
+ - name: iris_group_controller
+   action_ns: follow_multi_dof_joint_trajectory
+   type: FollowMultiDOFJointTrajectory
+   default: true
+   joints:
+    - virtual_joint
+```
