@@ -59,8 +59,8 @@
     <param name="/mavros/local_position/tf/frame_id" type="str" value="map" />
 
     <!-- spawn robot -->
-    <arg name="x" default="0"/>
-    <arg name="y" default="0"/>
+    <arg name="x" default="-2"/>
+    <arg name="y" default="1"/>
     <arg name="z" default="0"/>
     <arg name="R" default="0"/>
     <arg name="P" default="0"/>

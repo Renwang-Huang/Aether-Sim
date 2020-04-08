@@ -45,7 +45,7 @@ Eigen::Vector4d PX4Landing::LandingPidProcess(Eigen::Vector3d &currentPos,float 
   Eigen::Vector4d s_PidOut;
 
 	/*X方向的pid控制*/
-	s_PidItemX.difference = expectPos[0] - currentPos[1];
+	s_PidItemX.difference = expectPos[0] - currentPos[0];
 	s_PidItemX.intergral += s_PidItemX.difference;
 	if(s_PidItemX.intergral >= 100)		
 		s_PidItemX.intergral = 100;
@@ -58,7 +58,7 @@ Eigen::Vector4d PX4Landing::LandingPidProcess(Eigen::Vector3d &currentPos,float 
 
 	s_PidOut[0] = s_PidXY.p*s_PidItemX.difference + s_PidXY.d*s_PidItemX.differential + s_PidXY.i*s_PidItemX.intergral;
 	/*Y方向的pid控制*/
-	s_PidItemY.difference = expectPos[1] - currentPos[0];
+	s_PidItemY.difference = expectPos[1] - currentPos[1];
 	s_PidItemY.intergral += s_PidItemY.difference;
 	if(s_PidItemY.intergral >= 100)		
 		s_PidItemY.intergral = 100;
@@ -253,8 +253,8 @@ void PX4Landing::ArPoseCallback(const ar_track_alvar_msgs::AlvarMarkers::ConstPt
 		if(item.id == markers_id_)
 		{
 			detect_state = true;
-      ar_pose_[1] = -item.pose.pose.position.x;
-      ar_pose_[0] = item.pose.pose.position.y;
+      ar_pose_[0] = -item.pose.pose.position.x;
+      ar_pose_[1] = item.pose.pose.position.y;
       ar_pose_[2] = item.pose.pose.position.z;
       tf::quaternionMsgToTF(item.pose.pose.orientation,quat);
       tf::Matrix3x3(quat).getRPY(temp_roll,temp_pitch,temp_yaw);

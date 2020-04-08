@@ -49,7 +49,7 @@ class OffboardControl {
 
 };
 
-//机体坐标系下发送yz速度期望值以及期望偏航角速度至飞控，用于二维码跟踪 （参考于：https://docs.px4.io/master/en/flight_modes/offboard.html）,在机体坐标系下vy+表示向前飞，vx+表示向右飞
+//机体坐标系下发送yz速度期望值以及期望偏航角速度至飞控，用于二维码跟踪 （参考于：https://docs.px4.io/master/en/flight_modes/offboard.html）,在ros机体坐标系下pos_setpoint.velocity.y+飞机向前飞，pos_setpoint.velocity.x+飞机向右飞
 void OffboardControl::send_body_velyz_setpoint(const Eigen::Vector3d& vel_sp, float yaw_sp)
 {
     mavros_msgs::PositionTarget pos_setpoint;

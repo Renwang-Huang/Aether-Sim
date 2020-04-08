@@ -20,13 +20,6 @@
     <!-- publish tf to suppress warnings -->
     <node pkg="tf" name="map2odom" type="static_transform_publisher" args="0 0 0 0 0 0 map odom 100"/>
 
-    <!-- Moveit -->
-    <include file="$(find iris_moveit_config)/launch/move_group.launch" >
-        <arg name="fake_execution" value="false" />
-    </include>
-
-    <node pkg="dronedoc" name="drone_controller" type="drone_controller" output="screen"/>
-
 	<node pkg="simulation" type="keyboard_control_px4.py" name="keyboard_control_px4" output="screen" launch-prefix="gnome-terminal --tab -e">
     </node>
 
