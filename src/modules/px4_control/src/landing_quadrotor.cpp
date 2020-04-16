@@ -128,6 +128,11 @@ void PX4Landing::LandingStateUpdate()
 	switch(LandingState)
 	{
 		case WAITING:
+			if(px4_state_.mode == "AUTO.RTL" && detect_state == true)
+			{
+				mode_cmd_.request.custom_mode = "OFFBOARD";
+				set_mode_client_.call(mode_cmd_);
+			}
 			if(px4_state_.mode != "OFFBOARD")//等待offboard模式
 			{
 				temp_pos_drone[0] = px4_pose_[0];
@@ -135,7 +140,7 @@ void PX4Landing::LandingStateUpdate()
 				temp_pos_drone[2] = px4_pose_[2];
 				OffboardControl_.send_pos_setpoint(temp_pos_drone, 0);
 			}
-			else
+			if(px4_state_.mode == "OFFBOARD")
 			{
 				temp_pos_drone[0] = px4_pose_[0];
 				temp_pos_drone[1] = px4_pose_[1];
@@ -143,7 +148,6 @@ void PX4Landing::LandingStateUpdate()
 				LandingState = CHECKING;
 				cout << "CHECKING" <<endl;
 			}
-				//cout << "WAITING" <<endl;
 			break;
 		case CHECKING:
 			if(px4_pose_[0] == 0 && px4_pose_[1] == 0) 			//没有位置信息则执行降落模式
@@ -230,7 +234,7 @@ void PX4Landing::LandingStateUpdate()
 		case LANDOVER:
 			{
 				mode_cmd_.request.custom_mode = "AUTO.LAND";
-        set_mode_client_.call(mode_cmd_);
+        		set_mode_client_.call(mode_cmd_);
 				LandingState = WAITING;
 			}
 
