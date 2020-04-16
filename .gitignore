@@ -6,4 +6,4 @@ Firmware/
 src/CMakeLists.txt
 src/sensor
 .catkin_workspace
-
+.vscode/

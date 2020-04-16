@@ -34,7 +34,7 @@
  	<arg name="markers_id_" value="4" />
  	<arg name="desire_pose_x" value="0" />
  	<arg name="desire_pose_y" value="0" />
- 	<arg name="desire_pose_z" value="1.5" />
+ 	<arg name="desire_pose_z" value="0.2" />
  	<arg name="desire_yaw_" value="1.4" />
  	<arg name="PidXY_p" value="1" />
  	<arg name="PidXY_d" value="0.1" />

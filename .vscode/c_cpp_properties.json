@@ -1,0 +1,43 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/eason/Amov_WorkSpace/some/devel/include/**",
+                "/home/eason/off_ws/devel/include/**",
+                "/home/eason/Amov_WorkSpace/Prometheus/devel/include/**",
+                "/opt/ros/melodic/include/**",
+                "/home/eason/Amov_WorkSpace/Prometheus/Modules/planning/FastPlanner/bspline_opt/include/**",
+                "/home/eason/off_ws/src/fv_tracking/include/**",
+                "/home/eason/Amov_WorkSpace/Prometheus/Modules/planning/FastPlanner/path_searching/include/**",
+                "/home/eason/Amov_WorkSpace/Prometheus/Modules/planning/FastPlanner/plan_env/include/**",
+                "/home/eason/Amov_WorkSpace/Prometheus/Modules/control/include/**",
+                "/home/eason/Amov_WorkSpace/Prometheus/Simulator/gazebo_simulator/include/**",
+                "/home/eason/Amov_WorkSpace/Prometheus/Modules/planning/global_planner/include/**",
+                "/home/eason/Amov_WorkSpace/Prometheus/Modules/planning/local_planner/include/**",
+                "/home/eason/Amov_WorkSpace/Prometheus/Modules/mission/include/**",
+                "/home/eason/Amov_WorkSpace/Prometheus/Modules/planning/FastPlanner/plan_manage/include/**",
+                "/home/eason/Amov_WorkSpace/Prometheus/Modules/planning/Utils/pose_utils/include/**",
+                "/home/eason/Amov_WorkSpace/Prometheus/Modules/slam/include/**",
+                "/home/eason/Amov_WorkSpace/Prometheus/Modules/planning/Utils/uav_utils/include/**",
+                "/home/eason/off_ws/src/px4_command/include/**",
+                "/home/eason/Amov_WorkSpace/some/src/modules/px4_control/include/**",
+                "/home/eason/Amov_WorkSpace/some/src/sensor/camera/realsense_ros/realsense2_camera/include/**",
+                "/home/eason/off_ws/src/serial_ros/include/**",
+                "/home/eason/off_ws/src/simple_mavros_mission/include/**",
+                "/home/eason/Amov_WorkSpace/some/src/simulation/include/**",
+                "/home/eason/Amov_WorkSpace/Prometheus/Modules/planning/FastPlanner/traj_utils/include/**",
+                "/usr/include/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}
