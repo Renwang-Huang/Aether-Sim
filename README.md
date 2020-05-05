@@ -8,7 +8,7 @@
 
 - software frame
 
-![image](http://files.amovauto.com:8088/group1/default/20191208/14/41/1/sofe_frame.png)
+![image](./doc/image/sofe_frame.png)
 
 # QuadGuidance
 

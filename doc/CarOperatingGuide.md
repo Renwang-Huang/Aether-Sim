@@ -13,13 +13,13 @@
 sudo apt-get install ssh
 ```
 
-第二步：远程端电脑以及本地电脑连接wifi数传上的wifi，名字是''**amov-uav20xxx**''，密码是"amov20xxx"，其中xxx是小车的编号，最好是小车上的板载计算机先连接wifi，使用“**ifconfig**”终端命令查看ip，确保小车上的板载计算机被分配的ip为"**192.168.10.100**"。测试ssh，在远程端电脑终端上输入
+第二步：远程端电脑以及本地电脑连接wifi数传上的wifi，名字是''**lepus-uav20xxx**''，密码是"lepus20xxx"，其中xxx是小车的编号，最好是小车上的板载计算机先连接wifi，使用“**ifconfig**”终端命令查看ip，确保小车上的板载计算机被分配的ip为"**192.168.10.100**"。测试ssh，在远程端电脑终端上输入
 
 ```
-ssh amov@192.168.10.100
+ssh lepus@192.168.10.100
 ```
 
-密码是：**amov**
+密码是：**lepus**
 
 如果一切顺利将会进入板载计算机的终端。
 
@@ -58,17 +58,17 @@ export ROS_IP=192.168.10.100
 在远程端电脑终端里输入：
 
 ```
-ssh amov@192.168.10.100
+ssh lepus@192.168.10.100
 ```
 
-密码是：**amov**
+密码是：**lepus**
 
 第二步：运行t265_to_mavros demo
 
 在已打开的终端中运行板载计算机的launch文件
 
 ```
-amov@amov:~$ roslaunch amov_car t265_position_to_mavros.launch 
+lepusv@lepus:~$ roslaunch lepus t265_position_to_mavros.launch 
 ```
 
 **ctrl+shift+t**打开新的终端，运行

@@ -33,7 +33,7 @@ realsense-viewer
 第一步：下载项目
 
 ```
-git clone https://gitee.com/bingobinlw/some
+git clone https://gitee.com/bingobinlw/volans
 ```
 
 或更新已有仓库
@@ -45,28 +45,28 @@ git pull
 第二步：更新子模块
 
 ```
-cd some
+cd volans
 git submodule update --init --recursive
 ```
 
 第三步：编译
 
 ```
-cd some
+cd volans
 catkin_make
 ```
 
 第四步：添加环境路径
 
 ```
-cd some
+cd volans
 source source_environment.sh
 ```
 
 第五步：运行demo测试是否成功
 
 ```
-roslaunch amov_car t265_position_to_mavros.launch
+roslaunch lepus t265_position_to_mavros.launch
 ```
 
 查看t265是否运行正常，mavros是否与飞控连接正常。

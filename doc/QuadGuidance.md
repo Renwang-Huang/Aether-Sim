@@ -14,18 +14,9 @@
 
 - Planning
 
-- P200
+- volans
 
-  此项目运行环境可以手动安装，或下载已安装好了的iso镜像进行虚拟机安装或实体机安装，链接如下：
 
-  链接：https://pan.baidu.com/s/1yMvZXezQSPDPkYmSdbEZLA
-  提取码：y3rr
-
-  运行各demo之前，请先更新一下仓库:
-
-  ```
-  git pull
-  ```
   **注：有任何疑问都可在issues提问:)**
 
 
@@ -33,7 +24,7 @@
 
 - software frame
 
-![image](http://files.amovauto.com:8088/group1/default/20191208/14/41/1/sofe_frame.png)
+![image](./image/sofe_frame.png)
 
 # Simulation
 
@@ -57,7 +48,7 @@
 
 #### for ubuntu18.04 melodic
 
-1. Add ROS to sources.list.
+1. 添加ros源到 sources.list.
 
    ```bash
    sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -65,7 +56,7 @@
    sudo apt update
    ```
 
-2. Install gazebo with ROS.
+2. 安装的ros
 
    ```bash
    sudo apt-get install ros-melodic-desktop
@@ -74,36 +65,33 @@
 	echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 	source ~/.bashrc
    ```
+    并安装ros下gazebo9相关的包
+    ```
+    sudo apt install ros-melodic-gazebo9*
+    ```
 
-  please make sure install ros-gazebo related packages
-
-
-  For Gazebo 9,
-
-  ```
-  sudo apt install ros-melodic-gazebo9*
-  ```
-
-3. Initialize rosdep.
+3. 初始化ros.
 
    ```bash
    rosdep init
    rosdep update
    ```
 
-4. Install catkin.
+4. 安装catkin编译器.
 
    ```bash
    sudo apt-get install ros-melodic-catkin python-catkin-tools
    ```
 
-4. Install mavros version 0.29.0 or above. Instructions to install it from sources can be found here: https://dev.px4.io/en/ros/mavros_installation.html. If you want to install using apt, be sure to check that the version is 0.29.0 or greater.
+5. 安装mavros 
+
+   参考于 https://dev.px4.io/en/ros/mavros_installation.html. 
 
    ```bash
    sudo apt install ros-melodic-mavros ros-melodic-mavros-extras
    ```
 
-5. Install the geographiclib dataset
+6. 安装mavros相关的 geographiclib dataset
 
    ```bash
    wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
@@ -142,21 +130,21 @@ source ubuntu.sh
 下载源码：
 
 ```
-git clone https://gitee.com/bingobinlw/some
+git clone https://gitee.com/bingobinlw/volans
 ```
 #### 下载编译firmware
 
 在此目录下下载px4源码并切换v1.11.0-beta1的固件
 
 ```
-cd some
+cd volans
 git clone https://github.com/PX4/Firmware
 ```
 
 或下载码云中的px4源码
 
 ```
-cd some
+cd volans
 git clone https://gitee.com/bingobinlw/Firmware
 ```
 
@@ -176,15 +164,13 @@ make px4_sitl_default gazebo
 编译之前，请先下载必要的slam包，具体请到ros_slam包中查看readme.md
 
 ```
-dir:some/src/mid/slam/ros_slam
+dir:volans/src/mid/slam/ros_slam
 查看README.md
 ```
 And
 ```
 sudo apt-get install ros-melodic-ar-track-alvar*
 ```
-
-
 
 运行demo之前请先下载3Dlidar仿真相关的插件包
 
@@ -194,16 +180,19 @@ for ubuntu 18.04
 ```
 sudo apt-get install ros-melodic-velodyne-gazebo-plugins
 ```
-
+安装moveit相关的ros包
 ```
-cd some
+sudo apt-get install ros-melodic-moveit
+```
+```
+cd volans
 catkin config --extend /opt/ros/${ROS_DISTRO} --cmake-args -DCMAKE_BUILD_TYPE=Release
 catkin build
 
 ```
 
 
-编译成功后运行`source_environment.sh`添加Firmware环境变量,some gazebo模型路经,gazebo_modles模型路经
+编译成功后运行`source_environment.sh`添加Firmware环境变量,volans gazebo模型路经,gazebo_modles模型路经
 
 ```
 source source_enviroment.sh
@@ -223,12 +212,12 @@ roslaunch simulation circular_px4.launch
 同时会出现一飞机控制界面，要想使用此脚本请先查看下面路经的README.md
 
 ```
-dir:some/src/simulation/scripts/README.md
+dir:volans/src/simulation/scripts/README.md
 ```
 
 
 
-![image](http://files.amovauto.com:8088/group1/default/20191211/14/46/1/keyboard_control.png)
+![image](./image/keyboard_control.png)
 在键盘控制终端中，输入**0**解锁，然后输入**2**切**offboard**,飞机随后会按照你给定的半径与高度飞行，完成一圈后会自动降落。
 
 ## offboard 模式下进行二维VFH避障
@@ -241,7 +230,7 @@ dir:some/src/simulation/scripts/README.md
 roslaunch simulation obstacle_avoidance_2Dlaser_vfh_px4.launch 
 ```
 
-![image](http://files.amovauto.com:8088/group1/default/20200101/15/18/1/2dvfh.png)
+![image](./image/2dvfh.png)
 
 中间终端为GCG中各航点的平面信息，读取航点成功后，在最后一个控制终端中输入**2**然后回车，VFH节点将开始工作。
 
@@ -262,7 +251,7 @@ roscd ros_slam
 roslaunch simulation gmapping_demo_px4.launch
 ```
 
-![image](http://files.amovauto.com:8088/group1/default/20191215/21/46/1/gmapping_map.png)
+![image](./image/gmapping_slam.png)
 
 
 ## cartographer
@@ -286,7 +275,7 @@ roslaunch simulation cartographer2Dlidar_location_demo_px4.launch
 
 结果
 
-![image](http://files.amovauto.com:8088/group1/default/20191215/22/03/1/carto_use_imu.png)
+![image](./image/cartogra2d.gif)
 
 ### 2Dlidar mapping
 
@@ -316,7 +305,7 @@ sudo apt-get install ros-melodic-velodyne-gazebo-plugins
 
 使用一个16线的激光雷达，以及一个imu数据，激光雷达水平安装在飞机的顶部。就其定位效果来看，没有发现2Dlidar定位时会飘的情况，而且无人机速度倾斜角度都可以大幅提高。
 
-![image](http://files.amovauto.com:8088/group1/default/20191217/15/31/1/carto_3D_rviz.png)
+![image](./image/carto_3D_rviz.png)
 
 运行
 
@@ -347,9 +336,9 @@ roslaunch simulation rtabmap_depthCam_mapping_demo_px4.launch
 
 建图效果：
 
-![image](http://files.amovauto.com:8088/group1/default/20191230/22/37/1/rtabmap1.png)
+![image](./image/rtabmap1.png)
 
-![image](http://files.amovauto.com:8088/group1/default/20191230/22/38/1/rtabmap3.png)
+![image](./image/rtabmap3.png)
 
 # Map
 
@@ -372,7 +361,7 @@ roslaunch simulation octomap_px4.launch
 
 建图效果
 
-![image](http://files.amovauto.com:8088/group1/default/20200122/11/36/1/octomap_demp.png)
+![image](./image/octomap_demp.png)
 
 ### 3Dlidar
 
@@ -384,14 +373,14 @@ roslaunch octomap_3Dlidar_px4.launch
 
 建图效果
 
-![image](http://files.amovauto.com:8088/group1/default/20200318/22/00/1/octomap_3Dlidar.gif)
+![image](./image/octomap_3Dlidar.gif)
 
 # Image_process
 ## vision landing
 
 二维码降落
 
-![image](http://files.amovauto.com:8088/group1/default/20200213/01/43/1/landing_px4.gif)
+![image](./image/landing_px4.gif)
 
 运行demo之前请先安装必要的ros包
 
@@ -412,7 +401,7 @@ roslaunch simulation landing_px4.launch
 
 二维码跟踪
 
-![image](http://files.amovauto.com:8088/group1/default/20200312/17/55/1/tracking_px4.gif)
+![image](./image/tracking_px4.gif)
 
 运行
 
@@ -444,7 +433,7 @@ roslaunch simulation ros_2Dnav_demo_px4.launch
 
 然后在键盘控制界面输入2运行offboard模式。
 
-![image](http://files.amovauto.com:8088/group1/default/20200318/22/12/1/ros_nav_px4.gif)
+![image](./image/ros_nav_px4.gif)
 
 参考于：http://wiki.ros.org/navigation
 

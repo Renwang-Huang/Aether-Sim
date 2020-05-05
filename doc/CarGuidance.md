@@ -14,18 +14,8 @@
 
 - Planning
 
-- AmovCar
+- lepus
 
-  此项目运行环境可以手动安装，或下载已安装好了的iso镜像进行虚拟机安装或实体机安装，链接如下：
-
-  链接：https://pan.baidu.com/s/1yMvZXezQSPDPkYmSdbEZLA
-  提取码：y3rr
-
-  运行各demo之前，请先更新一下仓库:
-
-  ```
-  git pull
-  ```
   **注：有任何疑问都可在issues提问:)**
 
 
@@ -33,11 +23,11 @@
 
 - software frame
 
-![image](http://files.amovauto.com:8088/group1/default/20191208/14/41/1/sofe_frame.png)
+![image](./image/sofe_frame.png)
 
 # Simulation
 
-![image](http://files.amovauto.com:8088/group1/default/20200301/01/09/1/carModer.png)
+![image](./image/carModer.png)
 
 安装指导见   [**QuadGuidance.md**](./QuadGuidance.md)
 
@@ -94,10 +84,10 @@ roslaunch simulation avoidance_vfh_car.launch
 
 
 
-# AmovCar
+# lepus
 
 ```
-见 dir:some/src/AmovCar/README.md
+见 dir:volans/src/lepus/README.md
 ```
 
 
