@@ -56,8 +56,6 @@ add_executable(mission_car_offboard_node src/mission_car_offboard.cpp)
 add_executable(landing_quadrotor_node src/landing_quadrotor.cpp)
 add_executable(tracking_quadrotor_node src/tracking_quadrotor.cpp)
 
-
-
 ## Specify libraries to link a library or executable target against
 
 target_link_libraries(position_to_mavros_node

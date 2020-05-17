@@ -10,6 +10,7 @@
 #include <mavros_msgs/AttitudeTarget.h>
 #include <Eigen/Dense>
 #include <tf2_ros/transform_listener.h>
+#include "mavros_msgs/MountControl.h"
 
 #define pi  3.1415926
 using namespace std;
@@ -23,6 +24,7 @@ class OffboardControl {
   OffboardControl(void):
     offboard_nh_("~") {
   mavros_setpoint_pos_pub_ = offboard_nh_.advertise<mavros_msgs::PositionTarget>("/mavros/setpoint_raw/local", 10);
+  mount_control_pub_ = offboard_nh_.advertise<mavros_msgs::MountControl>("/mavros/mount_control/command", 1);
 
   mavros_setpoint_local_pos_pub_ = offboard_nh_.advertise<geometry_msgs::PoseStamped>("/mavros/setpoint_position/local", 10);
 
@@ -40,12 +42,14 @@ class OffboardControl {
     void send_actuator_setpoint(const Eigen::Vector4d& actuator_sp);
     void send_attitude_setpoint(const Eigen::Vector3d& _AttitudeReference,float thrust_sp);
     void send_attitude_rate_setpoint(const Eigen::Vector3d& attitude_rate_sp, float thrust_sp);
+    void send_mount_control_command(const Eigen::Vector3d& mount_sp);
   private:
     ros::NodeHandle offboard_nh_;
     ros::Publisher mavros_setpoint_pos_pub_;
     ros::Publisher mavros_setpoint_local_pos_pub_;
     ros::Publisher actuator_setpoint_pub_;
     ros::Publisher setpoint_raw_attitude_pub_;
+    ros::Publisher mount_control_pub_;
 
 };
 
@@ -212,4 +216,15 @@ void OffboardControl::send_attitude_rate_setpoint(const Eigen::Vector3d& attitud
 
 }
 
+void OffboardControl::send_mount_control_command(const Eigen::Vector3d& mount_sp)
+{
+  mavros_msgs::MountControl mount_setpoint;
+  mount_setpoint.mode = 2;
+  mount_setpoint.pitch = mount_sp[0]; // Gimbal Pitch
+  mount_setpoint.roll = mount_sp[1]; // Gimbal  Yaw
+  mount_setpoint.yaw = mount_sp[2]; // Gimbal  Yaw
+
+  mount_control_pub_.publish(mount_setpoint);
+
+}
 
