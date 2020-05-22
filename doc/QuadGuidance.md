@@ -14,7 +14,7 @@
 
 - Planning
 
-- volans
+- Volans
 
 
   **注：有任何疑问都可在issues提问:)**
@@ -161,34 +161,33 @@ make px4_sitl_default gazebo
 
 
 ## 编译工作空间，运行launch文件
-编译之前，请先下载必要的slam包，具体请到ros_slam包中查看readme.md
+编译之前请先安装必要的依赖项
 
 ```
-dir:volans/src/mid/slam/ros_slam
-查看README.md
+sudo apt-get install ros-melodic-ddynamic-reconfigure
 ```
-And
+
+二维码识别相关包
+
 ```
 sudo apt-get install ros-melodic-ar-track-alvar*
 ```
 
-运行demo之前请先下载3Dlidar仿真相关的插件包
-
-
-for ubuntu 18.04
+3Dlidar仿真相关的插件包
 
 ```
 sudo apt-get install ros-melodic-velodyne-gazebo-plugins
 ```
-安装moveit相关的ros包
+moveit运动规划相关的包
 ```
 sudo apt-get install ros-melodic-moveit
+sudo apt-get install ros-melodic-nav-core
 ```
+编译工程
 ```
 cd volans
 catkin config --extend /opt/ros/${ROS_DISTRO} --cmake-args -DCMAKE_BUILD_TYPE=Release
 catkin build
-
 ```
 
 
@@ -351,12 +350,18 @@ roscd octomap
 
 ## octomap
 
+安装octomap相关ros包
+
+```
+sudo apt-get install ros-melodic-octomap-*
+```
+
 ### depth camera 
 
 运行
 
 ```
-roslaunch simulation octomap_px4.launch 
+roslaunch simulation octomapdep_px4.launch 
 ```
 
 建图效果

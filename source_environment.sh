@@ -5,4 +5,4 @@ echo "source $(pwd)/Firmware/Tools/setup_gazebo.bash $(pwd)/Firmware $(pwd)/Firm
 echo "export ROS_PACKAGE_PATH=\$ROS_PACKAGE_PATH:$(pwd)/Firmware" >> ~/.bashrc
 echo "export ROS_PACKAGE_PATH=\$ROS_PACKAGE_PATH:$(pwd)/Firmware/Tools/sitl_gazebo" >> ~/.bashrc
 source ~/.bashrc
-echo "SUCCEED,  No need to repeat it."
+echo "SUCCEED."
