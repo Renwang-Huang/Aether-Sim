@@ -26,7 +26,6 @@
   <depend>nav_core</depend>
   <depend>tf</depend>
   <depend>ompl</depend>
-  <depend>gazebo_ros</depend>
   <depend>actionlib</depend>
   <depend>moveit</depend>
   <depend>moveit_core</depend>
@@ -39,8 +38,6 @@
   <exec_depend>laser_filters</exec_depend>
 
   <export>
-    <gazebo_ros gazebo_model_path="${prefix}/models"/>
-    <gazebo_ros plugin_path="${prefix}/lib" />
     <moveit_core plugin="${prefix}/moveit_multi_dof_controller_manager_plugin_description.xml"/>
   </export>
 </package>
