@@ -21,12 +21,12 @@
 	发布usb_camera tf
 -->
 	<node pkg="tf" type="static_transform_publisher" name="world_to_camera"
-		args="0 0 0.5 0 1.57 0 camera_link usb_camera_link 10"/>
+		args="0 0 0.5 0 1.57 0 camera_link csi_camera_link 10"/>
 
 <!-- 
 	打开相机
 -->
-  <include file="$(find ros_vision)/launch/usb_cam_with_calibration.launch" >
+  <include file="$(find ros_vision)/launch/csi_cam_with_calibration.launch" >
   </include>
 
 <!-- 
@@ -38,9 +38,9 @@ marker_size:二维码大小，这里是边长是7.5cm的正方形
     <arg name="marker_size" value="7.5" />
     <arg name="max_new_marker_error" value="0.08" />
     <arg name="max_track_error" value="0.2" />
-    <arg name="cam_image_topic" value="/camera/image_raw" />
-    <arg name="cam_info_topic" value="/camera/camera_info" />
-    <arg name="output_frame" value="/usb_camera_link" />
+    <arg name="cam_image_topic" value="/csi_camera/image_raw" />
+    <arg name="cam_info_topic" value="/csi_camera/camera_info" />
+    <arg name="output_frame" value="/csi_camera_link" />
 
   </include>
 <!-- 

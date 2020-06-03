@@ -2,7 +2,7 @@
 
 # 相机标定
 
-打开相机
+usb打开相机
 
 ```
 roslaunch ros_vision usb_cam.launch

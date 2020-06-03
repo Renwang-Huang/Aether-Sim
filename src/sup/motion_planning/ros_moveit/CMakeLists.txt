@@ -25,14 +25,9 @@ find_package(catkin REQUIRED COMPONENTS
 find_package(yaml-cpp REQUIRED)
 find_package(Protobuf REQUIRED)
 
-find_package(gazebo REQUIRED)
-if("${GAZEBO_VERSION}" VERSION_LESS "7.4")
-  message(FATAL_ERROR "Gazebo 7.4 or later is required.")
-endif()
 
 include (FindPkgConfig)
 if (PKG_CONFIG_FOUND)
-  pkg_check_modules(GAZEBO gazebo)
   pkg_check_modules(SDF sdformat)
 endif()
 
@@ -59,13 +54,11 @@ include_directories(
   include
   ${catkin_INCLUDE_DIRS}
   ${YAML_CPP_INCLUDE_DIR}
-  ${GAZEBO_INCLUDE_DIRS}
   ${SDF_INCLUDE_DIRS}
   ${CMAKE_CURRENT_BINARY_DIR}/msgs/proto
 )
 
-link_directories(${GAZEBO_LIBRARY_DIRS} ${CMAKE_CURRENT_BINARY_DIR}/msgs/proto)
-add_subdirectory(msgs/proto)
+link_directories(${CMAKE_CURRENT_BINARY_DIR}/msgs/proto)
 
 
 # Build moveit library
