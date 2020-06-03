@@ -440,6 +440,13 @@ roslaunch simulation ros_2Dnav_demo_px4.launch
 
 ![image](./image/ros_nav_px4.gif)
 
+也可在线调参，在终端中输入如下命令即可。
+```
+rosrun rqt_reconfigure rqt_reconfigure
+```
+
+
+
 参考于：http://wiki.ros.org/navigation
 
 视频链接：[px4 ros navigation](https://www.bilibili.com/video/av86842219)

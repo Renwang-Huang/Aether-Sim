@@ -55,6 +55,7 @@ add_executable(ros_nav_quadrotor_node src/ros_nav_quadrotor.cpp)
 add_executable(mission_car_offboard_node src/mission_car_offboard.cpp)
 add_executable(landing_quadrotor_node src/landing_quadrotor.cpp)
 add_executable(tracking_quadrotor_node src/tracking_quadrotor.cpp)
+add_executable(auto_2d_nav_node src/auto_2d_nav.cpp)
 
 ## Specify libraries to link a library or executable target against
 
@@ -91,7 +92,9 @@ target_link_libraries(landing_quadrotor_node
 target_link_libraries(tracking_quadrotor_node
   ${catkin_LIBRARIES}
 )
-
+target_link_libraries(auto_2d_nav_node
+  ${catkin_LIBRARIES}
+)
 
 ## Mark cpp header files for installation
 install(DIRECTORY include/${PROJECT_NAME}/
@@ -109,6 +112,7 @@ install(TARGETS  position_to_mavros_node
   mission_car_offboard_node
   landing_quadrotor_node
   tracking_quadrotor_node
+  auto_2d_nav_node
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
