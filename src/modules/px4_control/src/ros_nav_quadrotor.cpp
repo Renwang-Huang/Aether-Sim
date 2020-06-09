@@ -31,15 +31,15 @@ void PX4RosNav::CmdLoopCallback(const ros::TimerEvent& event)
 void PX4RosNav::PublishVelControl()
 {
 
-  OffboardControl_.send_velxy_posz_setpoint(px4_vel_,desire_posz_);
+  OffboardControl_.send_body_velxy_posz_setpoint(px4_vel_,desire_posz_);
 //  cout << "px4_vel[0]"<<px4_vel_[0] <<endl;
 //  cout << "px4_vel[1]"<<px4_vel_[1] <<endl;
 }
 
 void PX4RosNav::CmdVelCallback(const geometry_msgs::Twist &msg)
 {
- px4_vel_[0] = msg.linear.x;
- px4_vel_[1] = msg.linear.y;
+ px4_vel_[0] = -msg.linear.y;
+ px4_vel_[1] = msg.linear.x;
  
 }
 void PX4RosNav::initialize()

@@ -1,5 +1,5 @@
 <sdf version='1.6'>
-    <world name='default'>
+  <world name='default'>
     <light name='sun' type='directional'>
       <cast_shadows>1</cast_shadows>
       <pose frame=''>0 0 10 0 -0 0</pose>
@@ -58,13 +58,13 @@
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
       </link>
     </model>
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
     <atmosphere type='adiabatic'/>
     <physics name='default_physics' default='0' type='ode'>
-      <gravity>0 0 -9.8066</gravity>
       <ode>
         <solver>
           <type>quick</type>
@@ -82,7 +82,6 @@
       <max_step_size>0.004</max_step_size>
       <real_time_factor>1</real_time_factor>
       <real_time_update_rate>250</real_time_update_rate>
-      <magnetic_field>6.0e-6 2.3e-5 -4.2e-5</magnetic_field>
     </physics>
     <scene>
       <ambient>0.4 0.4 0.4 1</ambient>
@@ -109,6 +108,7 @@
             <iyz>0</iyz>
             <izz>0.297884</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -149,6 +149,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>38.7282 38.0226 2.26028 0 -0 0</pose>
     </model>
@@ -165,6 +166,7 @@
             <iyz>0</iyz>
             <izz>0.158534</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -205,6 +207,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>37.3386 17.4202 2.36747 0 -0 0</pose>
     </model>
@@ -221,6 +224,7 @@
             <iyz>0</iyz>
             <izz>0.44286</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -261,6 +265,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>30.9281 23.9603 1.41666 0 -0 0</pose>
     </model>
@@ -277,6 +282,7 @@
             <iyz>0</iyz>
             <izz>0.403289</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -317,6 +323,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>44.145 45.8026 1.54718 0 -0 0</pose>
     </model>
@@ -333,6 +340,7 @@
             <iyz>0</iyz>
             <izz>0.620901</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -373,6 +381,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>29.9206 8.51372 1.95357 0 -0 0</pose>
     </model>
@@ -389,6 +398,7 @@
             <iyz>0</iyz>
             <izz>0.186767</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -429,6 +439,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>38.9921 8.31265 1.02445 0 -0 0</pose>
     </model>
@@ -445,6 +456,7 @@
             <iyz>0</iyz>
             <izz>0.30328</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -485,6 +497,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>7.0052 7.97036 1.23502 0 -0 0</pose>
     </model>
@@ -501,6 +514,7 @@
             <iyz>0</iyz>
             <izz>0.171142</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -541,6 +555,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>40.5992 25.5949 2.49839 0 -0 0</pose>
     </model>
@@ -557,6 +572,7 @@
             <iyz>0</iyz>
             <izz>0.222806</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -597,6 +613,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>26.1172 31.3274 1.91896 0 -0 0</pose>
     </model>
@@ -613,6 +630,7 @@
             <iyz>0</iyz>
             <izz>0.95958</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -653,6 +671,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>37.4825 15.4558 1.74037 0 -0 0</pose>
     </model>
@@ -669,6 +688,7 @@
             <iyz>0</iyz>
             <izz>0.684649</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -709,6 +729,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>43.0104 20.4105 1.79012 0 -0 0</pose>
     </model>
@@ -725,6 +746,7 @@
             <iyz>0</iyz>
             <izz>0.264549</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -765,6 +787,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>44.2752 39.1553 1.42497 0 -0 0</pose>
     </model>
@@ -781,6 +804,7 @@
             <iyz>0</iyz>
             <izz>0.925435</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -821,6 +845,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>5.95857 26.1958 1.10463 0 -0 0</pose>
     </model>
@@ -837,6 +862,7 @@
             <iyz>0</iyz>
             <izz>0.558637</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -877,6 +903,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>18.0491 42.9507 1.28832 0 -0 0</pose>
     </model>
@@ -893,6 +920,7 @@
             <iyz>0</iyz>
             <izz>0.0702342</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -933,6 +961,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>4.90241 23.0543 1.09626 0 -0 0</pose>
     </model>
@@ -949,6 +978,7 @@
             <iyz>0</iyz>
             <izz>0.956436</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -989,6 +1019,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>41.1423 43.5016 1.35742 0 -0 0</pose>
     </model>
@@ -1005,6 +1036,7 @@
             <iyz>0</iyz>
             <izz>0.42879</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -1045,6 +1077,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>36.9714 19.2595 1.4 0 -0 0</pose>
     </model>
@@ -1061,6 +1094,7 @@
             <iyz>0</iyz>
             <izz>0.56369</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -1101,6 +1135,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>3.8069 26.4539 1.7688 0 -0 0</pose>
     </model>
@@ -1117,6 +1152,7 @@
             <iyz>0</iyz>
             <izz>0.900366</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -1157,6 +1193,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>35.1638 44.8172 1.65646 0 -0 0</pose>
     </model>
@@ -1173,6 +1210,7 @@
             <iyz>0</iyz>
             <izz>0.646256</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -1213,6 +1251,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>18.2862 31.439 1.42644 0 -0 0</pose>
     </model>
@@ -1229,6 +1268,7 @@
             <iyz>0</iyz>
             <izz>0.140236</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -1269,6 +1309,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>42.4835 22.2448 2.03179 0 -0 0</pose>
     </model>
@@ -1285,6 +1326,7 @@
             <iyz>0</iyz>
             <izz>0.247758</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -1325,6 +1367,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>43.0951 12.5325 2.2438 0 -0 0</pose>
     </model>
@@ -1341,6 +1384,7 @@
             <iyz>0</iyz>
             <izz>0.585229</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -1381,6 +1425,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>29.0774 45.9975 1.52554 0 -0 0</pose>
     </model>
@@ -1397,6 +1442,7 @@
             <iyz>0</iyz>
             <izz>0.799249</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -1437,6 +1483,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>44.5026 22.2198 1.98596 0 -0 0</pose>
     </model>
@@ -1453,6 +1500,7 @@
             <iyz>0</iyz>
             <izz>0.74145</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -1493,6 +1541,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>43.9047 33.4741 1.59766 0 -0 0</pose>
     </model>
@@ -1509,6 +1558,7 @@
             <iyz>0</iyz>
             <izz>0.169636</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -1549,6 +1599,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>44.3259 45.7116 1.72374 0 -0 0</pose>
     </model>
@@ -1565,6 +1616,7 @@
             <iyz>0</iyz>
             <izz>0.829551</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -1605,6 +1657,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>21.8699 31.4897 1.22149 0 -0 0</pose>
     </model>
@@ -1621,6 +1674,7 @@
             <iyz>0</iyz>
             <izz>0.212332</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -1661,6 +1715,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>16.1431 38.1561 1.92939 0 -0 0</pose>
     </model>
@@ -1677,6 +1732,7 @@
             <iyz>0</iyz>
             <izz>0.176047</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -1717,6 +1773,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>14.7068 10.6265 1.67055 0 -0 0</pose>
     </model>
@@ -1733,6 +1790,7 @@
             <iyz>0</iyz>
             <izz>0.316267</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -1773,6 +1831,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>43.713 9.80193 1.83467 0 -0 0</pose>
     </model>
@@ -1789,6 +1848,7 @@
             <iyz>0</iyz>
             <izz>0.118719</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -1829,6 +1889,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>36.9819 24.7904 1.15476 0 -0 0</pose>
     </model>
@@ -1845,6 +1906,7 @@
             <iyz>0</iyz>
             <izz>0.904882</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -1885,6 +1947,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>19.6267 33.4845 2.47713 0 -0 0</pose>
     </model>
@@ -1901,6 +1964,7 @@
             <iyz>0</iyz>
             <izz>0.2772</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -1941,6 +2005,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>12.684 15.5314 2.12466 0 -0 0</pose>
     </model>
@@ -1957,6 +2022,7 @@
             <iyz>0</iyz>
             <izz>0.187757</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -1997,6 +2063,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>35.6788 9.00993 1.87673 0 -0 0</pose>
     </model>
@@ -2013,6 +2080,7 @@
             <iyz>0</iyz>
             <izz>0.714199</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -2053,6 +2121,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>36.2733 9.54869 1.18821 0 -0 0</pose>
     </model>
@@ -2069,6 +2138,7 @@
             <iyz>0</iyz>
             <izz>0.926556</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -2109,6 +2179,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>25.9919 4.41635 1.11179 0 -0 0</pose>
     </model>
@@ -2125,6 +2196,7 @@
             <iyz>0</iyz>
             <izz>0.18494</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -2165,6 +2237,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>35.7021 38.6987 1.26432 0 -0 0</pose>
     </model>
@@ -2181,6 +2254,7 @@
             <iyz>0</iyz>
             <izz>0.951705</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -2221,6 +2295,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>36.9478 31.4151 1.98485 0 -0 0</pose>
     </model>
@@ -2237,6 +2312,7 @@
             <iyz>0</iyz>
             <izz>0.123325</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -2277,6 +2353,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>5.59868 25.9297 1.14022 0 -0 0</pose>
     </model>
@@ -2293,6 +2370,7 @@
             <iyz>0</iyz>
             <izz>0.162805</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -2333,6 +2411,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>39.7052 23.2253 1.10486 0 -0 0</pose>
     </model>
@@ -2349,6 +2428,7 @@
             <iyz>0</iyz>
             <izz>0.666975</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -2389,6 +2469,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>9.25913 4.38919 1.85998 0 -0 0</pose>
     </model>
@@ -2405,6 +2486,7 @@
             <iyz>0</iyz>
             <izz>0.162608</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -2445,6 +2527,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>7.77155 42.938 2.49999 0 -0 0</pose>
     </model>
@@ -2461,6 +2544,7 @@
             <iyz>0</iyz>
             <izz>0.0844153</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -2501,6 +2585,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>5.32712 42.0448 2.4967 0 -0 0</pose>
     </model>
@@ -2517,6 +2602,7 @@
             <iyz>0</iyz>
             <izz>0.887933</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -2557,6 +2643,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>10.2971 29.319 1.00624 0 -0 0</pose>
     </model>
@@ -2573,6 +2660,7 @@
             <iyz>0</iyz>
             <izz>0.295683</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -2613,6 +2701,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>39.706 43.9992 1.2447 0 -0 0</pose>
     </model>
@@ -2629,6 +2718,7 @@
             <iyz>0</iyz>
             <izz>0.441379</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -2669,6 +2759,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>22.8185 28.6538 1.53864 0 -0 0</pose>
     </model>
@@ -2685,6 +2776,7 @@
             <iyz>0</iyz>
             <izz>0.10545</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -2725,6 +2817,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>36.8355 26.4172 2.03108 0 -0 0</pose>
     </model>
@@ -2741,6 +2834,7 @@
             <iyz>0</iyz>
             <izz>0.988377</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -2781,6 +2875,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>42.3702 28.5407 1.45644 0 -0 0</pose>
     </model>
@@ -2797,6 +2892,7 @@
             <iyz>0</iyz>
             <izz>0.520826</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -2837,6 +2933,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>36.3989 3.62936 2.12171 0 -0 0</pose>
     </model>
@@ -2853,6 +2950,7 @@
             <iyz>0</iyz>
             <izz>0.891197</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -2893,6 +2991,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>40.2277 42.1705 2.24986 0 -0 0</pose>
     </model>
@@ -2909,6 +3008,7 @@
             <iyz>0</iyz>
             <izz>0.652635</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -2949,6 +3049,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>47.2454 43.5549 2.46915 0 -0 0</pose>
     </model>
@@ -2965,6 +3066,7 @@
             <iyz>0</iyz>
             <izz>0.388059</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -3005,6 +3107,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>40.1805 9.54253 2.00032 0 -0 0</pose>
     </model>
@@ -3021,6 +3124,7 @@
             <iyz>0</iyz>
             <izz>0.0947076</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -3061,6 +3165,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>13.41 31.8865 2.33342 0 -0 0</pose>
     </model>
@@ -3077,6 +3182,7 @@
             <iyz>0</iyz>
             <izz>0.17796</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -3117,6 +3223,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>16.5759 34.2285 1.94422 0 -0 0</pose>
     </model>
@@ -3133,6 +3240,7 @@
             <iyz>0</iyz>
             <izz>0.179412</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -3173,6 +3281,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>31.1213 5.4114 1.49317 0 -0 0</pose>
     </model>
@@ -3189,6 +3298,7 @@
             <iyz>0</iyz>
             <izz>0.545159</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -3229,6 +3339,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>46.6874 25.4916 1.33548 0 -0 0</pose>
     </model>
@@ -3245,6 +3356,7 @@
             <iyz>0</iyz>
             <izz>0.435046</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -3285,6 +3397,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>7.21091 35.0864 1.42006 0 -0 0</pose>
     </model>
@@ -3301,6 +3414,7 @@
             <iyz>0</iyz>
             <izz>0.482198</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -3341,6 +3455,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>22.7422 45.4386 1.70723 0 -0 0</pose>
     </model>
@@ -3357,6 +3472,7 @@
             <iyz>0</iyz>
             <izz>0.784577</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -3397,6 +3513,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>2.14865 21.9876 1.50453 0 -0 0</pose>
     </model>
@@ -3413,6 +3530,7 @@
             <iyz>0</iyz>
             <izz>0.488407</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -3453,6 +3571,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>12.759 40.3292 1.51741 0 -0 0</pose>
     </model>
@@ -3469,6 +3588,7 @@
             <iyz>0</iyz>
             <izz>0.374804</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -3509,6 +3629,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>16.028 24.169 2.01321 0 -0 0</pose>
     </model>
@@ -3525,6 +3646,7 @@
             <iyz>0</iyz>
             <izz>0.149705</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -3565,6 +3687,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>3.87976 30.6038 2.06813 0 -0 0</pose>
     </model>
@@ -3581,6 +3704,7 @@
             <iyz>0</iyz>
             <izz>0.595965</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -3621,6 +3745,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>31.3314 33.0011 1.62098 0 -0 0</pose>
     </model>
@@ -3637,6 +3762,7 @@
             <iyz>0</iyz>
             <izz>0.150907</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -3677,6 +3803,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>30.8493 30.0189 1.52067 0 -0 0</pose>
     </model>
@@ -3693,6 +3820,7 @@
             <iyz>0</iyz>
             <izz>0.246295</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -3733,6 +3861,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>11.3018 36.0602 2.09609 0 -0 0</pose>
     </model>
@@ -3749,6 +3878,7 @@
             <iyz>0</iyz>
             <izz>0.583035</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -3789,6 +3919,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>13.8342 32.044 2.38137 0 -0 0</pose>
     </model>
@@ -3805,6 +3936,7 @@
             <iyz>0</iyz>
             <izz>0.0996871</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -3845,6 +3977,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>42.3597 13.9829 1.79866 0 -0 0</pose>
     </model>
@@ -3861,6 +3994,7 @@
             <iyz>0</iyz>
             <izz>0.102595</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -3901,6 +4035,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>18.6336 7.11868 2.02919 0 -0 0</pose>
     </model>
@@ -3917,6 +4052,7 @@
             <iyz>0</iyz>
             <izz>0.482898</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -3957,6 +4093,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>15.2838 32.6616 1.86504 0 -0 0</pose>
     </model>
@@ -3973,6 +4110,7 @@
             <iyz>0</iyz>
             <izz>0.217421</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -4013,6 +4151,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>10.7285 17.1635 2.16365 0 -0 0</pose>
     </model>
@@ -4029,6 +4168,7 @@
             <iyz>0</iyz>
             <izz>0.0638492</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -4069,6 +4209,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>17.248 40.06 2.47654 0 -0 0</pose>
     </model>
@@ -4085,6 +4226,7 @@
             <iyz>0</iyz>
             <izz>0.333359</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -4125,6 +4267,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>44.2708 46.0973 1.2823 0 -0 0</pose>
     </model>
@@ -4141,6 +4284,7 @@
             <iyz>0</iyz>
             <izz>0.599551</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -4181,6 +4325,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>33.5461 7.57259 2.14731 0 -0 0</pose>
     </model>
@@ -4197,6 +4342,7 @@
             <iyz>0</iyz>
             <izz>0.690071</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -4237,6 +4383,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>44.1486 45.3804 1.57575 0 -0 0</pose>
     </model>
@@ -4253,6 +4400,7 @@
             <iyz>0</iyz>
             <izz>0.162136</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -4293,6 +4441,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>27.2099 38.5082 2.29288 0 -0 0</pose>
     </model>
@@ -4309,6 +4458,7 @@
             <iyz>0</iyz>
             <izz>0.862483</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -4349,6 +4499,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>42.203 43.8436 1.44593 0 -0 0</pose>
     </model>
@@ -4365,6 +4516,7 @@
             <iyz>0</iyz>
             <izz>0.465328</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -4405,6 +4557,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>14.5999 9.48681 1.74722 0 -0 0</pose>
     </model>
@@ -4421,6 +4574,7 @@
             <iyz>0</iyz>
             <izz>0.383531</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -4461,6 +4615,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>41.0513 23.3285 2.29687 0 -0 0</pose>
     </model>
@@ -4477,6 +4632,7 @@
             <iyz>0</iyz>
             <izz>0.219295</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -4517,6 +4673,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>33.4722 10.2994 1.74397 0 -0 0</pose>
     </model>
@@ -4533,6 +4690,7 @@
             <iyz>0</iyz>
             <izz>0.125524</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -4573,6 +4731,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>24.6514 29.743 2.09133 0 -0 0</pose>
     </model>
@@ -4589,6 +4748,7 @@
             <iyz>0</iyz>
             <izz>0.629149</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -4629,6 +4789,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>12.2104 10.1975 2.2572 0 -0 0</pose>
     </model>
@@ -4645,6 +4806,7 @@
             <iyz>0</iyz>
             <izz>0.116243</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -4685,6 +4847,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>18.5804 8.35897 1.74779 0 -0 0</pose>
     </model>
@@ -4701,6 +4864,7 @@
             <iyz>0</iyz>
             <izz>0.900452</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -4741,6 +4905,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>30.6164 43.7903 1.48721 0 -0 0</pose>
     </model>
@@ -4757,6 +4922,7 @@
             <iyz>0</iyz>
             <izz>0.745798</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -4797,6 +4963,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>17.4087 24.8194 2.25524 0 -0 0</pose>
     </model>
@@ -4813,6 +4980,7 @@
             <iyz>0</iyz>
             <izz>0.55372</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -4853,6 +5021,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>13.9097 30.0086 1.59149 0 -0 0</pose>
     </model>
@@ -4869,6 +5038,7 @@
             <iyz>0</iyz>
             <izz>0.0926647</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -4909,6 +5079,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>31.7715 6.96102 1.22685 0 -0 0</pose>
     </model>
@@ -4925,6 +5096,7 @@
             <iyz>0</iyz>
             <izz>0.217344</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -4965,6 +5137,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>6.19283 17.2437 1.5454 0 -0 0</pose>
     </model>
@@ -4981,6 +5154,7 @@
             <iyz>0</iyz>
             <izz>0.904156</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -5021,6 +5195,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>14.2112 28.8442 1.64099 0 -0 0</pose>
     </model>
@@ -5037,6 +5212,7 @@
             <iyz>0</iyz>
             <izz>0.674588</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -5077,6 +5253,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>9.23452 24.4216 1.98812 0 -0 0</pose>
     </model>
@@ -5093,6 +5270,7 @@
             <iyz>0</iyz>
             <izz>0.517319</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -5133,6 +5311,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>11.5608 25.8149 2.32455 0 -0 0</pose>
     </model>
@@ -5149,6 +5328,7 @@
             <iyz>0</iyz>
             <izz>0.324501</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -5189,6 +5369,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>20.1419 40.1772 1.83634 0 -0 0</pose>
     </model>
@@ -5205,6 +5386,7 @@
             <iyz>0</iyz>
             <izz>0.24454</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -5245,6 +5427,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>31.3781 35.5506 1.36649 0 -0 0</pose>
     </model>
@@ -5261,6 +5444,7 @@
             <iyz>0</iyz>
             <izz>0.253696</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -5301,6 +5485,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>8.25943 43.2878 2.47727 0 -0 0</pose>
     </model>
@@ -5317,6 +5502,7 @@
             <iyz>0</iyz>
             <izz>0.0645447</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -5357,6 +5543,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>37.6218 38.031 1.61618 0 -0 0</pose>
     </model>
@@ -5373,6 +5560,7 @@
             <iyz>0</iyz>
             <izz>0.112897</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -5413,6 +5601,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>35.1663 41.8146 1.44052 0 -0 0</pose>
     </model>
@@ -5429,6 +5618,7 @@
             <iyz>0</iyz>
             <izz>0.344368</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -5469,6 +5659,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>34.5638 47.3775 1.07374 0 -0 0</pose>
     </model>
@@ -5485,6 +5676,7 @@
             <iyz>0</iyz>
             <izz>0.366534</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -5525,6 +5717,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>6.3203 41.7983 1.31632 0 -0 0</pose>
     </model>
@@ -5541,6 +5734,7 @@
             <iyz>0</iyz>
             <izz>0.288554</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -5581,6 +5775,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>32.2275 15.8811 1.14934 0 -0 0</pose>
     </model>
@@ -5597,6 +5792,7 @@
             <iyz>0</iyz>
             <izz>0.121645</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -5637,6 +5833,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>4.45743 4.36938 2.21364 0 -0 0</pose>
     </model>
@@ -5653,6 +5850,7 @@
             <iyz>0</iyz>
             <izz>0.698313</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -5693,6 +5891,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>22.3578 33.8355 1.68657 0 -0 0</pose>
     </model>
@@ -5709,6 +5908,7 @@
             <iyz>0</iyz>
             <izz>0.479179</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -5749,6 +5949,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>26.3754 28.6172 1.17867 0 -0 0</pose>
     </model>
@@ -5765,6 +5966,7 @@
             <iyz>0</iyz>
             <izz>0.271897</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -5805,6 +6007,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>42.8813 15.9971 1.89257 0 -0 0</pose>
     </model>
@@ -5821,6 +6024,7 @@
             <iyz>0</iyz>
             <izz>0.142404</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -5861,6 +6065,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>26.1844 30.0475 1.71488 0 -0 0</pose>
     </model>
@@ -5877,6 +6082,7 @@
             <iyz>0</iyz>
             <izz>0.486014</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -5917,6 +6123,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>40.1712 12.7482 1.92839 0 -0 0</pose>
     </model>
@@ -5933,6 +6140,7 @@
             <iyz>0</iyz>
             <izz>0.105059</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -5973,6 +6181,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>9.80388 44.4915 1.10514 0 -0 0</pose>
     </model>
@@ -5989,6 +6198,7 @@
             <iyz>0</iyz>
             <izz>0.17566</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -6029,6 +6239,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>15.3781 40.0314 1.7226 0 -0 0</pose>
     </model>
@@ -6045,6 +6256,7 @@
             <iyz>0</iyz>
             <izz>0.825751</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -6085,6 +6297,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>39.4858 17.8355 1.53579 0 -0 0</pose>
     </model>
@@ -6101,6 +6314,7 @@
             <iyz>0</iyz>
             <izz>0.0768651</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -6141,6 +6355,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>37.7998 13.8436 1.98872 0 -0 0</pose>
     </model>
@@ -6157,6 +6372,7 @@
             <iyz>0</iyz>
             <izz>0.769265</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -6197,6 +6413,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>12.1664 16.1752 1.93895 0 -0 0</pose>
     </model>
@@ -6213,6 +6430,7 @@
             <iyz>0</iyz>
             <izz>0.503151</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -6253,6 +6471,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>33.0318 7.0477 1.29703 0 -0 0</pose>
     </model>
@@ -6269,6 +6488,7 @@
             <iyz>0</iyz>
             <izz>0.623462</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -6309,6 +6529,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>20.4546 11.2162 2.17339 0 -0 0</pose>
     </model>
@@ -6325,6 +6546,7 @@
             <iyz>0</iyz>
             <izz>0.331208</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -6365,6 +6587,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>19.7444 12.6258 1.47349 0 -0 0</pose>
     </model>
@@ -6381,6 +6604,7 @@
             <iyz>0</iyz>
             <izz>0.133987</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -6421,6 +6645,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>2.67065 27.5483 1.79927 0 -0 0</pose>
     </model>
@@ -6437,6 +6662,7 @@
             <iyz>0</iyz>
             <izz>0.287967</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -6477,6 +6703,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>35.9208 16.0488 1.57032 0 -0 0</pose>
     </model>
@@ -6493,6 +6720,7 @@
             <iyz>0</iyz>
             <izz>0.543529</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -6533,6 +6761,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>44.3012 27.4066 1.39067 0 -0 0</pose>
     </model>
@@ -6549,6 +6778,7 @@
             <iyz>0</iyz>
             <izz>0.73503</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -6589,6 +6819,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>16.3497 34.101 2.02898 0 -0 0</pose>
     </model>
@@ -6605,6 +6836,7 @@
             <iyz>0</iyz>
             <izz>0.0647721</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -6645,6 +6877,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>40.8198 26.5162 1.96883 0 -0 0</pose>
     </model>
@@ -6661,6 +6894,7 @@
             <iyz>0</iyz>
             <izz>0.535852</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -6701,6 +6935,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>20.4326 25.8517 1.92767 0 -0 0</pose>
     </model>
@@ -6717,6 +6952,7 @@
             <iyz>0</iyz>
             <izz>0.622758</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -6757,6 +6993,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>33.1794 38.8872 1.54323 0 -0 0</pose>
     </model>
@@ -6773,6 +7010,7 @@
             <iyz>0</iyz>
             <izz>0.0754433</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -6813,6 +7051,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>33.5432 4.92379 1.22931 0 -0 0</pose>
     </model>
@@ -6829,6 +7068,7 @@
             <iyz>0</iyz>
             <izz>0.510108</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -6869,6 +7109,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>28.1202 34.2139 1.28142 0 -0 0</pose>
     </model>
@@ -6885,6 +7126,7 @@
             <iyz>0</iyz>
             <izz>0.0646593</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -6925,6 +7167,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>14.0322 16.041 1.00169 0 -0 0</pose>
     </model>
@@ -6941,6 +7184,7 @@
             <iyz>0</iyz>
             <izz>0.797746</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -6981,6 +7225,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>17.7023 10.3334 1.98305 0 -0 0</pose>
     </model>
@@ -6997,6 +7242,7 @@
             <iyz>0</iyz>
             <izz>0.826748</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -7037,6 +7283,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>16.4086 32.052 2.00101 0 -0 0</pose>
     </model>
@@ -7053,6 +7300,7 @@
             <iyz>0</iyz>
             <izz>0.151865</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -7093,6 +7341,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>25.1592 9.2284 2.32752 0 -0 0</pose>
     </model>
@@ -7109,6 +7358,7 @@
             <iyz>0</iyz>
             <izz>0.572656</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -7149,6 +7399,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>10.7911 43.5918 2.24344 0 -0 0</pose>
     </model>
@@ -7165,6 +7416,7 @@
             <iyz>0</iyz>
             <izz>0.607698</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -7205,6 +7457,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>27.1803 41.9705 1.59178 0 -0 0</pose>
     </model>
@@ -7221,6 +7474,7 @@
             <iyz>0</iyz>
             <izz>0.901291</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -7261,6 +7515,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>44.6225 12.7235 2.10844 0 -0 0</pose>
     </model>
@@ -7277,6 +7532,7 @@
             <iyz>0</iyz>
             <izz>0.902624</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -7317,6 +7573,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>27.4181 24.7427 1.82716 0 -0 0</pose>
     </model>
@@ -7333,6 +7590,7 @@
             <iyz>0</iyz>
             <izz>0.722048</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -7373,6 +7631,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>29.3469 39.4504 2.40869 0 -0 0</pose>
     </model>
@@ -7389,6 +7648,7 @@
             <iyz>0</iyz>
             <izz>0.992962</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -7429,6 +7689,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>16.9289 45.0492 1.9858 0 -0 0</pose>
     </model>
@@ -7445,6 +7706,7 @@
             <iyz>0</iyz>
             <izz>0.478681</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -7485,6 +7747,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>36.9289 31.3375 2.31146 0 -0 0</pose>
     </model>
@@ -7501,6 +7764,7 @@
             <iyz>0</iyz>
             <izz>0.716025</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -7541,6 +7805,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>29.8014 14.0881 2.16313 0 -0 0</pose>
     </model>
@@ -7557,6 +7822,7 @@
             <iyz>0</iyz>
             <izz>0.140787</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -7597,6 +7863,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>41.7939 38.5926 1.70585 0 -0 0</pose>
     </model>
@@ -7613,6 +7880,7 @@
             <iyz>0</iyz>
             <izz>0.559969</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -7653,6 +7921,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>30.1511 20.9742 2.30953 0 -0 0</pose>
     </model>
@@ -7669,6 +7938,7 @@
             <iyz>0</iyz>
             <izz>0.539051</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -7709,6 +7979,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>8.82373 26.7736 1.89535 0 -0 0</pose>
     </model>
@@ -7725,6 +7996,7 @@
             <iyz>0</iyz>
             <izz>0.0754725</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -7765,6 +8037,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>25.8349 34.2419 1.86853 0 -0 0</pose>
     </model>
@@ -7781,6 +8054,7 @@
             <iyz>0</iyz>
             <izz>0.404861</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -7821,6 +8095,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>24.5313 7.18181 2.24891 0 -0 0</pose>
     </model>
@@ -7837,6 +8112,7 @@
             <iyz>0</iyz>
             <izz>0.0820105</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -7877,6 +8153,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>19.6943 39.4602 1.76552 0 -0 0</pose>
     </model>
@@ -7893,6 +8170,7 @@
             <iyz>0</iyz>
             <izz>0.347029</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -7933,6 +8211,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>21.0016 8.62317 1.95648 0 -0 0</pose>
     </model>
@@ -7949,6 +8228,7 @@
             <iyz>0</iyz>
             <izz>0.308108</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -7989,6 +8269,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>35.0094 2.803 1.37055 0 -0 0</pose>
     </model>
@@ -8005,6 +8286,7 @@
             <iyz>0</iyz>
             <izz>0.739102</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -8045,6 +8327,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>22.5502 28.8034 1.86058 0 -0 0</pose>
     </model>
@@ -8061,6 +8344,7 @@
             <iyz>0</iyz>
             <izz>0.99276</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -8101,6 +8385,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>5.41598 4.70127 1.71604 0 -0 0</pose>
     </model>
@@ -8117,6 +8402,7 @@
             <iyz>0</iyz>
             <izz>0.487148</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -8157,6 +8443,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>12.1102 12.2397 1.96115 0 -0 0</pose>
     </model>
@@ -8173,6 +8460,7 @@
             <iyz>0</iyz>
             <izz>0.88856</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -8213,6 +8501,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>23.2912 35.9452 1.94536 0 -0 0</pose>
     </model>
@@ -8229,6 +8518,7 @@
             <iyz>0</iyz>
             <izz>0.788437</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -8269,6 +8559,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>45.6499 45.8225 1.65784 0 -0 0</pose>
     </model>
@@ -8285,6 +8576,7 @@
             <iyz>0</iyz>
             <izz>0.681055</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -8325,6 +8617,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>26.6902 17.3442 2.34863 0 -0 0</pose>
     </model>
@@ -8341,6 +8634,7 @@
             <iyz>0</iyz>
             <izz>0.369863</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -8381,6 +8675,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>23.4438 45.6917 1.3287 0 -0 0</pose>
     </model>
@@ -8397,6 +8692,7 @@
             <iyz>0</iyz>
             <izz>0.951518</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -8437,6 +8733,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>23.0698 10.4532 2.32648 0 -0 0</pose>
     </model>
@@ -8453,6 +8750,7 @@
             <iyz>0</iyz>
             <izz>0.680354</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -8493,6 +8791,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>13.8489 43.6199 2.17034 0 -0 0</pose>
     </model>
@@ -8509,6 +8808,7 @@
             <iyz>0</iyz>
             <izz>0.946006</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -8549,6 +8849,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>20.5094 17.2649 2.14242 0 -0 0</pose>
     </model>
@@ -8565,6 +8866,7 @@
             <iyz>0</iyz>
             <izz>0.443338</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -8605,6 +8907,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>10.7873 30.6197 1.84118 0 -0 0</pose>
     </model>
@@ -8621,6 +8924,7 @@
             <iyz>0</iyz>
             <izz>0.270482</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -8661,6 +8965,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>44.16 32.0785 1.71694 0 -0 0</pose>
     </model>
@@ -8677,6 +8982,7 @@
             <iyz>0</iyz>
             <izz>0.496893</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -8717,6 +9023,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>7.04977 41.8099 1.31604 0 -0 0</pose>
     </model>
@@ -8733,6 +9040,7 @@
             <iyz>0</iyz>
             <izz>0.159402</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -8773,6 +9081,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>29.2638 31.7399 1.56033 0 -0 0</pose>
     </model>
@@ -8789,6 +9098,7 @@
             <iyz>0</iyz>
             <izz>0.486165</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -8829,6 +9139,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>27.8001 4.70758 2.01483 0 -0 0</pose>
     </model>
@@ -8845,6 +9156,7 @@
             <iyz>0</iyz>
             <izz>0.186598</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -8885,6 +9197,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>17.8167 2.86989 1.84543 0 -0 0</pose>
     </model>
@@ -8901,6 +9214,7 @@
             <iyz>0</iyz>
             <izz>0.888814</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -8941,6 +9255,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>37.4515 29.6656 1.01361 0 -0 0</pose>
     </model>
@@ -8957,6 +9272,7 @@
             <iyz>0</iyz>
             <izz>0.902413</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -8997,6 +9313,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>22.6072 9.96097 2.3308 0 -0 0</pose>
     </model>
@@ -9013,6 +9330,7 @@
             <iyz>0</iyz>
             <izz>0.716433</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -9053,6 +9371,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>46.4214 31.3944 1.73158 0 -0 0</pose>
     </model>
@@ -9069,6 +9388,7 @@
             <iyz>0</iyz>
             <izz>0.220587</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -9109,6 +9429,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>18.8373 42.5814 1.233 0 -0 0</pose>
     </model>
@@ -9125,6 +9446,7 @@
             <iyz>0</iyz>
             <izz>0.65728</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -9165,6 +9487,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>14.5574 23.8871 2.34915 0 -0 0</pose>
     </model>
@@ -9181,6 +9504,7 @@
             <iyz>0</iyz>
             <izz>0.116789</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -9221,6 +9545,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>30.6669 41.8212 2.41996 0 -0 0</pose>
     </model>
@@ -9237,6 +9562,7 @@
             <iyz>0</iyz>
             <izz>0.890012</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -9277,6 +9603,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>14.9851 10.467 2.078 0 -0 0</pose>
     </model>
@@ -9293,6 +9620,7 @@
             <iyz>0</iyz>
             <izz>0.161791</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -9333,6 +9661,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>10.107 30.8018 1.25075 0 -0 0</pose>
     </model>
@@ -9349,6 +9678,7 @@
             <iyz>0</iyz>
             <izz>0.176958</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -9389,6 +9719,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>2.63785 45.5585 1.19 0 -0 0</pose>
     </model>
@@ -9405,6 +9736,7 @@
             <iyz>0</iyz>
             <izz>0.115595</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -9445,6 +9777,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>31.8331 23.245 1.24124 0 -0 0</pose>
     </model>
@@ -9461,6 +9794,7 @@
             <iyz>0</iyz>
             <izz>0.106043</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -9501,6 +9835,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>5.24562 30.2544 2.37283 0 -0 0</pose>
     </model>
@@ -9517,6 +9852,7 @@
             <iyz>0</iyz>
             <izz>0.387286</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -9557,6 +9893,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>15.4862 22.0829 1.59062 0 -0 0</pose>
     </model>
@@ -9573,6 +9910,7 @@
             <iyz>0</iyz>
             <izz>0.872903</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -9613,6 +9951,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>10.7726 28.0436 1.3661 0 -0 0</pose>
     </model>
@@ -9629,6 +9968,7 @@
             <iyz>0</iyz>
             <izz>0.329341</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -9669,6 +10009,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>36.6556 39.4396 1.05207 0 -0 0</pose>
     </model>
@@ -9685,6 +10026,7 @@
             <iyz>0</iyz>
             <izz>0.996957</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -9725,6 +10067,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>26.0832 3.64066 1.53457 0 -0 0</pose>
     </model>
@@ -9741,6 +10084,7 @@
             <iyz>0</iyz>
             <izz>0.557029</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -9781,6 +10125,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>17.0703 34.1902 1.30142 0 -0 0</pose>
     </model>
@@ -9797,6 +10142,7 @@
             <iyz>0</iyz>
             <izz>0.540275</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -9837,6 +10183,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>4.30772 17.7082 2.33402 0 -0 0</pose>
     </model>
@@ -9853,6 +10200,7 @@
             <iyz>0</iyz>
             <izz>0.726752</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -9893,6 +10241,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>33.3684 34.1408 2.15005 0 -0 0</pose>
     </model>
@@ -9909,6 +10258,7 @@
             <iyz>0</iyz>
             <izz>0.234939</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -9949,6 +10299,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>15.7049 36.614 2.35628 0 -0 0</pose>
     </model>
@@ -9965,6 +10316,7 @@
             <iyz>0</iyz>
             <izz>0.153505</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -10005,6 +10357,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>4.45821 29.1911 2.21406 0 -0 0</pose>
     </model>
@@ -10021,6 +10374,7 @@
             <iyz>0</iyz>
             <izz>0.135392</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -10061,6 +10415,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>8.26384 13.2308 1.15218 0 -0 0</pose>
     </model>
@@ -10077,6 +10432,7 @@
             <iyz>0</iyz>
             <izz>0.0861653</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -10117,6 +10473,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>45.4931 42.9194 1.88368 0 -0 0</pose>
     </model>
@@ -10133,6 +10490,7 @@
             <iyz>0</iyz>
             <izz>0.890975</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -10173,6 +10531,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>13.8206 23.5763 1.08403 0 -0 0</pose>
     </model>
@@ -10189,6 +10548,7 @@
             <iyz>0</iyz>
             <izz>0.141849</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -10229,6 +10589,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>23.9123 28.8909 1.88052 0 -0 0</pose>
     </model>
@@ -10245,6 +10606,7 @@
             <iyz>0</iyz>
             <izz>0.892176</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -10285,6 +10647,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>28.7835 26.22 2.22332 0 -0 0</pose>
     </model>
@@ -10301,6 +10664,7 @@
             <iyz>0</iyz>
             <izz>0.1755</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -10341,6 +10705,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>31.1449 14.1519 2.0941 0 -0 0</pose>
     </model>
@@ -10357,6 +10722,7 @@
             <iyz>0</iyz>
             <izz>0.0688999</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -10397,6 +10763,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>17.9871 44.8498 1.80726 0 -0 0</pose>
     </model>
@@ -10413,6 +10780,7 @@
             <iyz>0</iyz>
             <izz>0.412127</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -10453,6 +10821,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>16.1297 20.4453 1.30857 0 -0 0</pose>
     </model>
@@ -10469,6 +10838,7 @@
             <iyz>0</iyz>
             <izz>0.538537</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -10509,6 +10879,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>14.375 22.3936 2.01986 0 -0 0</pose>
     </model>
@@ -10525,6 +10896,7 @@
             <iyz>0</iyz>
             <izz>0.249669</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -10565,6 +10937,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>36.9236 11.8681 2.05478 0 -0 0</pose>
     </model>
@@ -10581,6 +10954,7 @@
             <iyz>0</iyz>
             <izz>0.581682</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -10621,6 +10995,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>40.8757 2.74416 1.38717 0 -0 0</pose>
     </model>
@@ -10637,6 +11012,7 @@
             <iyz>0</iyz>
             <izz>0.490801</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -10677,6 +11053,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>32.7262 16.788 2.27862 0 -0 0</pose>
     </model>
@@ -10693,6 +11070,7 @@
             <iyz>0</iyz>
             <izz>0.784996</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -10733,6 +11111,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>13.7865 13.5097 1.79025 0 -0 0</pose>
     </model>
@@ -10749,6 +11128,7 @@
             <iyz>0</iyz>
             <izz>0.404225</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -10789,6 +11169,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>30.1249 42.9314 1.10985 0 -0 0</pose>
     </model>
@@ -10805,6 +11186,7 @@
             <iyz>0</iyz>
             <izz>0.749953</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -10845,6 +11227,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>35.8904 46.112 1.79655 0 -0 0</pose>
     </model>
@@ -10861,6 +11244,7 @@
             <iyz>0</iyz>
             <izz>0.270355</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -10901,6 +11285,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>3.09771 4.0201 1.51594 0 -0 0</pose>
     </model>
@@ -10917,6 +11302,7 @@
             <iyz>0</iyz>
             <izz>0.378767</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -10957,6 +11343,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>34.5801 15.4727 1.00761 0 -0 0</pose>
     </model>
@@ -10973,6 +11360,7 @@
             <iyz>0</iyz>
             <izz>0.397602</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -11013,6 +11401,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>5.59986 23.5037 2.23022 0 -0 0</pose>
     </model>
@@ -11029,6 +11418,7 @@
             <iyz>0</iyz>
             <izz>0.375446</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -11069,6 +11459,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>3.99616 44.4755 1.28648 0 -0 0</pose>
     </model>
@@ -11085,6 +11476,7 @@
             <iyz>0</iyz>
             <izz>0.188047</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -11125,6 +11517,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>30.1171 34.7223 1.12662 0 -0 0</pose>
     </model>
@@ -11141,6 +11534,7 @@
             <iyz>0</iyz>
             <izz>0.943179</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -11181,6 +11575,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>9.64033 41.9036 1.13929 0 -0 0</pose>
     </model>
@@ -11197,6 +11592,7 @@
             <iyz>0</iyz>
             <izz>0.669061</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -11237,6 +11633,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>2.32109 37.7652 1.71392 0 -0 0</pose>
     </model>
@@ -11253,6 +11650,7 @@
             <iyz>0</iyz>
             <izz>0.64376</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -11293,6 +11691,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>44.4383 36.2114 1.86792 0 -0 0</pose>
     </model>
@@ -11309,6 +11708,7 @@
             <iyz>0</iyz>
             <izz>0.70683</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -11349,6 +11749,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>6.6681 45.536 1.14461 0 -0 0</pose>
     </model>
@@ -11365,6 +11766,7 @@
             <iyz>0</iyz>
             <izz>0.184462</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -11405,6 +11807,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>6.37197 39.2482 1.41234 0 -0 0</pose>
     </model>
@@ -11421,6 +11824,7 @@
             <iyz>0</iyz>
             <izz>0.209682</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -11461,6 +11865,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>45.1348 9.97183 2.1201 0 -0 0</pose>
     </model>
@@ -11477,6 +11882,7 @@
             <iyz>0</iyz>
             <izz>0.104013</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -11517,6 +11923,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>40.8826 47.131 2.14129 0 -0 0</pose>
     </model>
@@ -11533,6 +11940,7 @@
             <iyz>0</iyz>
             <izz>0.591896</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -11573,6 +11981,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>21.9823 22.9997 1.51231 0 -0 0</pose>
     </model>
@@ -11589,6 +11998,7 @@
             <iyz>0</iyz>
             <izz>0.243037</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -11629,6 +12039,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>7.9789 29.6226 1.98104 0 -0 0</pose>
     </model>
@@ -11645,6 +12056,7 @@
             <iyz>0</iyz>
             <izz>0.28462</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -11685,6 +12097,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>32.3544 8.29998 1.1219 0 -0 0</pose>
     </model>
@@ -11701,6 +12114,7 @@
             <iyz>0</iyz>
             <izz>0.829033</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -11741,6 +12155,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>11.6997 28.7927 1.17169 0 -0 0</pose>
     </model>
@@ -11757,6 +12172,7 @@
             <iyz>0</iyz>
             <izz>0.418174</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -11797,6 +12213,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>45.3882 16.3678 2.00249 0 -0 0</pose>
     </model>
@@ -11813,6 +12230,7 @@
             <iyz>0</iyz>
             <izz>0.116666</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -11853,6 +12271,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>25.6871 3.76018 2.15231 0 -0 0</pose>
     </model>
@@ -11869,6 +12288,7 @@
             <iyz>0</iyz>
             <izz>0.167015</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -11909,6 +12329,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>9.36745 22.8219 1.59895 0 -0 0</pose>
     </model>
@@ -11925,6 +12346,7 @@
             <iyz>0</iyz>
             <izz>0.330992</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -11965,6 +12387,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>31.8902 2.25001 1.46237 0 -0 0</pose>
     </model>
@@ -11981,6 +12404,7 @@
             <iyz>0</iyz>
             <izz>0.355767</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -12021,6 +12445,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>37.8915 5.87249 1.18933 0 -0 0</pose>
     </model>
@@ -12037,6 +12462,7 @@
             <iyz>0</iyz>
             <izz>0.582944</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -12077,6 +12503,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>41.8911 43.8704 2.1789 0 -0 0</pose>
     </model>
@@ -12093,6 +12520,7 @@
             <iyz>0</iyz>
             <izz>0.0814457</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -12133,6 +12561,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>10.1481 26.2454 1.09401 0 -0 0</pose>
     </model>
@@ -12149,6 +12578,7 @@
             <iyz>0</iyz>
             <izz>0.110319</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -12189,6 +12619,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>29.4248 19.8478 2.3918 0 -0 0</pose>
     </model>
@@ -12205,6 +12636,7 @@
             <iyz>0</iyz>
             <izz>0.60102</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -12245,6 +12677,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>20.7043 26.813 1.95761 0 -0 0</pose>
     </model>
@@ -12261,6 +12694,7 @@
             <iyz>0</iyz>
             <izz>0.466842</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -12301,6 +12735,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>12.1994 44.3913 2.23364 0 -0 0</pose>
     </model>
@@ -12317,6 +12752,7 @@
             <iyz>0</iyz>
             <izz>0.28159</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -12357,6 +12793,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>6.48457 19.5668 2.18387 0 -0 0</pose>
     </model>
@@ -12373,6 +12810,7 @@
             <iyz>0</iyz>
             <izz>0.292131</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -12413,6 +12851,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>44.9723 36.3747 2.21194 0 -0 0</pose>
     </model>
@@ -12429,6 +12868,7 @@
             <iyz>0</iyz>
             <izz>0.763171</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -12469,6 +12909,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>31.2194 34.8639 2.27391 0 -0 0</pose>
     </model>
@@ -12485,6 +12926,7 @@
             <iyz>0</iyz>
             <izz>0.516233</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -12525,6 +12967,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>28.6254 25.1105 1.77421 0 -0 0</pose>
     </model>
@@ -12541,6 +12984,7 @@
             <iyz>0</iyz>
             <izz>0.0740423</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -12581,6 +13025,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>29.5865 36.7735 2.00776 0 -0 0</pose>
     </model>
@@ -12597,6 +13042,7 @@
             <iyz>0</iyz>
             <izz>0.128133</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -12637,6 +13083,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>37.7609 11.0113 1.2085 0 -0 0</pose>
     </model>
@@ -12653,6 +13100,7 @@
             <iyz>0</iyz>
             <izz>0.642376</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -12693,6 +13141,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>32.6685 10.4652 2.26642 0 -0 0</pose>
     </model>
@@ -12709,6 +13158,7 @@
             <iyz>0</iyz>
             <izz>0.108361</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -12749,6 +13199,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>6.70273 42.8679 1.46948 0 -0 0</pose>
     </model>
@@ -12765,6 +13216,7 @@
             <iyz>0</iyz>
             <izz>0.204974</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -12805,6 +13257,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>15.2359 11.1873 1.71967 0 -0 0</pose>
     </model>
@@ -12821,6 +13274,7 @@
             <iyz>0</iyz>
             <izz>0.922081</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -12861,6 +13315,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>25.3181 12.2082 1.98646 0 -0 0</pose>
     </model>
@@ -12877,6 +13332,7 @@
             <iyz>0</iyz>
             <izz>0.906803</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -12917,6 +13373,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>15.5517 8.53745 2.16769 0 -0 0</pose>
     </model>
@@ -12933,6 +13390,7 @@
             <iyz>0</iyz>
             <izz>0.537861</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -12973,6 +13431,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>12.711 42.177 1.84151 0 -0 0</pose>
     </model>
@@ -12989,6 +13448,7 @@
             <iyz>0</iyz>
             <izz>0.521312</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -13029,6 +13489,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>39.3979 40.2975 2.01099 0 -0 0</pose>
     </model>
@@ -13045,6 +13506,7 @@
             <iyz>0</iyz>
             <izz>0.0736251</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -13085,6 +13547,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>30.4088 29.1587 2.15995 0 -0 0</pose>
     </model>
@@ -13101,6 +13564,7 @@
             <iyz>0</iyz>
             <izz>0.690269</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -13141,6 +13605,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>5.53066 15.0773 2.14565 0 -0 0</pose>
     </model>
@@ -13157,6 +13622,7 @@
             <iyz>0</iyz>
             <izz>0.144052</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -13197,6 +13663,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>18.5501 10.2334 2.32001 0 -0 0</pose>
     </model>
@@ -13213,6 +13680,7 @@
             <iyz>0</iyz>
             <izz>0.285191</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -13253,6 +13721,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>6.63154 31.786 1.66456 0 -0 0</pose>
     </model>
@@ -13269,6 +13738,7 @@
             <iyz>0</iyz>
             <izz>0.813748</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -13309,6 +13779,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>6.79201 29.9496 1.48857 0 -0 0</pose>
     </model>
@@ -13325,6 +13796,7 @@
             <iyz>0</iyz>
             <izz>0.659814</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -13365,6 +13837,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>18.8726 20.3437 2.20868 0 -0 0</pose>
     </model>
@@ -13381,6 +13854,7 @@
             <iyz>0</iyz>
             <izz>0.206245</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -13421,6 +13895,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>5.1388 29.5836 1.59136 0 -0 0</pose>
     </model>
@@ -13437,6 +13912,7 @@
             <iyz>0</iyz>
             <izz>0.329647</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -13477,6 +13953,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>33.0431 42.5367 2.35232 0 -0 0</pose>
     </model>
@@ -13493,6 +13970,7 @@
             <iyz>0</iyz>
             <izz>0.364489</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -13533,6 +14011,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>12.3231 15.4519 1.69098 0 -0 0</pose>
     </model>
@@ -13549,6 +14028,7 @@
             <iyz>0</iyz>
             <izz>0.465862</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -13589,6 +14069,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>7.79968 15.8538 1.36911 0 -0 0</pose>
     </model>
@@ -13605,6 +14086,7 @@
             <iyz>0</iyz>
             <izz>0.372242</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -13645,6 +14127,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>10.8543 24.3498 2.12416 0 -0 0</pose>
     </model>
@@ -13661,6 +14144,7 @@
             <iyz>0</iyz>
             <izz>0.122529</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -13701,6 +14185,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>10.4906 15.4859 2.2883 0 -0 0</pose>
     </model>
@@ -13717,6 +14202,7 @@
             <iyz>0</iyz>
             <izz>0.856696</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -13757,6 +14243,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>39.1964 15.2826 1.00424 0 -0 0</pose>
     </model>
@@ -13773,6 +14260,7 @@
             <iyz>0</iyz>
             <izz>0.586213</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -13813,6 +14301,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>4.05756 10.069 1.97574 0 -0 0</pose>
     </model>
@@ -13829,6 +14318,7 @@
             <iyz>0</iyz>
             <izz>0.691048</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -13869,6 +14359,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>41.6182 7.19636 2.43957 0 -0 0</pose>
     </model>
@@ -13885,6 +14376,7 @@
             <iyz>0</iyz>
             <izz>0.991313</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -13925,6 +14417,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>32.7238 26.6613 1.31088 0 -0 0</pose>
     </model>
@@ -13941,6 +14434,7 @@
             <iyz>0</iyz>
             <izz>0.759355</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -13981,6 +14475,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>34.7477 43.0469 1.69875 0 -0 0</pose>
     </model>
@@ -13997,6 +14492,7 @@
             <iyz>0</iyz>
             <izz>0.156119</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -14037,6 +14533,7 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>9.11668 40.5474 1.6079 0 -0 0</pose>
     </model>
@@ -14053,6 +14550,7 @@
             <iyz>0</iyz>
             <izz>0.242939</izz>
           </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
         </inertial>
         <collision name='collision'>
           <geometry>
@@ -14093,14 +14591,15 @@
         <gravity>0</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
       </link>
       <pose frame=''>26.4957 17.971 2.01047 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>54 794000000</sim_time>
-      <real_time>62 421253324</real_time>
-      <wall_time>1536275694 393725547</wall_time>
-      <iterations>54794</iterations>
+      <sim_time>364 146000000</sim_time>
+      <real_time>338 502852404</real_time>
+      <wall_time>1591711684 455907495</wall_time>
+      <iterations>77338</iterations>
       <model name='0'>
         <pose frame=''>38.7282 38.0226 2.26028 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -16611,17 +17110,71 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
+      <model name='lawn_plane'>
+        <pose frame=''>22.9152 18.7338 0 0 -0 0</pose>
+        <scale>3 3 1</scale>
+        <link name='link'>
+          <pose frame=''>22.9152 18.7338 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
       <light name='sun'>
         <pose frame=''>0 0 10 0 -0 0</pose>
       </light>
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>5.00573 -20.4585 32.6755 0 0.495643 1.1642</pose>
+        <pose frame=''>2.12375 -29.3675 28.1619 0 0.495643 1.1642</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
-   
+    <wind/>
+    <model name='lawn_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://lawn_plane/materials/scripts</uri>
+              <uri>model://lawn_plane/materials/textures</uri>
+              <name>vrc/lawn</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>10.5049 10.7821 0 0 -0 0</pose>
+    </model>
   </world>
 </sdf>

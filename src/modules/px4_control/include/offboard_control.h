@@ -43,6 +43,7 @@ class OffboardControl {
     void send_attitude_setpoint(const Eigen::Vector3d& _AttitudeReference,float thrust_sp);
     void send_attitude_rate_setpoint(const Eigen::Vector3d& attitude_rate_sp, float thrust_sp);
     void send_mount_control_command(const Eigen::Vector3d& mount_sp);
+    void send_body_velxy_posz_setpoint(const Eigen::Vector3d& vel_sp, float desire_z);
   private:
     ros::NodeHandle offboard_nh_;
     ros::Publisher mavros_setpoint_pos_pub_;
@@ -86,7 +87,7 @@ void OffboardControl::send_body_velxyz_setpoint(const Eigen::Vector3d& vel_sp, f
     pos_setpoint.yaw_rate = yaw_sp;
     mavros_setpoint_pos_pub_.publish(pos_setpoint);
 }
-//local frame下发送xyz速度期望值以及期望偏航角速度至飞控
+//local frame本地坐标系下发送xyz速度期望值以及期望偏航角速度至飞控
 void OffboardControl::send_velxyz_setpoint(const Eigen::Vector3d& vel_sp, float yaw_sp)
 {
     mavros_msgs::PositionTarget pos_setpoint;
@@ -102,7 +103,23 @@ void OffboardControl::send_velxyz_setpoint(const Eigen::Vector3d& vel_sp, float 
     pos_setpoint.yaw_rate = yaw_sp;
     mavros_setpoint_pos_pub_.publish(pos_setpoint);
 }
-//发送xy速度期望值以及高度z期望值至飞控（输入：期望xy,期望高度）
+//机体坐标系下发送xy速度期望值以及高度z期望值至飞控（输入：期望xy,期望高度）
+void OffboardControl::send_body_velxy_posz_setpoint(const Eigen::Vector3d& vel_sp, float desire_z)
+{
+    mavros_msgs::PositionTarget pos_setpoint;
+    //Bitmask toindicate which dimensions should be ignored (1 means ignore,0 means not ignore; Bit 10 must set to 0)
+    //Bit 1:x, bit 2:y, bit 3:z, bit 4:vx, bit 5:vy, bit 6:vz, bit 7:ax, bit 8:ay, bit 9:az, bit 10:is_force_sp, bit 11:yaw, bit 12:yaw_rate
+    //Bit 10 should set to 0, means is not force sp
+    pos_setpoint.type_mask = 1 + 2 + /*4 + 8 + 16 + 32 +*/ 64 + 128 + 256 + 512 + 1024 + 2048;
+    pos_setpoint.coordinate_frame = 8;
+
+    pos_setpoint.velocity.x = vel_sp[0];
+    pos_setpoint.velocity.y = vel_sp[1];
+    pos_setpoint.position.z = desire_z;
+
+    mavros_setpoint_pos_pub_.publish(pos_setpoint);
+}
+//本地坐标系发送xy速度期望值以及高度z期望值至飞控（输入：期望xy,期望高度）
 void OffboardControl::send_velxy_posz_setpoint(const Eigen::Vector3d& vel_sp, float desire_z)
 {
     mavros_msgs::PositionTarget pos_setpoint;
