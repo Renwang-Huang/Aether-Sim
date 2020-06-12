@@ -113,7 +113,6 @@
 
 ```
 wget https://raw.githubusercontent.com/PX4/Firmware/master/Tools/setup/ubuntu.sh
-
 ```
 
 ```
@@ -124,6 +123,14 @@ wget https://raw.githubusercontent.com/PX4/Firmware/master/Tools/setup/requireme
 ```
 source ubuntu.sh
 ```
+
+如果不进行px4代码的开发，只是进行ros下开发仿真的话，可以把**ubuntu.sh**里的*INSTALL_NUTTX*改为’false’，减少不必要的安装时间
+
+```
+INSTALL_NUTTX="false"
+```
+
+之间可能安装失败多次，请务必重新运行ubuntu.sh脚本，直至成功
 
 参考于http://dev.px4.io/master/en/setup/dev_env_linux_ubuntu.html
 
