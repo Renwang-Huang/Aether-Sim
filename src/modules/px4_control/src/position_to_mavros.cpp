@@ -50,7 +50,7 @@ int main(int argc, char** argv){
 	cout<<"pitch_obj:"<<pitch_obj<<endl;
 	cout<<"yaw_obj:"<<yaw_obj<<endl;
 
-  ros::Rate rate(10.0);
+  ros::Rate rate(output_rate);
   while (node.ok()){
     geometry_msgs::TransformStamped transformStamped;
     try{
