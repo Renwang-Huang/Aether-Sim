@@ -7,7 +7,6 @@ Panels:
         - /Global Options1
         - /TF1/Frames1
         - /TF1/Tree1
-        - /Planner Plan1/Status1
         - /Global Map1/Costmap1
         - /Global Map1/Planner1
         - /Local Map1/Polygon1
@@ -298,6 +297,14 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /explore/frontiers
+      Name: MarkerArray
+      Namespaces:
+        frontiers: true
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -356,4 +363,4 @@ Window Geometry:
     collapsed: true
   Width: 1279
   X: 161
-  Y: 145
+  Y: 27
