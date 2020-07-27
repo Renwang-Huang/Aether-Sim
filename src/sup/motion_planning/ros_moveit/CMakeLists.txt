@@ -23,7 +23,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 find_package(yaml-cpp REQUIRED)
-find_package(Protobuf REQUIRED)
+# find_package(Protobuf REQUIRED)
 
 
 include (FindPkgConfig)

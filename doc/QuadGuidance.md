@@ -185,10 +185,11 @@ sudo apt-get install ros-melodic-ar-track-alvar*
 ```
 sudo apt-get install ros-melodic-velodyne-gazebo-plugins
 ```
-moveit运动规划相关的包
+运动规划相关的包
 ```
 sudo apt-get install ros-melodic-moveit
 sudo apt-get install ros-melodic-nav-core
+sudo apt-get install ros-melodic-move-base
 ```
 编译工程
 ```
