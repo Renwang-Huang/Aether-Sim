@@ -9,7 +9,7 @@
   <license>TODO</license>
 
   <url type="website">http://www.amovauto.com/</url>
-  <url type="repository">https://gitee.com/bingobinlw/some.git</url>
+  <url type="repository">https://gitee.com/bingobinlw/volans.git</url>
 
   <build_depend>message_generation</build_depend>
   <exec_depend>message_runtime</exec_depend>
