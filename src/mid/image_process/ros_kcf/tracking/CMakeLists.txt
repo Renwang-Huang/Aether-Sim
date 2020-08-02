@@ -2,14 +2,13 @@ cmake_minimum_required(VERSION 2.8.3)
 project(tracking)
 find_package(catkin REQUIRED)
 set(OpenCV_DIR "/home/jcuav/tools/opencv/build")    
+#需要opencv3.4.4 所以需要重新编译opencv以及cv_bridge
 set(cv_bridge_DIR /home/jcuav/tools/cv_bridge_ws/devel/share/cv_bridge/cmake)
 find_package(OpenCV REQUIRED)
-find_package(Eigen3 REQUIRED)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   tf
   std_msgs
-  iarc_msgs
    cv_bridge
   image_transport
   darknet_ros_msgs

@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(video_pub)
 
+#需要opencv3.4.4 所以需要重新编译opencv以及cv_bridge
 set(OpenCV_DIR "/home/jcuav/tools/opencv/build")
 set(cv_bridge_DIR /home/jcuav/tools/cv_bridge_ws/devel/share/cv_bridge/cmake)   
 find_package(OpenCV REQUIRED)
@@ -11,7 +12,6 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
-  iarc_msgs
    cv_bridge
   image_transport
   rospy
@@ -19,17 +19,14 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
- generate_messages(
-  DEPENDENCIES
-  geometry_msgs 
-  std_msgs
- )
 
 
 include_directories(
   ${catkin_INCLUDE_DIRS}
   ${video_pub_SOURCE_DIR}/include/video_pub
 )
+
+
 
 add_executable(
 	video_pub 

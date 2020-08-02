@@ -17,7 +17,6 @@
 #include <string>
 #include <vector>
 #include <Eigen/Dense>
-#include "iarc_msgs/RoiPos.h"
 #include "include/kcftracker.hpp"
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
@@ -89,7 +88,7 @@ class Tracking_Melon {
 
   
   image_transport::Subscriber camera_subscriber;
-  iarc_msgs::RoiPos roi_pos;
+//  iarc_msgs::RoiPos roi_pos;
   vector<darknet_ros_msgs::BoundingBox> roi_recv;
   void hand_callback(const std_msgs::Int8::ConstPtr& msg);
   void imageCallback(const sensor_msgs::ImageConstPtr& msg);

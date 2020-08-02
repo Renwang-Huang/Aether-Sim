@@ -191,6 +191,10 @@ sudo apt-get install ros-melodic-moveit
 sudo apt-get install ros-melodic-nav-core
 sudo apt-get install ros-melodic-move-base
 ```
+darknet_ros 相关包
+```
+sudo apt-get install ros-melodic-cv-bridge
+```
 编译工程
 ```
 cd volans
