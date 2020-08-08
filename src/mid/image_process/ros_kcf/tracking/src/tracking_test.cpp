@@ -1,5 +1,8 @@
 #include "tracking_test.h"
 #define sim_method 0
+
+//#define SHOWIMAGE   //是否显示实时跟踪图像
+
 Tracking_Melon::Tracking_Melon() { init(); }
 
 Tracking_Melon::~Tracking_Melon() {}
@@ -197,12 +200,9 @@ void Tracking_Melon::mainloop() {
           }
         }
         first = 1;
-
-        // cout<<"trackers
-        // "<<trackers.getObjects().size()<<"roi"<<roi_recv.size()<<endl;
+#if defined (SHOWIMAGE)
         for (auto j = 0; j < trackers.getObjects().size(); j++) {
           //画出跟踪框
-
           rectangle(frame, trackers.getObjects()[j], colors[colors_flag[j]], 2,
                     1);
           history_pos[j].push_back(
@@ -222,12 +222,7 @@ void Tracking_Melon::mainloop() {
 
           stringstream ss;
           string str;
-          // if(flag){ss <<"mycar "<< abs(1-j);
-          // cout<<"change my flag!!!!!!"<<endl;
-
-          // }else{
           ss << "five " << colors_flag[j];
-          // }
           str = ss.str();
           cv::rectangle(frame,
                         cv::Rect(cv::Point(trackers.getObjects()[j].x,
@@ -238,22 +233,21 @@ void Tracking_Melon::mainloop() {
               frame, str,
               cv::Point(trackers.getObjects()[j].x, trackers.getObjects()[j].y),
               cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(0, 0, 0), 2.1);
-//	cout << "five_pose_x:  "<<  trackers.getObjects()[j].x + cvRound(trackers.getObjects()[j].width / 2.0) << endl;
-//	cout << "five_pose_y:  "<<  trackers.getObjects()[j].y + cvRound(trackers.getObjects()[j].height / 2.0) << endl;
-	target_position.position.x = trackers.getObjects()[j].x + cvRound(trackers.getObjects()[j].width / 2.0);
-	target_position.position.y = trackers.getObjects()[j].y + cvRound(trackers.getObjects()[j].height / 2.0);
-
-
-	target_position_pub.publish(target_position);
           ///画出历史轨迹
-      //    for (auto i = 0; i < history_pos[j].size(); i++) {
-
-      //      circle(frame, history_pos[j][i], 3, colors[colors_flag[j]], -1);
-      //    }
+          for (auto i = 0; i < history_pos[j].size(); i++) {
+            circle(frame, history_pos[j][i], 3, colors[colors_flag[j]], -1);
+          }
         }
-        if_track.data = 1;
         imshow(winName, frame);
         cv::waitKey(10);
+#endif
+      //发布位置坐标
+        for (auto j = 0; j < trackers.getObjects().size(); j++) {
+          target_position.position.x = trackers.getObjects()[j].x + cvRound(trackers.getObjects()[j].width / 2.0);
+          target_position.position.y = trackers.getObjects()[j].y + cvRound(trackers.getObjects()[j].height / 2.0);
+	        target_position_pub.publish(target_position);
+        }
+        if_track.data = 1;
         // ros::spinOnce();
         ros::spinOnce();
         //更新跟踪
@@ -262,15 +256,6 @@ void Tracking_Melon::mainloop() {
           if_track.data = 0;
           ok = 0;
         }
-        // if(!ok){
-        //    for (auto j = 0; j < trackers.getObjects().size(); j++) {
-        //      cars[j].bbox=trackers.getObjects()[j];
-        //      cars[j].my_color=colors[j];
-        //      cars[j].my_history=history_pos[j];
-        //      cars[j].pic=frame(trackers.getObjects()[j]).clone();
-        //    }
-        // cout<<"old_ok"<<endl;
-        // }
       }
       roi.clear();
       algorithms.clear();
