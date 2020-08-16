@@ -36,7 +36,7 @@ void Tracking_Melon::getRandomColors(vector<Scalar>& colors, int numColors) {
 //接收darknet的bounding box信息
 void Tracking_Melon::bounding_box_callback(
     const darknet_ros_msgs::BoundingBoxes& msg) {
-  // if(!ok){
+   if(!ok){
 
   roi_recv = msg.bounding_boxes;
   ifdetect = 0;
@@ -54,7 +54,7 @@ void Tracking_Melon::bounding_box_callback(
     ifdetect = 1;
   }
 }
-// }
+ }
 //接收图片topic
 void Tracking_Melon::imageCallback(const sensor_msgs::ImageConstPtr& msg) {
   Mat img = cv_bridge::toCvShare(msg, "bgr8")->image;
@@ -139,8 +139,8 @@ bool isInside(Rect rect1, Rect rect2) { return (rect1 == (rect1 & rect2)); }
 
 void Tracking_Melon::mainloop() {
   ros::Rate loop_rate_class(loopRate_);
-  const char winName[] = "My Camera";
-  cv::namedWindow(winName, 1);
+  //const char winName[] = "My Camera";
+//  cv::namedWindow(winName, 1);
   int k = 0;
   my_target tar1;
   my_target tar2;

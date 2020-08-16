@@ -1,0 +1,28 @@
+<launch>
+	<!-- 
+	search_alt_：预定跟踪绝对高度
+        desire_pose_x、desire_pose_y：期望的飞机相对目标上空的位置 像素点坐标  640x480像素，中间期望点为x=320(左右方向) y=240(前后方向)
+	PidXY_p：x,y方向p项系数
+	PidXY_d：x,y方向d项系数
+	PidXY_i：x,y方向i项系数
+
+-->
+
+        <arg name="search_alt_" default="2" />
+
+        <arg name="desire_pose_x" default="320" />
+        <arg name="desire_pose_y" default="240" />
+
+        <arg name="PidXY_p" default="0.0003" />
+        <arg name="PidXY_d" default="0.0005" />
+        <arg name="PidXY_i" default="0.0004" />
+
+	<node pkg="px4_control" type="tracking_ardupilot_node" name="tracking_ardupilot_node" output="screen">
+		<param name="search_alt_" value = "$(arg search_alt_)"/>	
+		<param name="desire_pose_x" value = "$(arg desire_pose_x)"/>	
+		<param name="desire_pose_y" value = "$(arg desire_pose_y)"/>	
+		<param name="PidXY_p" value = "$(arg PidXY_p)"/>	
+		<param name="PidXY_d" value = "$(arg PidXY_d)"/>	
+		<param name="PidXY_i" value = "$(arg PidXY_i)"/>	
+	</node>
+</launch>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <launch>
-  <master auto="start"/>
-  <node pkg="tracking" name="tracking_test" type="tracking_test" output="screen">
+  <node pkg="tracking" type="tracking_test" name="tracking_test" output="screen">
 
  </node>
 

@@ -24,6 +24,13 @@
       <arg name="enable_sync"       value="true"/>
       <arg name="tf_prefix"         value="$(arg camera)"/>
     </include>
-
   </group>
+
+
+  <include file="$(find mavros)/launch/apm.launch">
+    <arg name="fcu_url"           default="/dev/ttyTHS1:921600"/>
+
+  </include>
+
+
 </launch>

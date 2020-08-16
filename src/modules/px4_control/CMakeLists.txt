@@ -54,6 +54,7 @@ add_executable(circular_car_node src/circular_car.cpp)
 add_executable(ros_nav_quadrotor_node src/ros_nav_quadrotor.cpp)
 add_executable(mission_car_offboard_node src/mission_car_offboard.cpp)
 add_executable(landing_quadrotor_node src/landing_quadrotor.cpp)
+add_executable(tracking_ardupilot_node src/tracking_ardupilot.cpp)
 add_executable(tracking_quadrotor_node src/tracking_quadrotor.cpp)
 add_executable(auto_2d_nav_node src/auto_2d_nav.cpp)
 
@@ -92,6 +93,9 @@ target_link_libraries(landing_quadrotor_node
 target_link_libraries(tracking_quadrotor_node
   ${catkin_LIBRARIES}
 )
+target_link_libraries(tracking_ardupilot_node
+  ${catkin_LIBRARIES}
+)
 target_link_libraries(auto_2d_nav_node
   ${catkin_LIBRARIES}
 )
@@ -112,6 +116,7 @@ install(TARGETS  position_to_mavros_node
   mission_car_offboard_node
   landing_quadrotor_node
   tracking_quadrotor_node
+  tracking_ardupilot_node
   auto_2d_nav_node
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}

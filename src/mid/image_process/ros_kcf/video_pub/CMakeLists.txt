@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 2.8.3)
 project(video_pub)
 
 #需要opencv3.4.4 所以需要重新编译opencv以及cv_bridge
-set(OpenCV_DIR "/home/zozo/Tools/opencv-3.4.4/build")
-set(cv_bridge_DIR /home/zozo/Tools/cv_bridge_ws/devel/share/cv_bridge/cmake)   
+set(OpenCV_DIR "/home/jcuav/tools/opencv/build")
+set(cv_bridge_DIR /home/jcuav/tools/cv_bridge_ws/devel/share/cv_bridge/cmake)   
 find_package(OpenCV REQUIRED)
 
 find_package(catkin REQUIRED COMPONENTS
