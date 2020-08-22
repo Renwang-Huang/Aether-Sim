@@ -198,8 +198,8 @@ sudo apt-get install ros-melodic-cv-bridge
 编译工程
 ```
 cd volans
-catkin config --extend /opt/ros/${ROS_DISTRO} --cmake-args -DCMAKE_BUILD_TYPE=Release
-catkin build simulation
+根据需要选择编译ros包
+catkin build simulation px4_control ros_slam octomap ros_vision path_planning explore 
 ```
 
 
