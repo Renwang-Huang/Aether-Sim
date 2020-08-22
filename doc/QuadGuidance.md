@@ -199,7 +199,7 @@ sudo apt-get install ros-melodic-cv-bridge
 ```
 cd volans
 catkin config --extend /opt/ros/${ROS_DISTRO} --cmake-args -DCMAKE_BUILD_TYPE=Release
-catkin build
+catkin build simulation
 ```
 
 
