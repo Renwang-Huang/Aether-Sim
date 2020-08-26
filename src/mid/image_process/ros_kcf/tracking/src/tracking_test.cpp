@@ -1,7 +1,7 @@
 #include "tracking_test.h"
 #define sim_method 0
 
-//#define SHOWIMAGE   //是否显示实时跟踪图像
+#define SHOWIMAGE   //是否显示实时跟踪图像
 
 Tracking_Melon::Tracking_Melon() { init(); }
 
@@ -16,7 +16,7 @@ void Tracking_Melon::init() {
 
   bounding_sub = nh.subscribe("/darknet_ros/bounding_boxes", 1,
                               &Tracking_Melon::bounding_box_callback, this);
-  camera_subscriber = it.subscribe("/camera/color/image_raw", 1,
+  camera_subscriber = it.subscribe("/camera/rgb/image_raw", 1,
                                    &Tracking_Melon::imageCallback, this);
   if_track_pub = nh.advertise<std_msgs::Int8>("/tracking/if_tracking", 30);
 
@@ -138,9 +138,9 @@ double my_target::getMSSIM(Mat inputimage1, Mat inputimage2) {
 bool isInside(Rect rect1, Rect rect2) { return (rect1 == (rect1 & rect2)); }
 
 void Tracking_Melon::mainloop() {
-  ros::Rate loop_rate_class(loopRate_);
-  //const char winName[] = "My Camera";
-//  cv::namedWindow(winName, 1);
+  ros::Rate loop_rate_class(10);
+  const char winName[] = "My Camera";
+  cv::namedWindow(winName, 1);
   int k = 0;
   my_target tar1;
   my_target tar2;
@@ -222,7 +222,7 @@ void Tracking_Melon::mainloop() {
 
           stringstream ss;
           string str;
-          ss << "five " << colors_flag[j];
+          ss << "target " << colors_flag[j];
           str = ss.str();
           cv::rectangle(frame,
                         cv::Rect(cv::Point(trackers.getObjects()[j].x,
@@ -260,7 +260,7 @@ void Tracking_Melon::mainloop() {
       roi.clear();
       algorithms.clear();
       obj.clear();
-      // loop_rate_class.sleep();
+       loop_rate_class.sleep();
     }
     if_track_pub.publish(if_track);
   }

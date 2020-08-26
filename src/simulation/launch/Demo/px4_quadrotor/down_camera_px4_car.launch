@@ -12,8 +12,8 @@
     <arg name="Y" default="0"/>
 
     <arg name="world" default="$(find simulation)/worlds/mcity.world" />
-    <arg name="sdf" default="$(find simulation)/models/iris_depth_camera/iris_depth_camera.sdf" />
-    <arg name="car" default="$(find simulation)/urdf/car/prius_a02.urdf"/>
+    <arg name="sdf" default="$(find simulation)/models/iris_depth_camera_down/iris_depth_camera_down.sdf" />
+    <arg name="car" default="$(find simulation)/urdf/car/prius.urdf"/>
     <arg name="vehicle" default="iris"/>
     <arg name="verbose" default="false"/>
     <arg name="debug" default="false"/>
@@ -34,5 +34,7 @@
   <param name="robot_description" textfile="$(arg car)"/>
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x 19.8 -y 2.4 -z 0.5 -model prius"/>
 
+	<node pkg="simulation" type="keyboard_control_px4.py" name="keyboard_control_px4" output="screen" launch-prefix="gnome-terminal --tab -e">
+    </node>
 </launch>
 

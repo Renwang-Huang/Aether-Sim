@@ -26,6 +26,13 @@
     <kp>1e8</kp>
   </gazebo>
 
+	<gazebo reference="planding_place">
+		  <mu1>0.9</mu1>
+		  <mu2>0.9</mu2>
+		  <minDepth>0.005</minDepth>
+		  <kp>1e8</kp>
+	</gazebo>
+
 
   <link name="base_link">
     <inertial>
@@ -40,6 +47,27 @@
     <axis xyz="1 0 0"/>
   </joint>
 
+
+  <link name="planding_place">
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+          <mesh filename="package://simulation/urdf/car/meshes/landing.dae" scale="3 3 3"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="landing_link_connection" type="fixed">
+    <parent link="chassis"/>
+    <child link="planding_place"/>
+    <origin xyz="0.4 2.2 1.5" rpy="-1.57 0 0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
 
   <link name="chassis">
     <visual>
