@@ -58,6 +58,7 @@ add_executable(tracking_ardupilot_node src/tracking_ardupilot.cpp)
 add_executable(tracking_quadrotor_node src/tracking_quadrotor.cpp)
 add_executable(tracking_down_kcf_quadrotor_node src/tracking_down__kcf_quadrotor.cpp)
 add_executable(auto_2d_nav_node src/auto_2d_nav.cpp)
+add_executable(simulinkVFH_node src/simulinkVFH.cpp)
 
 ## Specify libraries to link a library or executable target against
 
@@ -103,6 +104,10 @@ target_link_libraries(tracking_ardupilot_node
 target_link_libraries(auto_2d_nav_node
   ${catkin_LIBRARIES}
 )
+target_link_libraries(simulinkVFH_node
+  ${catkin_LIBRARIES}
+)
+
 
 ## Mark cpp header files for installation
 install(DIRECTORY include/${PROJECT_NAME}/
@@ -123,6 +128,7 @@ install(TARGETS  position_to_mavros_node
   tracking_down_kcf_quadrotor_node
   tracking_ardupilot_node
   auto_2d_nav_node
+  simulinkVFH_node
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

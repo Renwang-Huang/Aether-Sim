@@ -1,0 +1,8 @@
+<launch>
+	<!-- run the simulinkVFH.cpp -->
+
+        <arg name="search_alt_" default="1.5" />
+	<node pkg="px4_control" type="simulinkVFH_node" name="simulinkVFH_node" output="screen">
+		<param name="search_alt_" value = "$(arg search_alt_)"/>		
+	</node>
+</launch>

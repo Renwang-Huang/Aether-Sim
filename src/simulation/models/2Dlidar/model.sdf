@@ -35,9 +35,9 @@
             </horizontal>
           </scan>
           <range>
-            <min>0.120</min>
+            <min>0.08</min>
             <max>10</max>
-            <resolution>0.015</resolution>
+            <resolution>0.01</resolution>
           </range>
           <noise>
             <type>gaussian</type>
@@ -51,7 +51,7 @@
           <frameName>2Dlidar_link</frameName>
         </plugin>
         <always_on>1</always_on>
-        <update_rate>5.5</update_rate>
+        <update_rate>10</update_rate>
         <visualize>false</visualize>
       </sensor>
 <!--
