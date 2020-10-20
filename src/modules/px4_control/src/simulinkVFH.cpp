@@ -33,7 +33,7 @@ float desire_z = 1.5; //期望高度
 /*接收来自simulink的期望x方向的速度，以及期望偏航角，其中angular.z为正表示从上往下看飞机应该逆时针旋转，当为0时表示此刻机头对应的区域可以安全通行，msg->linear.x表示此刻期望的飞机前进速度*/                               
 void targetMsg_cb(const geometry_msgs::Twist::ConstPtr &msg)
 {
-  desire_vel[1] =  msg->linear.x;
+  desire_vel[0] =  msg->linear.x;
   desire_yawRate =  msg->angular.z;
   //ROS_INFO("I heard: [%f],[%f]", desire_vx,desire_yaw);
 }
