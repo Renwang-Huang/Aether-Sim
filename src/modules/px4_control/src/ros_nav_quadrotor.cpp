@@ -38,8 +38,8 @@ void PX4RosNav::PublishVelControl()
 
 void PX4RosNav::CmdVelCallback(const geometry_msgs::Twist &msg)
 {
- px4_vel_[0] = -msg.linear.y;
- px4_vel_[1] = msg.linear.x;
+ px4_vel_[0] = msg.linear.x;
+ px4_vel_[1] = msg.linear.y;
  
 }
 void PX4RosNav::initialize()
