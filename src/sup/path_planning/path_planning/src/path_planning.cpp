@@ -211,7 +211,7 @@ public:
 			trajectory_msgs::MultiDOFJointTrajectoryPoint point_msg;
 
 			msg.header.stamp = ros::Time::now();
-			msg.header.frame_id = "world";
+			msg.header.frame_id = "odom";
 			msg.joint_names.clear();
 			msg.points.clear();
 			msg.joint_names.push_back("Quadcopter");
@@ -270,7 +270,7 @@ public:
 	            // extract the second component of the state and cast it to what we expect
 				const ob::SO3StateSpace::StateType *rot = se3state->as<ob::SO3StateSpace::StateType>(1);
 				
-				marker.header.frame_id = "world";
+				marker.header.frame_id = "odom";
 				marker.header.stamp = ros::Time();
 				marker.ns = "path";
 				marker.id = idx;

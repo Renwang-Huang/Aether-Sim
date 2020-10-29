@@ -1,3 +1,4 @@
+
 <launch> 
 
     <arg name="mavlink_udp_port" default="14560"/>
@@ -10,21 +11,35 @@
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
+
   <arg name="world_path" default="$(find simulation)/worlds/cloister.world" />
 
-  <include file="$(find simulation)/launch/px4/depth_camera_px4.launch">
+  <include file="$(find simulation)/launch/px4/3Dlidar_px4.launch">
     <arg name="world" value="$(arg world_path)" />
   </include>
+
     <param name="/mavros/local_position/tf/send" type="bool" value="true" />
     <param name="/mavros/local_position/frame_id" type="str" value="base_link" />
     <param name="/mavros/local_position/tf/frame_id" type="str" value="odom" />
 
-  <include file="$(find octomap)/launch/octomap_depthCamera_mapping.launch">
+  <include file="$(find octomap)/launch/octomap_3Dlidar_mapping.launch">
   </include>
+
+  <!-- 启动规划器 -->
+  <include file="$(find path_planning)/launch/pathTrajGen.launch">
+  </include>
+
+  <!-- 启动控制无人机节点 -->
+  <node pkg="px4_control" type="omplControlPx4_node" name="omplControlPx4_node" output="screen">
+   </node>
+
 	<node pkg="simulation" type="keyboard_control_px4.py" name="keyboard_control_px4" output="screen" launch-prefix="gnome-terminal --tab -e">
     </node>
+
+
+
     <!-- RViz -->
     <node pkg="rviz" type="rviz" output="screen" name="rviz" respawn="true"
-          args="-d $(find octomap)/rviz/octomap_depthCamera_demo.rviz" />
+          args="-d $(find path_planning)/rviz/ompl3dRRT.rviz" />
 </launch>
 

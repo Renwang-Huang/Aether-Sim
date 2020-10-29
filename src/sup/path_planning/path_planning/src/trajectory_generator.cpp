@@ -79,7 +79,7 @@ void trajCb(Eigen::MatrixXf coefficients, Eigen::MatrixXf waypoints)
 
 	trajectory_msgs::MultiDOFJointTrajectory traj_msg;
 	trajectory_msgs::MultiDOFJointTrajectoryPoint point_msg;
-	traj_msg.header.frame_id = "world";
+	traj_msg.header.frame_id = "odom";
 	traj_msg.joint_names.clear();
 	traj_msg.joint_names.push_back("Quadcopter");
 	
@@ -174,7 +174,7 @@ void trajCb(Eigen::MatrixXf coefficients, Eigen::MatrixXf waypoints)
 			// Markers for visualization
 			if(visualize)
 			{
-				marker.header.frame_id = "world";
+				marker.header.frame_id = "odom";
 				marker.header.stamp = ros::Time();
 				marker.ns = "Jerk";
 				marker.id = id++;
@@ -308,7 +308,7 @@ int main(int argc, char **argv)
 	ros::NodeHandle n;
 	ros::Subscriber planner_sub = n.subscribe("/waypoints",1,plannerCb);
 	vis_pub = n.advertise<visualization_msgs::Marker>( "visualization_marker_jerk", 0 );
-	traj_pub = n.advertise<trajectory_msgs::MultiDOFJointTrajectory>("/bebop2/command/trajectory",10);
+	traj_pub = n.advertise<trajectory_msgs::MultiDOFJointTrajectory>("/px4/trajectory",10);
 	start_pub = n.advertise<geometry_msgs::PointStamped>("/start/clicked_point", 10);
 	ros::spin();
 }

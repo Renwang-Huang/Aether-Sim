@@ -1,0 +1,10 @@
+<launch>
+	<!-- 使用ompl的3DrrtStar路径规划生成航点，继而再平滑路径-->
+
+	<node pkg="path_planning" type="path_planning_node" name="path_planning_node" output="screen">	
+	</node>
+
+	<node pkg="path_planning" type="traj_gen" name="traj_gen" output="screen">	
+	</node>
+	
+</launch>

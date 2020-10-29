@@ -1,4 +1,16 @@
 <launch> 
+
+    <arg name="mavlink_udp_port" default="14560"/>
+    <!-- 加载urdf以便在rviz上显示uav模型 -->
+    <arg name="model" default="$(find simulation)/urdf/iris_depth_camera/xacro/urdf/iris_base.xacro" />
+    <arg name="rotors_description_dir" default="$(find simulation)/urdf/iris_depth_camera/xacro" />
+    <arg name="cmd" default="$(find xacro)/xacro $(arg model) rotors_description_dir:=$(arg rotors_description_dir) mavlink_udp_port:=$(arg mavlink_udp_port) --inorder"/>
+    <param command="$(arg cmd)" name="robot_description" />
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+
   <arg name="world_path" default="$(find simulation)/worlds/cloister.world" />
 
   <include file="$(find simulation)/launch/px4/3Dlidar_px4.launch">
