@@ -199,7 +199,7 @@ sudo apt-get install ros-melodic-cv-bridge
 ```
 cd volans
 根据需要选择编译ros包
-catkin build simulation px4_control ros_slam octomap ros_vision path_planning explore 
+catkin build simulation px4_control ros_slam octomap ros_vision path_planning explore_lite
 ```
 
 
