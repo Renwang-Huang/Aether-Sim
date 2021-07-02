@@ -8,6 +8,8 @@
 
 ### realsense 驱动安装
 
+[参考](https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md)
+
 第一步：添加密钥
 
 ```
